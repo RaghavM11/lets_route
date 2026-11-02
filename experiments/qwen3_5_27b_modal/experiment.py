@@ -1,20 +1,33 @@
-"""Reusable xRouteBench evaluation logic for the Modal Qwen experiment."""
+"""xRouteBench evaluation through a local SGLang server."""
 
 from __future__ import annotations
 
 import hashlib
+import importlib.metadata
 import json
 import math
+import os
 import re
+import signal
+import subprocess
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Callable, Iterable
+from typing import Any, Iterable
 
-import numpy as np
 import pandas as pd
 
 
+DEFAULT_TASKS = (
+    "mmlu",
+    "arc_challenge",
+    "openbook_qa",
+    "commonsense_qa",
+    "boolq",
+    "hellaswag",
+)
 ROUTING_COLUMNS = (
     "embedding_id",
     "task_name",
@@ -28,218 +41,198 @@ ROUTING_COLUMNS = (
     "response_time",
 )
 
-DEFAULT_TASKS = (
-    "mmlu",
-    "arc_challenge",
-    "openbook_qa",
-    "commonsense_qa",
-    "boolq",
-    "hellaswag",
-)
 
-
-def file_sha256(path: Path, chunk_size: int = 1 << 20) -> str:
+def file_sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
-        while chunk := handle.read(chunk_size):
+        while chunk := handle.read(1 << 20):
             digest.update(chunk)
     return digest.hexdigest()
 
 
-def load_xroute_queries(
+def load_queries(
     data_root: Path, split: str = "test"
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
-    """Load and validate one complete xRouteBench candidate matrix."""
-
     path = data_root / "llmrouter_generic" / f"{split}-000.parquet"
     if not path.exists():
-        raise FileNotFoundError(f"Missing xRouteBench Parquet: {path}")
+        raise FileNotFoundError(f"Missing xRouteBench data: {path}")
 
     frame = pd.read_parquet(path, columns=list(ROUTING_COLUMNS))
-    missing = set(ROUTING_COLUMNS).difference(frame.columns)
-    if missing:
-        raise ValueError(f"Missing required columns: {sorted(missing)}")
     if frame.duplicated(["embedding_id", "model_name"]).any():
-        raise ValueError("Duplicate (embedding_id, model_name) executions found")
+        raise ValueError("Duplicate (embedding_id, model_name) rows")
 
     candidate_count = frame["model_name"].nunique()
-    per_query = frame.groupby("embedding_id", sort=False).agg(
+    grouped = frame.groupby("embedding_id", sort=False).agg(
         rows=("model_name", "size"),
         models=("model_name", "nunique"),
-        queries=("query", "nunique"),
+        prompts=("query", "nunique"),
         tasks=("task_name", "nunique"),
         metrics=("metric", "nunique"),
     )
-    invalid = per_query[
-        (per_query["rows"] != candidate_count)
-        | (per_query["models"] != candidate_count)
-        | (per_query[["queries", "tasks", "metrics"]] != 1).any(axis=1)
+    invalid = grouped[
+        (grouped["rows"] != candidate_count)
+        | (grouped["models"] != candidate_count)
+        | (grouped[["prompts", "tasks", "metrics"]] != 1).any(axis=1)
     ]
     if len(invalid):
-        raise ValueError(f"{len(invalid)} incomplete or inconsistent query matrices")
+        raise ValueError(f"{len(invalid)} incomplete query matrices")
 
-    query_table = (
+    queries = (
         frame.sort_values("embedding_id")
         .drop_duplicates("embedding_id")
         [["embedding_id", "task_name", "query", "ground_truth", "metric"]]
         .reset_index(drop=True)
     )
-    query_table["query_hash"] = query_table["query"].map(
-        lambda value: hashlib.sha256(str(value).encode("utf-8")).hexdigest()
+    queries["query_hash"] = queries["query"].map(
+        lambda value: hashlib.sha256(str(value).encode()).hexdigest()
     )
     audit = {
-        "split": split,
-        "execution_rows": int(len(frame)),
-        "query_instances": int(len(query_table)),
-        "unique_prompt_texts": int(query_table["query_hash"].nunique()),
-        "candidate_models": int(candidate_count),
         "path": str(path),
         "bytes": path.stat().st_size,
         "sha256": file_sha256(path),
+        "split": split,
+        "execution_rows": int(len(frame)),
+        "query_instances": int(len(queries)),
+        "candidate_models": int(candidate_count),
     }
-    return query_table, frame, audit
+    return queries, frame, audit
 
 
-def select_mc_queries(
-    query_table: pd.DataFrame,
+def select_queries(
+    queries: pd.DataFrame,
     tasks: Iterable[str] = DEFAULT_TASKS,
     *,
     per_task: int = 2,
     seed: int = 42,
 ) -> pd.DataFrame:
-    """Deterministically select exact-score multiple-choice queries by task."""
-
     if per_task < 1:
         raise ValueError("per_task must be at least 1")
 
-    tasks = tuple(tasks)
-    if not tasks:
-        raise ValueError("At least one task is required")
-
-    selections = []
+    selected = []
     for task in tasks:
-        task_rows = query_table[
-            query_table["task_name"].eq(task) & query_table["metric"].eq("em_mc")
+        subset = queries[
+            queries["task_name"].eq(task) & queries["metric"].eq("em_mc")
         ].copy()
-        if len(task_rows) < per_task:
+        if len(subset) < per_task:
             raise ValueError(
-                f"Task {task!r} has only {len(task_rows)} em_mc queries; "
-                f"requested {per_task}"
+                f"Task {task!r} has {len(subset)} em_mc rows; requested {per_task}"
             )
-        task_rows["sample_order"] = task_rows["query_hash"].map(
-            lambda value: hashlib.sha256(f"{seed}:{value}".encode("utf-8")).hexdigest()
+        subset["sample_order"] = subset["query_hash"].map(
+            lambda value: hashlib.sha256(f"{seed}:{value}".encode()).hexdigest()
         )
-        selections.append(task_rows.sort_values("sample_order").head(per_task))
-
-    return pd.concat(selections, ignore_index=True).drop(columns="sample_order")
+        selected.append(subset.sort_values("sample_order").head(per_task))
+    if not selected:
+        raise ValueError("At least one task is required")
+    return pd.concat(selected, ignore_index=True).drop(columns="sample_order")
 
 
 def xroute_messages(raw_query: Any) -> list[dict[str, str]]:
-    """Convert xRouteBench's combined prompt into proper chat roles."""
-
-    raw_query = str(raw_query)
+    text = str(raw_query)
     system_marker, user_marker = "[System Instruction]", "[User Query]"
-    if raw_query.startswith(system_marker) and user_marker in raw_query:
-        system_text, user_text = raw_query[len(system_marker) :].split(user_marker, 1)
+    if text.startswith(system_marker) and user_marker in text:
+        system, user = text[len(system_marker) :].split(user_marker, 1)
         return [
-            {"role": "system", "content": system_text.strip()},
-            {"role": "user", "content": user_text.strip()},
+            {"role": "system", "content": system.strip()},
+            {"role": "user", "content": user.strip()},
         ]
-    return [{"role": "user", "content": raw_query}]
+    return [{"role": "user", "content": text}]
 
 
 def extract_mc_choice(response: Any) -> str | None:
-    """Extract the final A-D choice without rewarding letters in prose."""
+    """Accept A-E only when the model presents it as a final answer."""
 
     text = str(response).strip().upper()
-    parenthesized = re.findall(r"\(([A-D])\)", text)
-    if parenthesized:
-        return parenthesized[-1]
-    final_answer = re.findall(
-        r"FINAL\s+ANSWER(?:\s+IS)?[:\s]+([A-D])(?:\b|$)", text
+    marked = re.findall(
+        r"(?:FINAL\s+)?(?:ANSWER|CHOICE)(?:\s+IS)?\s*[:=-]?\s*"
+        r"(?:\*\*)?\(?([A-E])\)?(?:\*\*)?(?:[.)])?",
+        text,
     )
-    if final_answer:
-        return final_answer[-1]
-    standalone = re.fullmatch(r"\s*([A-D])(?:[.)])?\s*", text)
-    return standalone.group(1) if standalone else None
+    if marked:
+        return marked[-1]
+    trailing = re.search(
+        r"(?:^|\n)\s*(?:\*\*)?\(?([A-E])\)?(?:\*\*)?(?:[.)])?\s*$", text
+    )
+    return trailing.group(1) if trailing else None
 
 
-def evaluate_generator(
-    queries: pd.DataFrame,
-    generate_fn: Callable[[list[dict[str, str]]], dict[str, Any]],
-) -> pd.DataFrame:
-    """Evaluate an adapter returning response/token/latency/cost fields."""
+def _http_json(
+    method: str,
+    url: str,
+    payload: dict[str, Any] | None = None,
+    timeout: float = 60,
+) -> dict[str, Any]:
+    request = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode() if payload is not None else None,
+        method=method,
+        headers={"Content-Type": "application/json"},
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        data = response.read()
+    return json.loads(data) if data else {}
 
-    rows: list[dict[str, Any]] = []
-    for position, row in enumerate(queries.itertuples(index=False), start=1):
+
+def _wait_for_server(process: subprocess.Popen[bytes], base_url: str) -> float:
+    started = time.perf_counter()
+    while time.perf_counter() - started < 15 * 60:
+        if process.poll() is not None:
+            raise RuntimeError(f"SGLang exited during startup with code {process.returncode}")
         try:
-            result = generate_fn(xroute_messages(row.query))
-            parsed = extract_mc_choice(result["response"])
-            error = None
-        except Exception as exc:  # Preserve the rest of a paid benchmark run.
-            result = {
-                "response": "",
-                "input_tokens": 0,
-                "output_tokens": 0,
-                "latency_s": math.nan,
-                "cost_usd": math.nan,
-            }
-            parsed = None
-            error = f"{type(exc).__name__}: {exc}"
-
-        expected = str(row.ground_truth).strip().upper()
-        rows.append(
-            {
-                "embedding_id": int(row.embedding_id),
-                "task_name": row.task_name,
-                "expected": expected,
-                "parsed_answer": parsed,
-                "correct": bool(parsed == expected),
-                "response": result.get("response", ""),
-                "input_tokens": result.get("input_tokens", math.nan),
-                "output_tokens": result.get("output_tokens", math.nan),
-                "latency_s": result.get("latency_s", math.nan),
-                "cost_usd": result.get("cost_usd", math.nan),
-                "error": error,
-            }
-        )
-        print(
-            f"[{position:03d}/{len(queries)}] {row.task_name}: "
-            f"expected={expected}, predicted={parsed}",
-            flush=True,
-        )
-    return pd.DataFrame(rows)
+            _http_json("GET", f"{base_url}/health_generate", timeout=30)
+            return time.perf_counter() - started
+        except (OSError, urllib.error.URLError, json.JSONDecodeError):
+            time.sleep(2)
+    raise TimeoutError("SGLang did not become ready within 15 minutes")
 
 
-def candidate_comparison(
+def _stop_process_group(process: subprocess.Popen[bytes]) -> None:
+    if process.poll() is not None:
+        return
+    os.killpg(process.pid, signal.SIGTERM)
+    try:
+        process.wait(timeout=30)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGKILL)
+        process.wait(timeout=10)
+
+
+def _gpu_info() -> tuple[str, float]:
+    output = subprocess.check_output(
+        [
+            "nvidia-smi",
+            "--query-gpu=name,memory.total",
+            "--format=csv,noheader,nounits",
+        ],
+        text=True,
+    ).strip()
+    name, memory_mib = (part.strip() for part in output.split(",", 1))
+    return name, round(float(memory_mib) / 1024, 2)
+
+
+def _candidate_comparison(
     results: pd.DataFrame,
-    selected_queries: pd.DataFrame,
+    selected: pd.DataFrame,
     test_long: pd.DataFrame,
     candidates_path: Path,
     model_label: str,
 ) -> pd.DataFrame:
-    """Compare the measured Qwen run with recorded candidates on identical IDs."""
+    prices = pd.read_parquet(candidates_path)[
+        ["model_name", "input_price_per_1m", "output_price_per_1m"]
+    ]
+    if prices["model_name"].duplicated().any():
+        raise ValueError("Candidate price table has duplicate models")
 
-    candidates = pd.read_parquet(candidates_path)
-    price_columns = ["model_name", "input_price_per_1m", "output_price_per_1m"]
-    missing = set(price_columns).difference(candidates.columns)
-    if missing:
-        raise ValueError(f"Candidate price table is missing: {sorted(missing)}")
-    if candidates["model_name"].duplicated().any():
-        raise ValueError("Candidate price table contains duplicate model names")
-
-    selected_ids = set(selected_queries["embedding_id"])
-    candidate_eval = test_long[test_long["embedding_id"].isin(selected_ids)].merge(
-        candidates[price_columns], on="model_name", how="left", validate="many_to_one"
+    recorded = test_long[test_long["embedding_id"].isin(selected["embedding_id"])].merge(
+        prices, on="model_name", how="left", validate="many_to_one"
     )
-    if candidate_eval[price_columns[1:]].isna().any().any():
-        raise ValueError("At least one recorded candidate is missing price data")
-    candidate_eval["cost_usd"] = (
-        candidate_eval["input_tokens"] * candidate_eval["input_price_per_1m"]
-        + candidate_eval["output_tokens"] * candidate_eval["output_price_per_1m"]
-    ) / 1_000_000.0
-    candidate_summary = (
-        candidate_eval.groupby("model_name")
+    if recorded[["input_price_per_1m", "output_price_per_1m"]].isna().any().any():
+        raise ValueError("Candidate price data is incomplete")
+    recorded["cost_usd"] = (
+        recorded["input_tokens"] * recorded["input_price_per_1m"]
+        + recorded["output_tokens"] * recorded["output_price_per_1m"]
+    ) / 1_000_000
+    baseline = (
+        recorded.groupby("model_name")
         .agg(
             accuracy=("performance", "mean"),
             mean_cost_per_1k_usd=("cost_usd", lambda values: values.mean() * 1000),
@@ -247,7 +240,7 @@ def candidate_comparison(
         )
         .reset_index()
     )
-    qwen_summary = pd.DataFrame(
+    qwen = pd.DataFrame(
         [
             {
                 "model_name": model_label,
@@ -258,30 +251,24 @@ def candidate_comparison(
         ]
     )
     return (
-        pd.concat([qwen_summary, candidate_summary], ignore_index=True)
+        pd.concat([qwen, baseline], ignore_index=True)
         .sort_values(["accuracy", "mean_cost_per_1k_usd"], ascending=[False, True])
         .reset_index(drop=True)
     )
 
 
-def safe_run_id(run_id: str | None = None) -> str:
-    """Return a path-safe run id, generating one when absent."""
-
-    value = run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+def safe_run_id(value: str | None) -> str:
+    value = value or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,79}", value):
-        raise ValueError(
-            "run_id must be 1-80 path-safe characters: letters, digits, _, ., or -"
-        )
+        raise ValueError("run_id must be 1-80 path-safe characters")
     return value
 
 
-def json_records(frame: pd.DataFrame) -> list[dict[str, Any]]:
-    """Convert a frame to JSON-safe records, including NaN -> null."""
-
+def _records(frame: pd.DataFrame) -> list[dict[str, Any]]:
     return json.loads(frame.to_json(orient="records"))
 
 
-def run_transformers_benchmark(
+def run_sglang_benchmark(
     *,
     model_path: Path,
     model_id: str,
@@ -291,120 +278,127 @@ def run_transformers_benchmark(
     tasks: Iterable[str] = DEFAULT_TASKS,
     per_task: int = 2,
     seed: int = 42,
-    max_new_tokens: int = 32,
-    gpu_usd_per_hour: float = 0.0,
+    max_new_tokens: int = 256,
+    gpu_usd_per_hour: float = 0,
     run_id: str | None = None,
 ) -> dict[str, Any]:
-    """Load Qwen on one GPU, run the suite, and persist complete artifacts."""
-
-    if max_new_tokens < 1:
-        raise ValueError("max_new_tokens must be at least 1")
-    if gpu_usd_per_hour < 0:
-        raise ValueError("gpu_usd_per_hour cannot be negative")
-
-    import torch
-    import transformers
-    from transformers import AutoModelForMultimodalLM, AutoProcessor
-
-    if not torch.cuda.is_available():
-        raise RuntimeError("This experiment requires a CUDA GPU")
-    if not torch.cuda.is_bf16_supported():
-        raise RuntimeError("Qwen3.5-27B is configured for BF16, but this GPU lacks support")
+    if max_new_tokens < 1 or gpu_usd_per_hour < 0:
+        raise ValueError("Token limit must be positive and GPU rate cannot be negative")
 
     run_id = safe_run_id(run_id)
     tasks = tuple(tasks)
-    query_table, test_long, loader_audit = load_xroute_queries(data_root, "test")
-    selected = select_mc_queries(
-        query_table, tasks, per_task=per_task, seed=seed
-    )
+    queries, test_long, data_audit = load_queries(data_root)
+    selected = select_queries(queries, tasks, per_task=per_task, seed=seed)
     candidates_path = data_root / "llm_candidates" / "train-000.parquet"
-    if not candidates_path.exists():
-        raise FileNotFoundError(f"Missing candidate price Parquet: {candidates_path}")
+    if not model_path.exists() or not candidates_path.exists():
+        raise FileNotFoundError("Model checkpoint or candidate price data is missing")
 
-    print(f"Loading {model_id}@{model_revision} from {model_path}", flush=True)
-    load_started = time.perf_counter()
-    processor = AutoProcessor.from_pretrained(model_path, local_files_only=True)
-    model = AutoModelForMultimodalLM.from_pretrained(
-        model_path,
-        local_files_only=True,
-        dtype=torch.bfloat16,
-        device_map="cuda",
-        low_cpu_mem_usage=True,
-    ).eval()
-    torch.cuda.synchronize()
-    model_load_s = time.perf_counter() - load_started
+    base_url = "http://127.0.0.1:30000"
+    command = [
+        "python",
+        "-m",
+        "sglang.launch_server",
+        "--model-path",
+        str(model_path),
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "30000",
+        "--dtype",
+        "bfloat16",
+        "--mem-fraction-static",
+        "0.80",
+        "--model-loader-extra-config",
+        '{"enable_multithread_load": true}',
+    ]
+    environment = {
+        **os.environ,
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1",
+    }
+    print("Starting SGLang:", " ".join(command), flush=True)
+    server = subprocess.Popen(command, env=environment, start_new_session=True)
 
-    def make_inputs(messages: list[dict[str, str]]):
-        inputs = processor.apply_chat_template(
-            messages,
-            add_generation_prompt=True,
-            enable_thinking=False,
-            tokenize=True,
-            return_dict=True,
-            return_tensors="pt",
-        )
-        return inputs.to("cuda")
+    try:
+        startup_s = _wait_for_server(server, base_url)
+        rows = []
+        benchmark_started = time.perf_counter()
+        for position, row in enumerate(selected.itertuples(index=False), start=1):
+            started = time.perf_counter()
+            error = None
+            try:
+                response = _http_json(
+                    "POST",
+                    f"{base_url}/v1/chat/completions",
+                    {
+                        "model": str(model_path),
+                        "messages": xroute_messages(row.query),
+                        "temperature": 0,
+                        "max_tokens": max_new_tokens,
+                        "chat_template_kwargs": {"enable_thinking": False},
+                    },
+                    timeout=10 * 60,
+                )
+                latency_s = time.perf_counter() - started
+                text = response["choices"][0]["message"]["content"].strip()
+                usage = response.get("usage", {})
+                prompt_tokens = int(usage.get("prompt_tokens", 0))
+                output_tokens = int(usage.get("completion_tokens", 0))
+                parsed = extract_mc_choice(text)
+            except Exception as exc:
+                latency_s = time.perf_counter() - started
+                text, parsed, prompt_tokens, output_tokens = "", None, 0, 0
+                error = f"{type(exc).__name__}: {exc}"
 
-    # Exclude one-time CUDA/kernel initialization from measured query latency.
-    warmup_inputs = make_inputs(xroute_messages(selected.iloc[0]["query"]))
-    with torch.inference_mode():
-        model.generate(**warmup_inputs, max_new_tokens=1, do_sample=False)
-    torch.cuda.synchronize()
-    del warmup_inputs
-
-    def generate(messages: list[dict[str, str]]) -> dict[str, Any]:
-        inputs = make_inputs(messages)
-        torch.cuda.synchronize()
-        started = time.perf_counter()
-        with torch.inference_mode():
-            output = model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                do_sample=False,
-                pad_token_id=processor.tokenizer.pad_token_id,
+            expected = str(row.ground_truth).strip().upper()
+            rows.append(
+                {
+                    "embedding_id": int(row.embedding_id),
+                    "task_name": row.task_name,
+                    "expected": expected,
+                    "parsed_answer": parsed,
+                    "correct": parsed == expected,
+                    "response": text,
+                    "input_tokens": prompt_tokens,
+                    "output_tokens": output_tokens,
+                    "latency_s": latency_s,
+                    "cost_usd": (
+                        latency_s * gpu_usd_per_hour / 3600
+                        if gpu_usd_per_hour
+                        else math.nan
+                    ),
+                    "truncated": output_tokens >= max_new_tokens,
+                    "error": error,
+                }
             )
-        torch.cuda.synchronize()
-        latency_s = time.perf_counter() - started
-        response_ids = output[0, inputs["input_ids"].shape[-1] :]
-        response = processor.decode(response_ids, skip_special_tokens=True).strip()
-        cost_usd = (
-            latency_s * gpu_usd_per_hour / 3600.0
-            if gpu_usd_per_hour > 0
-            else math.nan
-        )
-        return {
-            "response": response,
-            "input_tokens": int(inputs["input_ids"].shape[-1]),
-            "output_tokens": int(response_ids.numel()),
-            "latency_s": latency_s,
-            "cost_usd": cost_usd,
-        }
+            print(
+                f"[{position:03d}/{len(selected)}] {row.task_name}: "
+                f"expected={expected}, predicted={parsed}",
+                flush=True,
+            )
+        benchmark_s = time.perf_counter() - benchmark_started
+    finally:
+        _stop_process_group(server)
 
-    benchmark_started = time.perf_counter()
-    results = evaluate_generator(selected, generate)
-    benchmark_s = time.perf_counter() - benchmark_started
-    comparison = candidate_comparison(
+    results = pd.DataFrame(rows)
+    comparison = _candidate_comparison(
         results,
         selected,
         test_long,
         candidates_path,
-        f"{model_id} (Modal H200)",
+        f"{model_id} (SGLang / Modal H200)",
     )
-
-    total_output_tokens = int(results["output_tokens"].sum())
-    total_query_latency = float(results["latency_s"].sum())
+    gpu_name, gpu_memory_gib = _gpu_info()
+    latency_total = results["latency_s"].sum()
     summary = {
         "run_id": run_id,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
+        "engine": "sglang",
+        "sglang_version": importlib.metadata.version("sglang"),
         "model_id": model_id,
         "model_revision": model_revision,
-        "model_path": str(model_path),
-        "gpu": torch.cuda.get_device_name(0),
-        "gpu_memory_gib": round(
-            torch.cuda.get_device_properties(0).total_memory / 1024**3, 2
-        ),
-        "torch_version": torch.__version__,
-        "transformers_version": transformers.__version__,
+        "gpu": gpu_name,
+        "gpu_memory_gib": gpu_memory_gib,
         "dtype": "bfloat16",
         "thinking_enabled": False,
         "seed": seed,
@@ -415,21 +409,22 @@ def run_transformers_benchmark(
         "accuracy": float(results["correct"].mean()),
         "correct": int(results["correct"].sum()),
         "errors": int(results["error"].notna().sum()),
+        "unparsed_responses": int(results["parsed_answer"].isna().sum()),
+        "truncated_responses": int(results["truncated"].sum()),
         "mean_latency_s": float(results["latency_s"].mean()),
         "output_tokens_per_s": (
-            total_output_tokens / total_query_latency if total_query_latency else None
+            float(results["output_tokens"].sum() / latency_total)
+            if latency_total
+            else None
         ),
         "gpu_usd_per_hour": gpu_usd_per_hour or None,
         "estimated_cost_per_1k_queries_usd": (
-            float(results["cost_usd"].mean() * 1000)
-            if gpu_usd_per_hour > 0
-            else None
+            float(results["cost_usd"].mean() * 1000) if gpu_usd_per_hour else None
         ),
-        "model_load_s": model_load_s,
+        "engine_startup_s": startup_s,
         "benchmark_s": benchmark_s,
-        "peak_gpu_memory_gib": round(torch.cuda.max_memory_allocated() / 1024**3, 2),
         "data": {
-            "test": loader_audit,
+            "test": data_audit,
             "candidates": {
                 "path": str(candidates_path),
                 "bytes": candidates_path.stat().st_size,
@@ -443,13 +438,12 @@ def run_transformers_benchmark(
     results.to_csv(output_dir / "query_results.csv", index=False)
     comparison.to_csv(output_dir / "candidate_comparison.csv", index=False)
     (output_dir / "summary.json").write_text(
-        json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        json.dumps(summary, indent=2, sort_keys=True) + "\n"
     )
     print(json.dumps(summary, indent=2, sort_keys=True), flush=True)
-
     return {
         "summary": summary,
-        "query_results": json_records(results),
-        "candidate_comparison": json_records(comparison),
+        "query_results": _records(results),
+        "candidate_comparison": _records(comparison),
         "remote_result_dir": str(output_dir),
     }

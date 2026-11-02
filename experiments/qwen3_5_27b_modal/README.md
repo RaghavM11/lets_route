@@ -1,6 +1,7 @@
-# Qwen3.5-27B on Modal H200
+# Qwen3.5-27B with SGLang on Modal H200
 
-This experiment runs the deterministic xRouteBench multiple-choice suite from
+This experiment uses the pinned `lmsysorg/sglang:v0.5.23` CUDA image to run the
+deterministic xRouteBench multiple-choice suite from
 `route_f_playground.ipynb` with the official `Qwen/Qwen3.5-27B` checkpoint on
 one Modal H200. It evaluates two queries from each of six tasks by default, then
 compares Qwen with all 18 recorded xRouteBench candidates on the same query IDs.
@@ -28,15 +29,17 @@ No local Modal install is required when `uvx` is available.
 From the repository root:
 
 ```bash
-uvx --from modal modal run experiments/qwen3_5_27b_modal/modal_app.py
+MODAL_PROFILE=hackkaggle uvx --from modal modal run \
+  experiments/qwen3_5_27b_modal/modal_app.py
 ```
 
 Useful overrides:
 
 ```bash
-uvx --from modal modal run experiments/qwen3_5_27b_modal/modal_app.py \
+MODAL_PROFILE=hackkaggle uvx --from modal modal run \
+  experiments/qwen3_5_27b_modal/modal_app.py \
   --per-task 10 \
-  --max-new-tokens 64 \
+  --max-new-tokens 512 \
   --run-id qwen27b-mc-60
 ```
 
@@ -45,9 +48,9 @@ To attach your current H200 rate to per-query cost measurements, pass
 incorrect price. This estimate measures generation time only; Modal also bills
 for model loading and container startup.
 
-The default run uses non-thinking mode. Qwen3.5 thinks by default, which is a
-bad fit for the notebook's short answer budget and can truncate before the
-multiple-choice answer appears.
+The default run uses non-thinking mode and allows 256 output tokens. Qwen3.5
+thinks by default, which is a bad fit for a short-answer benchmark and can
+truncate before the multiple-choice answer appears.
 
 ## Results
 

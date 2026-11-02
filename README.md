@@ -102,7 +102,7 @@ Main configs: `llmrouter_generic`, `memory_locomo`, `memory_longmemeval`,
 
 The reproducible Qwen3.5-27B launcher is documented in
 [`experiments/qwen3_5_27b_modal/README.md`](experiments/qwen3_5_27b_modal/README.md).
-It uses the existing Modal profile in `~/.modal.toml`, caches the pinned model in
-a Modal Volume, runs the six-task multiple-choice suite on one H200, and saves
-complete local and remote result artifacts.
+It uses SGLang, caches the pinned model in a Modal Volume, runs the six-task
+multiple-choice suite on one H200, and saves complete local and remote result
+artifacts.
 

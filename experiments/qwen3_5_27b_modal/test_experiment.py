@@ -6,9 +6,9 @@ from pathlib import Path
 from experiment import (
     DEFAULT_TASKS,
     extract_mc_choice,
-    load_xroute_queries,
+    load_queries,
     safe_run_id,
-    select_mc_queries,
+    select_queries,
     xroute_messages,
 )
 
@@ -21,7 +21,11 @@ class ExperimentTest(unittest.TestCase):
         self.assertEqual(extract_mc_choice("C"), "C")
         self.assertEqual(extract_mc_choice("Final answer: (B)"), "B")
         self.assertEqual(extract_mc_choice("The final answer is D."), "D")
+        self.assertEqual(extract_mc_choice("Answer: **E**"), "E")
         self.assertIsNone(extract_mc_choice("A is tempting, but C is better"))
+        self.assertIsNone(
+            extract_mc_choice("Options include (A) first and (B) second, because")
+        )
 
     def test_prompt_role_split(self) -> None:
         messages = xroute_messages(
@@ -36,9 +40,9 @@ class ExperimentTest(unittest.TestCase):
         )
 
     def test_real_data_selection_is_deterministic(self) -> None:
-        table, _, audit = load_xroute_queries(REPO_ROOT / "data/raw", "test")
-        first = select_mc_queries(table, DEFAULT_TASKS, per_task=2, seed=42)
-        second = select_mc_queries(table, DEFAULT_TASKS, per_task=2, seed=42)
+        table, _, audit = load_queries(REPO_ROOT / "data/raw", "test")
+        first = select_queries(table, DEFAULT_TASKS, per_task=2, seed=42)
+        second = select_queries(table, DEFAULT_TASKS, per_task=2, seed=42)
         self.assertEqual(audit["candidate_models"], 18)
         self.assertEqual(len(first), 12)
         self.assertListEqual(
