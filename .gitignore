@@ -16,6 +16,9 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 
+# Local model checkpoints
+models/
+
 # OS junk
 .DS_Store
 
