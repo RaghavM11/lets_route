@@ -25,7 +25,8 @@ lets_route/
 │   └── README.md                 # HF publishing guide
 ├── experiments/
 │   ├── xroutebench_official_baseline/  # official-matrix router baseline
-│   └── qwen3_5_27b_modal/        # Qwen3.5-27B xRouteBench run on Modal H200
+│   ├── qwen3_5_27b_modal/        # Qwen3.5-27B xRouteBench run on Modal H200
+│   └── system1_router_full_h200/  # full-dataset System-1 router (Qwen3.5-9B, Modal H200)
 ├── notebooks/archive/
 │   ├── route_f_playground.ipynb  # env sanity-check notebook (route_f kernel)
 │   └── study_xroutebench.ipynb   # dataset study notebook
