@@ -117,6 +117,12 @@ See `AGENTS.md` for the persistent repository convention.
 For SGLang serving on Modal, see `experiments/sglang_modal/README.md`.
 The experimental workflow is recorded in `docs/experiment-plan.md`.
 
+The completed four-tier Qwen smoke test contains 40 live executions on those
+same ten prompts. Read the English report at
+[`results/sglang_fixed_ten/qwen-four-fixed-ten-20261102/all_results.txt`](results/sglang_fixed_ten/qwen-four-fixed-ten-20261102/all_results.txt).
+Its local scores, token usage, latency matrices, and raw completion responses
+are included alongside the report. Scores use the documented local evaluator.
+
 ## Dataset — xRouteBench
 
 See [ulab-ai/xRouteBench](https://huggingface.co/datasets/ulab-ai/xRouteBench)

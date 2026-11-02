@@ -1,5 +1,60 @@
 # Open-model SGLang endpoints on Modal
 
+## Four public Qwen tiers on the fixed tasks
+
+Run the frozen ten prompts once on each of four public models:
+
+```bash
+source .route_f/bin/activate
+modal run experiments/sglang_modal/fixed_tasks_app.py
+```
+
+The live-run tiers are Qwen3.5-0.8B (H100), Qwen2.5-7B-Instruct (H100), Qwen3.5-27B
+(H200), and Qwen2.5-72B-Instruct (two H200s with tensor parallelism). All
+checkpoint revisions are pinned. These tiers span different Qwen generations.
+The initial L4 requests stayed queued; an H100 preflight succeeded, so the
+small tiers use H100s for this run. This is a capacity workaround, not a claim
+that H100s minimize serving cost for small models.
+
+The previously exported 50 dataset records represent ten unique prompts.
+Four live model runs therefore produce 40 new outputs. The runner reads the
+unchanged `fixtures/smoke10/tasks.json` manifest. Checkpoints are downloaded
+with CPU functions and cached before GPUs are allocated. Each GPU function
+starts an internal SGLang HTTP server, sends all ten prompts, persists each
+response to a Modal Volume, then stops the server. No public endpoint remains
+running after the benchmark.
+
+Options include `--tiers 0.8b,7b`, `--max-new-tokens 1024`, and a unique
+`--run-id`. For CPU-only checkpoint preparation, pass `--cache-only`.
+Reusing a run ID safely resumes completed tiers from the local `runs.json`,
+after checking that the prompt-manifest hash and decoding settings match.
+Completed tiers are not rerun. A tier that failed partway requires a new run ID
+for recovery; its partial remote artifacts are retained.
+
+Artifacts are saved locally under `results/sglang_fixed_ten/RUN_ID/` and
+remotely in the `lets-route-fixed-ten-results-v2` Modal Volume:
+
+- `all_results.txt`: English prompts, references, live outputs, and local scores.
+- `scored_results.csv` and `.json`: structured results with tokens and latency.
+- `runs.json`: unmodified completion API responses and serving diagnostics.
+- `summary.json`: counts, mean local scores, hardware, timings, and GPU cost estimates.
+- `score_matrix.csv` and `latency_matrix.csv`: ten-query-by-model comparison tables.
+
+Local scoring handles A-J multiple-choice answers, numeric answers for the
+fixed math questions, and normalized token F1. These rules are not claimed to
+reproduce the original xRouteBench evaluator. HTTP failures receive a null
+score, and length-limited completions retain their finish reason. GPU cost
+estimates exclude CPU, memory, image build, and download costs; consult Modal's
+billing dashboard for actual spend.
+
+Run local scoring checks with:
+
+```bash
+python -m unittest discover -s experiments/sglang_modal -p 'test_*.py'
+```
+
+## Individual authenticated HTTP endpoints
+
 The three explicit tiers are Qwen3.5-0.8B (L4), Qwen2.5-7B-Instruct (L4),
 and Qwen3.5-27B (H200). These are different model generations; record the full
 model ID rather than treating tier size as an architecture-controlled ablation.

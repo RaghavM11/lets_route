@@ -15,7 +15,9 @@ serving smoke test, then run a shared task-stratified sample (500–1,000 initia
 query-by-model score and cost matrix before training a router.
 
 The desired capacity tiers are approximately 0.8B, 7B, 27B, and 70B. The exact
-70B-class checkpoint remains to be selected. Model generation, revision,
+70B-class checkpoint is now Qwen2.5-72B-Instruct, chosen by the user to keep all
+four live tiers public and avoid gated model access. The other live tiers are
+Qwen3.5-0.8B, Qwen2.5-7B-Instruct, and Qwen3.5-27B. Model generation, revision,
 precision, GPU type, decoding settings, and thinking mode must be recorded.
 Existing xRouteBench outputs for 18 candidates cannot supply supervision for
 new model checkpoints that were not evaluated in that table.
@@ -66,6 +68,16 @@ candidate pools explicit; do not compare them as though they were identical.
 The local branch was fast-forwarded to the fetched upstream baseline; prior
 Mercury and Intel Mac environment changes were reapplied without committing.
 The original recovery stash is retained. The dataset configs needed for the
-first experiment are downloaded under `data/raw/`. Modal login and GPU runtime
-validation are tracked separately from code preparation; a scaffold is not a
-verified running endpoint.
+first experiment are downloaded under `data/raw/`. Modal is authenticated in
+the `wuyaoyao0309` workspace. The four-tier live runner is
+`experiments/sglang_modal/fixed_tasks_app.py`; it produces 40 live records
+(four models on the fixed ten prompts). Runtime success and model outputs
+must be assessed from the generated results, not inferred from the scaffold.
+
+The run `qwen-four-fixed-ten-20261102` completed all 40 model/query pairs with
+zero HTTP request errors. All GPU workers were stopped afterward. The user
+explicitly requested publishing this run's results on the feature branch;
+other generated runs and the full raw datasets remain ignored. Four outputs
+reached the 1,024-token limit. The local scorer awarded full credit on 2/10,
+8/10, 7/10, and 8/10 queries for the 0.8B, 7B, 27B, and 72B tiers respectively.
+These are small-sample smoke-test results, not a general model ranking.

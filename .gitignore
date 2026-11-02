@@ -19,7 +19,11 @@ __pycache__/
 .pytest_cache/
 
 # Generated experiment artifacts
-results/
+results/*
+!results/sglang_fixed_ten/
+results/sglang_fixed_ten/*
+# Explicitly requested published smoke-test run; keep other results local.
+!results/sglang_fixed_ten/qwen-four-fixed-ten-20261102/
 
 # Local model checkpoints
 models/*

@@ -1,0 +1,68 @@
+{
+  "run_id": "qwen-four-fixed-ten-20261102",
+  "tiers": [
+    "0.8b",
+    "7b",
+    "27b",
+    "72b"
+  ],
+  "max_new_tokens": 1024,
+  "temperature": 0,
+  "seed": 42,
+  "thinking_enabled": false,
+  "manifest_sha256": "64743bae2c42b0c0c6b61ec1ef8207a75b739d37eb80dadae0b777d75363486a",
+  "unique_prompts": 10,
+  "expected_results": 40,
+  "price_source": "https://modal.com/pricing (2026-11-02); GPU estimates exclude CPU, RAM and image/caching overhead",
+  "completed_results": 40,
+  "model_summaries": [
+    {
+      "model_id": "Qwen/Qwen3.5-0.8B",
+      "results": 10,
+      "request_errors": 0,
+      "length_limited_count": 3,
+      "mean_local_score": 0.20465116279069767,
+      "full_score_count": 2,
+      "mean_latency_s": 0.6159839639000027,
+      "server_error": null,
+      "worker_wall_s": 125.5369172,
+      "worker_gpu_cost_estimate_usd": 0.13771399816840002
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "results": 10,
+      "request_errors": 0,
+      "length_limited_count": 0,
+      "mean_local_score": 0.82,
+      "full_score_count": 8,
+      "mean_latency_s": 0.3524967845999953,
+      "server_error": null,
+      "worker_wall_s": 83.57105004499999,
+      "worker_gpu_cost_estimate_usd": 0.091677441899365
+    },
+    {
+      "model_id": "Qwen/Qwen3.5-27B",
+      "results": 10,
+      "request_errors": 0,
+      "length_limited_count": 1,
+      "mean_local_score": 0.7068965517241379,
+      "full_score_count": 7,
+      "mean_latency_s": 3.434365189600001,
+      "server_error": null,
+      "worker_wall_s": 232.197587656,
+      "worker_gpu_cost_estimate_usd": 0.29280115803421597
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-72B-Instruct",
+      "results": 10,
+      "request_errors": 0,
+      "length_limited_count": 0,
+      "mean_local_score": 0.82,
+      "full_score_count": 8,
+      "mean_latency_s": 0.8616700521999917,
+      "server_error": null,
+      "worker_wall_s": 355.167904962,
+      "worker_gpu_cost_estimate_usd": 0.895733456314164
+    }
+  ]
+}

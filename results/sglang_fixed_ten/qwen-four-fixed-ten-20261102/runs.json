@@ -1,0 +1,2005 @@
+{
+  "metadata": {
+    "run_id": "qwen-four-fixed-ten-20261102",
+    "tiers": [
+      "0.8b",
+      "7b",
+      "27b",
+      "72b"
+    ],
+    "max_new_tokens": 1024,
+    "temperature": 0,
+    "seed": 42,
+    "thinking_enabled": false,
+    "manifest_sha256": "64743bae2c42b0c0c6b61ec1ef8207a75b739d37eb80dadae0b777d75363486a",
+    "unique_prompts": 10,
+    "expected_results": 40,
+    "price_source": "https://modal.com/pricing (2026-11-02); GPU estimates exclude CPU, RAM and image/caching overhead"
+  },
+  "runs": [
+    {
+      "model": {
+        "id": "Qwen/Qwen3.5-0.8B",
+        "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+        "gpu": "H100",
+        "tp": 1,
+        "gpu_usd_per_s": 0.001097
+      },
+      "rows": [
+        {
+          "fixed_id": "smoke-01",
+          "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+          "task_name": "mmlu",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.032583139999999844,
+          "error": null,
+          "api_response": {
+            "id": "1af02783694c441bab1f9b758f7c6c8e",
+            "object": "chat.completion",
+            "created": 1793657382,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "D",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 179,
+              "total_tokens": 181,
+              "completion_tokens": 2,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-02",
+          "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+          "task_name": "mmlu_pro",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.5533711869999962,
+          "error": null,
+          "api_response": {
+            "id": "5a145136c4df4cfd99ad2f3fb4f6a681",
+            "object": "chat.completion",
+            "created": 1793657383,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The question describes a type of malware that specifically targets the integrity of a system, often by hiding itself within legitimate software or files. This behavior is known as **rootkit** behavior.\n\nA rootkit is designed to modify data on your system without your knowledge or consent. It can hide the presence of the malware, prevent other software from accessing the system, and potentially compromise the security of the system. While it can cause system instability or prevent access to specific data, the defining characteristic described in the question—modifying data to prevent system integrity or access—is the primary function of a rootkit.\n\nLet's evaluate the other options:\n*   **Email Trojans**, **Backdoor Trojans**, **Spyware Trojans**, **Network Trojans**, **Worm Trojans**, and **Trojan-Downloader** are general categories of malware that can cause various issues, but they do not inherently modify data to prevent system integrity in the same specific way a rootkit does.\n*   **Ransom Trojan** is a specific type of malware that demands money for access, which is a form of extortion, but the general mechanism of \"modifying data to prevent system integrity\" is the definition of a rootkit.\n*   **IM – Trojans** refers to Internet Message Trojans, which are a subset of spyware, not the general category described.\n\nTherefore, the term that best fits the description of modifying data to prevent system integrity or access is \"Rootkit Trojans\".\n\nC. Rootkit Trojans",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 169,
+              "total_tokens": 489,
+              "completion_tokens": 320,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 320
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-03",
+          "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+          "task_name": "arc_challenge",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 1.6663051290000084,
+          "error": null,
+          "api_response": {
+            "id": "0916f77c9af44393a6d1c8b2a6f69b92",
+            "object": "chat.completion",
+            "created": 1793657386,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To determine which substance is least likely to change from a solid state to a liquid state (melting) when heat is applied, let's analyze the properties of each option based on the melting point:\n\n1.  **Butter (A)**: Butter is a semi-solid fat. It has a melting point between 30°C and 35°C. When heat is applied, it will melt into a liquid.\n2.  **Paper (B)**: Paper is a solid. It has a melting point of approximately 180°C. When heat is applied, it will melt into a liquid.\n3.  **Ice (C)**: Ice is a solid water. It has a melting point of 0°C. When heat is applied, it will melt into a liquid.\n4.  **Candle wax (D)**: Candle wax is a solid paraffin. It has a melting point of approximately 60°C. When heat is applied, it will melt into a liquid.\n\nAll four substances listed are solids that will undergo a phase change from solid to liquid (melting) when heat is applied. Therefore, none of them is \"least likely\" to change; they all do. However, in multiple-choice questions of this nature, there is often a specific context or a subtle distinction intended.\n\nLet's re-evaluate the question's phrasing: \"Which of the following is **least likely** to change...\"\nIf the question implies that one of them *cannot* change, that would be impossible for all of them.\nPerhaps the question is asking which one is the **highest** melting point among the options, making it the \"least likely\" to change at a given temperature? Or perhaps there is a typo in the question and it meant \"Which of the following is **most** likely to change?\"?\n\nLet's look at the options again.\n- Butter melts around 30-35°C.\n- Paper melts around 180°C.\n- Ice melts at 0°C.\n- Candle wax melts around 60°C.\n\nIf the question is \"Which is least likely to change [at a specific temperature, e.g., room temperature or 0°C]?\", then Paper is the answer because it requires the most heat to melt.\nIf the question is \"Which is least likely to change [from solid to liquid]?\" (implying all do), this is a flawed question.\n\nHowever, let's consider the source or common variations of this question. Often, these questions test knowledge of melting points.\n- Butter: ~30°C\n- Paper: ~180°C\n- Ice: 0°C\n- Wax: ~60°C\n\nIf the question is \"Which is least likely to change [into a liquid]?\" and the options are all solids, the answer is technically \"None\". But if forced to choose the one that requires the *most* energy to melt, that is Paper.\n\nLet's reconsider the wording \"least likely to change\".\nMaybe the question meant: \"Which of the following is **least likely** to change from a solid state to a liquid state *when heat is applied*?\"\nIf the question is strictly asking for the substance that does not melt, none do.\nBut if we assume the question is flawed and meant to ask for the substance with the **highest** melting point (the one that requires the most heat), then **Paper** is the correct answer.\n\nLet's try another angle. Is there a substance that is actually a liquid at room temperature? No.\nIs there a substance that is a solid at room temperature but has a very high melting point? Paper.\nIs there a substance that is a solid at room temperature but has a low melting point? Butter, Ice, Wax.\n\nIf the question is \"Which is least likely to change [into a liquid]?\" and the options are A, B, C, D.\nIf the question is actually \"Which of the following is **most** likely to change?\" then Paper is the answer.\nIf the question is \"Which is least likely to change [from solid to liquid]?\" and the answer key expects **Paper**, it is because Paper has the highest melting point.\n\nLet's assume the question is asking to identify the substance with the highest melting point among the choices, as this is a common pattern in poorly phrased science questions.\n- Butter: ~30°C\n- Paper: ~180°C\n- Ice: 0°C\n- Wax: ~60°C\n\nPaper requires the most heat to melt. Therefore, it is the least likely to change from a solid state to a liquid state *at a given temperature* (like room temperature).\n\nLet's double check if there's any trick.\nCould \"paper\" be considered a liquid at room temperature? No.\nCould \"butter\" be considered a liquid",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "length",
+                "matched_stop": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 90,
+              "total_tokens": 1114,
+              "completion_tokens": 1024,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 1024
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-04",
+          "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+          "task_name": "openbook_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.02997885999999994,
+          "error": null,
+          "api_response": {
+            "id": "8210001ea7484f24b9f7adddfedf63b9",
+            "object": "chat.completion",
+            "created": 1793657387,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "D",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 95,
+              "total_tokens": 97,
+              "completion_tokens": 2,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-05",
+          "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+          "task_name": "commonsense_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.345259102,
+          "error": null,
+          "api_response": {
+            "id": "057e6973ff344fa2bd4b7b8fb860939d",
+            "object": "chat.completion",
+            "created": 1793657388,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The question refers to the famous 1980s TV personality **Dennis Quaid**, who played the role of **The Weasel** in the sitcom *The Weasel*.\n\nIn the show, Quaid was dressed as a weasel and began to play a **children's song**. The song was titled \"The Weasel's Song\" (or similar variations like \"The Weasel's Song\" or \"The Weasel's Song and a Little More\"), which was a popular children's song that Quaid performed.\n\nLet's review the other options:\n*   (B) Washington D.C. is a city, not a song.\n*   (C) Chicken coop is a place, not a song.\n*   (D) Dead is a state, not a song.\n*   (E) Used car lot is a place, not a song.\n\nTherefore, the correct option is (A).\n\n(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 97,
+              "total_tokens": 293,
+              "completion_tokens": 196,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 196
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-06",
+          "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+          "task_name": "boolq",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.029556744000004187,
+          "error": null,
+          "api_response": {
+            "id": "75cc7ed4c2ed4ff195a4ff7f18b41b89",
+            "object": "chat.completion",
+            "created": 1793657389,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "B",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 161,
+              "total_tokens": 163,
+              "completion_tokens": 2,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-07",
+          "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+          "task_name": "hellaswag",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.029546848000009618,
+          "error": null,
+          "api_response": {
+            "id": "0124b39d658b44ddba7c96d6f526dbbf",
+            "object": "chat.completion",
+            "created": 1793657390,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "B",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 285,
+              "total_tokens": 287,
+              "completion_tokens": 2,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-08",
+          "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+          "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+          "task_name": "gsm8k",
+          "metric": "GSM8K",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 1.6718666840000083,
+          "error": null,
+          "api_response": {
+            "id": "a3c4934b7a164c849d4433142fba6415",
+            "object": "chat.completion",
+            "created": 1793657392,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To find the total number of jellybeans in the bag, we need to calculate the number of each type of bean and then sum them up.\n\n**Step 1: Determine the number of green beans.**\nThe problem states there are 2 more green beans than orange beans.\n*   Let $O$ be the number of orange beans.\n*   Let $G$ be the number of green beans.\n*   We know $G = O + 2$.\n*   We also know $O = G - 1$.\n\nSubstitute the expression for $G$ into the equation for $O$:\n$$O = (O + 2) - 1$$\n$$O = O + 1$$\nThis results in a contradiction ($0 = 1$), which means we cannot solve for $O$ using just these two equations. Let's re-read the problem carefully to ensure I haven't misinterpreted the relationship.\n\n*   \"It also contains 1 less orange bean than green beans.\" -> $O = G - 1$.\n*   \"It also contains 2 more green beans.\" -> $G = O + 2$.\n\nLet's solve this system of equations again:\n1.  $G = O + 2$\n2.  $O = G - 1$\n\nSubstitute (1) into (2):\n$$O = (O + 2) - 1$$\n$$O = O + 1$$\n$$0 = 1$$\n\nThis is impossible. There is a logical error in the problem statement as written. Let's re-read the specific phrasing: \"It also contains 1 less orange bean than green beans.\"\nDoes \"It also contains\" refer to the *total* bag, or just the *orange* beans?\nIf it refers to the *total* bag:\nTotal = $G + O$.\nWe have $G = O + 2$ and $O = G - 1$.\nTotal = $(O + 2) + (O - 1) = 2O + 1$.\nWe still have two variables ($O$ and $G$) and two equations ($G = O+2$ and $O = G-1$). The system is inconsistent.\n\nLet's try a different interpretation. Perhaps the \"1 less orange bean than green beans\" applies to the *total* count, but the phrasing \"It also contains\" implies an addition?\nNo, \"It also contains\" usually modifies the subject immediately following it.\nLet's look at the numbers. 8 black, 2 green, 1 less orange.\nMaybe the \"1 less orange bean\" is a typo in the user's prompt and should have been \"1 more\"?\nIf $O = G + 1$:\n$G = O + 2$\n$O = (O + 2) + 1 = O + 3$. Still impossible.\n\nLet's try the other interpretation: \"It also contains 1 less orange bean [than the total number of beans] than green beans.\"\nTotal = $G + O$.\n$O = G - 1$.\nTotal = $G + (G - 1) = 2G - 1$.\nStill two variables.\n\nLet's reconsider the standard logic puzzle structure. Often, \"1 less orange bean than green beans\" means $O = G - 1$.\nIs it possible the problem meant \"1 less **total** bean than green beans\"?\nIf $O = G - 1$ (Total), then $O = (O+2) - 1 = O+1$. Impossible.\n\nLet's try: \"It also contains 1 less orange bean [than the green beans]\".\nMaybe the \"1 less\" refers to the *total* count?\nTotal = $G + O$.\n$O = G - 1$.\nTotal = $G + (G - 1) = 2G - 1$.\nStill two variables.\n\nLet's try: \"It also contains 1 less orange bean [than the black beans]\".\n$O = B - 1$.\n$B = G + 2$.\n$O = (G + 2) - 1 = G + 1$.\n$G = O - 1$.\n$O = (O - 1) + 1 = O$. Consistent.\nSo if $O = G + 1$, then $G = O - 1$.\nTotal = $G + O = (O - 1) + O = 2O - 1$.\nWe need another constraint. \"8 black beans\".\n$B = 8$.\n$O = B - 1 = 7$.\n$G = O - 1 = 6$.",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "length",
+                "matched_stop": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 67,
+              "total_tokens": 1091,
+              "completion_tokens": 1024,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 1024
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-09",
+          "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+          "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+          "task_name": "math",
+          "metric": "MATH",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 1.6707215849999955,
+          "error": null,
+          "api_response": {
+            "id": "4065e738762747b7bafed4897b6ad0c5",
+            "object": "chat.completion",
+            "created": 1793657395,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To find the greatest possible value of the sum of the products of three numbers assigned to the three faces that include each of the eight vertices of a cube, we proceed with the following steps:\n\n### 1. Define the Variables\nLet the numbers on the faces of the cube be $a, b, c, d, e, f$.\nThe problem states that all numbers $\\{2, 3, 4, 5, 6, 7\\}$ are assigned to these faces.\nLet the set of numbers be $S = \\{2, 3, 4, 5, 6, 7\\}$.\nThe sum of these numbers is:\n$$ \\sum S = 2 + 3 + 4 + 5 + 6 + 7 = 27 $$\n\n### 2. Analyze the Vertex Products\nConsider a vertex of the cube. It is formed by the intersection of three faces. Let the three faces meeting at this vertex have numbers $x, y, z$ on them.\nThe product of the numbers on these three faces is $P = xyz$.\nThe question asks for the sum of these products over all 8 vertices.\nLet $S_{total} = \\sum_{\\text{vertices}} (xyz)$.\n\n### 3. Relate the Sum to the Sum of Products\nConsider the elementary symmetric polynomials of the numbers on the faces.\nLet the numbers on the faces be $x_1, x_2, x_3, x_4, x_5, x_6$.\nThe sum of the products of all pairs of faces is:\n$$ \\sum_{1 \\le i < j \\le 6} x_i x_j = \\left(\\sum x_i\\right)^2 - \\sum x_i^2 $$\n$$ \\sum_{1 \\le i < j \\le 6} x_i x_j = 27^2 - \\sum x_i^2 = 729 - \\sum x_i^2 $$\n\nNow, consider the sum of the products of all triples of faces (vertices).\n$$ \\sum_{1 \\le i < j < k \\le 6} x_i x_j x_k = \\left(\\sum x_i\\right)^3 - \\sum x_i^2 \\left(\\sum x_i\\right) + \\sum x_i^3 $$\n$$ \\sum_{1 \\le i < j < k \\le 6} x_i x_j x_k = 27^3 - 27 \\sum x_i^2 + \\sum x_i^3 $$\n\nThe sum of the products of all triples of faces is exactly the sum of the products of the products of the pairs of faces.\nLet $S_{pairs} = \\sum_{1 \\le i < j < k \\le 6} x_i x_j x_k$.\nWe have:\n$$ S_{pairs} = \\left(\\sum x_i\\right)^3 - \\sum x_i^2 \\left(\\sum x_i\\right) + \\sum x_i^3 $$\n$$ S_{pairs} = 27^3 - 27 \\sum x_i^2 + \\sum x_i^3 $$\n\n### 4. Determine the Constraint\nThe numbers $x_1, \\dots, x_6$ are a permutation of $\\{2, 3, 4, 5, 6, 7\\}$.\nLet $n_1 = \\sum x_i^2$ and $n_3 = \\sum x_i^3$.\nThe sum of the products of the triples is:\n$$ S_{total} = 27^3 - 27 n_1 + n_3 $$\n\nTo maximize $S_{total}$, we need to maximize $n_3 - 27 n_1$.\nLet's analyze the function $f(n_1, n_3) = n_3 - 27 n_1$.\nSince the numbers are fixed, $n_1$ and $n_3$ are fixed values determined by the specific set $\\{2, 3, 4, 5, 6, 7\\}$.\nLet's calculate $n_1$ and $n_3$ for this set.\nThe squares are:\n$2^2 = 4$\n$3^2 = 9$\n$4^2 = 16$\n$5^2 = 25$\n$6^2 = 36$\n$7^2 = 49$\n\nSum of squares $n_1 = 4+9+16+25+36+49 = 139$.\n\nThe cubes are:\n$2^3 = 8$\n",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "length",
+                "matched_stop": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 125,
+              "total_tokens": 1149,
+              "completion_tokens": 1024,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 1024
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-10",
+          "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+          "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+          "task_name": "squad",
+          "metric": "f1_score",
+          "model_id": "Qwen/Qwen3.5-0.8B",
+          "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "latency_s": 0.13065036000000418,
+          "error": null,
+          "api_response": {
+            "id": "226d24a42c764ef89d671237a87cf3eb",
+            "object": "chat.completion",
+            "created": 1793657396,
+            "model": "Qwen/Qwen3.5-0.8B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Producers have been accused of planting **controversy** within the show.\n\nThe context provided explicitly states that the competition has been \"accused of double standard for disqualifying some but not others,\" and that individual contestants have been disqualified for actions or \"being 'ringers' planted by the producers.\"",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 108,
+              "total_tokens": 172,
+              "completion_tokens": 64,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 64
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "startup_s": 105.07186093300001,
+      "worker_wall_s": 125.5369172,
+      "gpu_info": "NVIDIA H100 80GB HBM3, 81559 MiB",
+      "server_error": null,
+      "server_log_tail": "0, cuda graph: True, input throughput (token/s): 369.22\n[2026-11-02 22:09:50] INFO:     127.0.0.1:51914 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:09:50] Prefill batch, #new-seq: 1, #new-token: 67, #cached-token: 0, full token usage: 0.00, mamba usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 104.10\n[2026-11-02 22:09:50] Decode batch, #running-req: 1, #full token: 74, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 17.70, #queue-req: 0\n[2026-11-02 22:09:50] Decode batch, #running-req: 1, #full token: 114, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 624.26, #queue-req: 0\n[2026-11-02 22:09:50] Decode batch, #running-req: 1, #full token: 154, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.22, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 194, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.44, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 234, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.95, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 274, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 614.66, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 314, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 628.52, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 354, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 626.05, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 394, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 630.22, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 434, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 628.54, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 474, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 616.25, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 514, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 618.50, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 554, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 614.88, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 594, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 616.04, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 634, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 616.56, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 674, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 613.69, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 714, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 617.47, #queue-req: 0\n[2026-11-02 22:09:51] Decode batch, #running-req: 1, #full token: 754, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 616.72, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 794, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 615.52, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 834, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 613.52, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 874, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 627.30, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 914, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 626.39, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 954, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 625.33, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 994, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 627.18, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 1034, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.63, #queue-req: 0\n[2026-11-02 22:09:52] Decode batch, #running-req: 1, #full token: 1074, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 625.29, #queue-req: 0\n[2026-11-02 22:09:52] INFO:     127.0.0.1:39304 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:09:53] Prefill batch, #new-seq: 1, #new-token: 125, #cached-token: 0, full token usage: 0.00, mamba usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 44.86\n[2026-11-02 22:09:53] Decode batch, #running-req: 1, #full token: 149, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 33.21, #queue-req: 0\n[2026-11-02 22:09:53] Decode batch, #running-req: 1, #full token: 189, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.32, #queue-req: 0\n[2026-11-02 22:09:53] Decode batch, #running-req: 1, #full token: 229, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 624.56, #queue-req: 0\n[2026-11-02 22:09:53] Decode batch, #running-req: 1, #full token: 269, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 625.08, #queue-req: 0\n[2026-11-02 22:09:53] Decode batch, #running-req: 1, #full token: 309, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.22, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 349, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 625.48, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 389, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 622.38, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 429, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 621.14, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 469, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 625.63, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 509, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.13, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 549, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 621.37, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 589, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 624.84, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 629, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 621.39, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 669, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.39, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 709, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.97, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 749, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.97, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 789, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 622.84, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 829, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.92, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 869, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.79, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 909, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 622.72, #queue-req: 0\n[2026-11-02 22:09:54] Decode batch, #running-req: 1, #full token: 949, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 624.65, #queue-req: 0\n[2026-11-02 22:09:55] Decode batch, #running-req: 1, #full token: 989, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 623.43, #queue-req: 0\n[2026-11-02 22:09:55] Decode batch, #running-req: 1, #full token: 1029, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 622.62, #queue-req: 0\n[2026-11-02 22:09:55] Decode batch, #running-req: 1, #full token: 1069, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 615.32, #queue-req: 0\n[2026-11-02 22:09:55] Decode batch, #running-req: 1, #full token: 1109, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 617.15, #queue-req: 0\n[2026-11-02 22:09:55] Decode batch, #running-req: 1, #full token: 0, full token usage: 0.00, mamba num: 0, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 618.83, #queue-req: 0\n[2026-11-02 22:09:55] INFO:     127.0.0.1:44955 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:09:56] Prefill batch, #new-seq: 1, #new-token: 108, #cached-token: 0, full token usage: 0.00, mamba usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 44.65\n[2026-11-02 22:09:56] Decode batch, #running-req: 1, #full token: 149, full token usage: 0.00, mamba num: 4, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 47.56, #queue-req: 0\n[2026-11-02 22:09:56] INFO:     127.0.0.1:57447 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:09:56] SIGTERM received. signum=None frame=None. Draining requests and shutting down...\n[2026-11-02 22:09:57] Subprocess scheduler_0 (pid=31) crashed with exit code -15. Triggering SIGQUIT for cleanup...\n[2026-11-02 22:09:57] SIGQUIT received. signum=None, frame=None. It usually means one child failed.\n[2026-11-02 22:09:57] Sleeping 5 seconds before crash diagnostics to let GPU activity settle.\n[2026-11-02 22:10:02] No live scheduler processes found; skipping py-spy and CUDA coredump.\n[2026-11-02 22:10:02] kill_process_tree called: parent_pid=4, include_parent=True, pid=4\n"
+    },
+    {
+      "model": {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "gpu": "H100",
+        "tp": 1,
+        "gpu_usd_per_s": 0.001097
+      },
+      "rows": [
+        {
+          "fixed_id": "smoke-01",
+          "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+          "task_name": "mmlu",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 1.3903053960000022,
+          "error": null,
+          "api_response": {
+            "id": "217da4f1addb4c08b39b94df4b53aed1",
+            "object": "chat.completion",
+            "created": 1793657470,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "A.",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 169,
+              "total_tokens": 172,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-02",
+          "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+          "task_name": "mmlu_pro",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.028269975999990038,
+          "error": null,
+          "api_response": {
+            "id": "363ad7bee36e4347a38e59b24c6386d5",
+            "object": "chat.completion",
+            "created": 1793657471,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(I)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 162,
+              "total_tokens": 165,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-03",
+          "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+          "task_name": "arc_challenge",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.02693630199999575,
+          "error": null,
+          "api_response": {
+            "id": "6abd4112f71441c4b1b85e2e57a2f400",
+            "object": "chat.completion",
+            "created": 1793657472,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 85,
+              "total_tokens": 88,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-04",
+          "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+          "task_name": "openbook_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.027514389999993227,
+          "error": null,
+          "api_response": {
+            "id": "80dba013b88143c29c57efbcbc2486af",
+            "object": "chat.completion",
+            "created": 1793657473,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 91,
+              "total_tokens": 94,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-05",
+          "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+          "task_name": "commonsense_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.02750463199998876,
+          "error": null,
+          "api_response": {
+            "id": "918dbd44ca404b85b10c46323bf444fe",
+            "object": "chat.completion",
+            "created": 1793657473,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 92,
+              "total_tokens": 95,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-06",
+          "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+          "task_name": "boolq",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.10502516099998616,
+          "error": null,
+          "api_response": {
+            "id": "34e792948cce4746b3ab6ad8c5ec4459",
+            "object": "chat.completion",
+            "created": 1793657480,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 155,
+              "total_tokens": 158,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-07",
+          "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+          "task_name": "hellaswag",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.04137366800000564,
+          "error": null,
+          "api_response": {
+            "id": "2bc9b137a8ee4c7090c9c3442812b48e",
+            "object": "chat.completion",
+            "created": 1793657481,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "B (B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 275,
+              "total_tokens": 280,
+              "completion_tokens": 5,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 5
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-08",
+          "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+          "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+          "task_name": "gsm8k",
+          "metric": "GSM8K",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 1.7155212940000126,
+          "error": null,
+          "api_response": {
+            "id": "e932c233805748c8bc01d038b36283ae",
+            "object": "chat.completion",
+            "created": 1793657483,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Let's break down the problem step by step to find the total number of jellybeans in the bag.\n\n1. **Identify the number of black beans:**\n   - The problem states there are 8 black beans.\n   - So, \\( B = 8 \\).\n\n2. **Determine the number of green beans:**\n   - The problem says there are 2 more green beans than black beans.\n   - Therefore, the number of green beans \\( G \\) is:\n     \\[\n     G = B + 2 = 8 + 2 = 10\n     \\]\n\n3. **Find the number of orange beans:**\n   - The problem indicates there is 1 less orange bean than green beans.\n   - Thus, the number of orange beans \\( O \\) is:\n     \\[\n     O = G - 1 = 10 - 1 = 9\n     \\]\n\n4. **Calculate the total number of jellybeans:**\n   - Add the number of black, green, and orange beans together:\n     \\[\n     \\text{Total} = B + G + O = 8 + 10 + 9 = 27\n     \\]\n\nSo, the total number of jellybeans in the bag is \\( \\boxed{27} \\).",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 63,
+              "total_tokens": 334,
+              "completion_tokens": 271,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 271
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-09",
+          "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+          "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+          "task_name": "math",
+          "metric": "MATH",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.05753295099998468,
+          "error": null,
+          "api_response": {
+            "id": "8c8457840fc54ef79118fa614f74a7c1",
+            "object": "chat.completion",
+            "created": 1793657484,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "\\boxed{315}",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 121,
+              "total_tokens": 129,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 8
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-10",
+          "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+          "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+          "task_name": "squad",
+          "metric": "f1_score",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+          "latency_s": 0.10498407599999382,
+          "error": null,
+          "api_response": {
+            "id": "43f2d5f2b7a24b4aa71f399c837b74ba",
+            "object": "chat.completion",
+            "created": 1793657485,
+            "model": "Qwen/Qwen2.5-7B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Producers have been accused of planting 'ringers' within the show.",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 103,
+              "total_tokens": 119,
+              "completion_tokens": 16,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 16
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "startup_s": 61.040306498999996,
+      "worker_wall_s": 83.57105004499999,
+      "gpu_info": "NVIDIA H100 80GB HBM3, 81559 MiB",
+      "server_error": null,
+      "server_log_tail": "vail_mem=12.77 GB):  55%|█████▌    | 32/58 [00:13<00:02, 12.97it/s]\nCapturing prefill shape (num_tokens=352 avail_mem=12.77 GB):  55%|█████▌    | 32/58 [00:13<00:02, 12.97it/s]\nCapturing prefill shape (num_tokens=352 avail_mem=12.77 GB):  59%|█████▊    | 34/58 [00:13<00:01, 12.75it/s]\nCapturing prefill shape (num_tokens=320 avail_mem=12.76 GB):  59%|█████▊    | 34/58 [00:13<00:01, 12.75it/s]\nCapturing prefill shape (num_tokens=288 avail_mem=12.76 GB):  59%|█████▊    | 34/58 [00:13<00:01, 12.75it/s]\nCapturing prefill shape (num_tokens=288 avail_mem=12.76 GB):  62%|██████▏   | 36/58 [00:13<00:01, 13.01it/s]\nCapturing prefill shape (num_tokens=256 avail_mem=12.76 GB):  62%|██████▏   | 36/58 [00:13<00:01, 13.01it/s]\nCapturing prefill shape (num_tokens=240 avail_mem=12.75 GB):  62%|██████▏   | 36/58 [00:13<00:01, 13.01it/s]\nCapturing prefill shape (num_tokens=240 avail_mem=12.75 GB):  66%|██████▌   | 38/58 [00:13<00:01, 13.46it/s]\nCapturing prefill shape (num_tokens=224 avail_mem=12.75 GB):  66%|██████▌   | 38/58 [00:13<00:01, 13.46it/s]\nCapturing prefill shape (num_tokens=208 avail_mem=12.74 GB):  66%|██████▌   | 38/58 [00:13<00:01, 13.46it/s]\nCapturing prefill shape (num_tokens=208 avail_mem=12.74 GB):  69%|██████▉   | 40/58 [00:13<00:01, 13.71it/s]\nCapturing prefill shape (num_tokens=192 avail_mem=12.74 GB):  69%|██████▉   | 40/58 [00:13<00:01, 13.71it/s]\nCapturing prefill shape (num_tokens=176 avail_mem=12.74 GB):  69%|██████▉   | 40/58 [00:13<00:01, 13.71it/s]\nCapturing prefill shape (num_tokens=176 avail_mem=12.74 GB):  72%|███████▏  | 42/58 [00:13<00:01, 13.81it/s]\nCapturing prefill shape (num_tokens=160 avail_mem=12.74 GB):  72%|███████▏  | 42/58 [00:13<00:01, 13.81it/s]\nCapturing prefill shape (num_tokens=144 avail_mem=12.73 GB):  72%|███████▏  | 42/58 [00:13<00:01, 13.81it/s]\nCapturing prefill shape (num_tokens=144 avail_mem=12.73 GB):  76%|███████▌  | 44/58 [00:14<00:01, 13.18it/s]\nCapturing prefill shape (num_tokens=128 avail_mem=12.72 GB):  76%|███████▌  | 44/58 [00:14<00:01, 13.18it/s]\nCapturing prefill shape (num_tokens=112 avail_mem=12.72 GB):  76%|███████▌  | 44/58 [00:14<00:01, 13.18it/s]\nCapturing prefill shape (num_tokens=112 avail_mem=12.72 GB):  79%|███████▉  | 46/58 [00:14<00:00, 13.63it/s]\nCapturing prefill shape (num_tokens=96 avail_mem=12.71 GB):  79%|███████▉  | 46/58 [00:14<00:00, 13.63it/s] \nCapturing prefill shape (num_tokens=80 avail_mem=12.71 GB):  79%|███████▉  | 46/58 [00:14<00:00, 13.63it/s]\nCapturing prefill shape (num_tokens=80 avail_mem=12.71 GB):  83%|████████▎ | 48/58 [00:14<00:00, 13.61it/s]\nCapturing prefill shape (num_tokens=64 avail_mem=12.70 GB):  83%|████████▎ | 48/58 [00:14<00:00, 13.61it/s]\nCapturing prefill shape (num_tokens=48 avail_mem=12.70 GB):  83%|████████▎ | 48/58 [00:14<00:00, 13.61it/s]\nCapturing prefill shape (num_tokens=48 avail_mem=12.70 GB):  86%|████████▌ | 50/58 [00:14<00:00, 13.57it/s]\nCapturing prefill shape (num_tokens=32 avail_mem=12.69 GB):  86%|████████▌ | 50/58 [00:14<00:00, 13.57it/s]\nCapturing prefill shape (num_tokens=28 avail_mem=12.69 GB):  86%|████████▌ | 50/58 [00:14<00:00, 13.57it/s]\nCapturing prefill shape (num_tokens=28 avail_mem=12.69 GB):  90%|████████▉ | 52/58 [00:14<00:00, 13.79it/s]\nCapturing prefill shape (num_tokens=24 avail_mem=12.69 GB):  90%|████████▉ | 52/58 [00:14<00:00, 13.79it/s]\nCapturing prefill shape (num_tokens=20 avail_mem=12.69 GB):  90%|████████▉ | 52/58 [00:14<00:00, 13.79it/s]\nCapturing prefill shape (num_tokens=20 avail_mem=12.69 GB):  93%|█████████▎| 54/58 [00:14<00:00, 14.12it/s]\nCapturing prefill shape (num_tokens=16 avail_mem=12.68 GB):  93%|█████████▎| 54/58 [00:14<00:00, 14.12it/s]\nCapturing prefill shape (num_tokens=12 avail_mem=12.68 GB):  93%|█████████▎| 54/58 [00:14<00:00, 14.12it/s]\nCapturing prefill shape (num_tokens=12 avail_mem=12.68 GB):  97%|█████████▋| 56/58 [00:15<00:00, 12.00it/s]\nCapturing prefill shape (num_tokens=8 avail_mem=12.68 GB):  97%|█████████▋| 56/58 [00:15<00:00, 12.00it/s] \nCapturing prefill shape (num_tokens=4 avail_mem=12.67 GB):  97%|█████████▋| 56/58 [00:15<00:00, 12.00it/s]\nCapturing prefill shape (num_tokens=4 avail_mem=12.67 GB): 100%|██████████| 58/58 [00:15<00:00, 12.22it/s]\nCapturing prefill shape (num_tokens=4 avail_mem=12.67 GB): 100%|██████████| 58/58 [00:15<00:00,  3.82it/s]\n[2026-11-02 22:11:03] Capture target prefill CUDA graph end. elapsed=15.89 s, mem usage=1.47 GB, avail mem=14.06 GB.\n[2026-11-02 22:11:03] Capture target decode CUDA graph begin. backend=full, num_tokens_per_req=1, avail mem=14.06 GB\n\n  0%|          | 0/3 [00:00<?, ?it/s]\nCapturing batches (bs=4 avail_mem=14.06 GB):   0%|          | 0/3 [00:00<?, ?it/s]\nCapturing batches (bs=4 avail_mem=14.06 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.69it/s]\nCapturing batches (bs=2 avail_mem=14.06 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.69it/s]\nCapturing batches (bs=1 avail_mem=14.06 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.69it/s]\nCapturing batches (bs=1 avail_mem=14.06 GB): 100%|██████████| 3/3 [00:00<00:00,  4.37it/s]\n[2026-11-02 22:11:05] Capture target decode CUDA graph end. bs=[1, 2, 4], elapsed=1.33 s, mem usage=0.00 GB, avail mem=14.06 GB.\n[2026-11-02 22:11:05] max_total_num_tokens=907821, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=4, context_len=8192, available_gpu_mem=14.06 GB\n[2026-11-02 22:11:05] Init Unified Radix Cache. Components: (<ComponentType.FULL: 0>,). Tree Core: RustUnifiedTreeCore\n[2026-11-02 22:11:05] Tree cache initialized: source=default impl=UnifiedRadixCache hybrid_swa=False hybrid_ssm=False hicache_attached=False\n[2026-11-02 22:11:05] Engine startup timings (s): load_weight=9.32, kv_cache_allocation=0.40, scheduler_e2e=30.05, cuda_graph={prefill=15.89, decode=1.33, target_verify=0.00, draft_prefill=0.00, draft_decode=0.00, draft_extend=0.00}, tokenizer_e2e=44.79\n[2026-11-02 22:11:05] INFO:     Started server process [337]\n[2026-11-02 22:11:05] INFO:     Waiting for application startup.\n[2026-11-02 22:11:05] Using default chat sampling params from model generation config: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}\n[2026-11-02 22:11:05] INFO:     Application startup complete.\n[2026-11-02 22:11:05] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)\n[2026-11-02 22:11:06] INFO:     127.0.0.1:33157 - \"GET /health HTTP/1.1\" 503 Service Unavailable\n[2026-11-02 22:11:06] INFO:     127.0.0.1:63698 - \"GET /model_info HTTP/1.1\" 200 OK\n[2026-11-02 22:11:06] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 3.41\n[2026-11-02 22:11:07] INFO:     127.0.0.1:26830 - \"POST /generate HTTP/1.1\" 200 OK\n[2026-11-02 22:11:07] INFO:     127.0.0.1:40865 - \"POST /freeze_gc HTTP/1.1\" 200 OK\n[2026-11-02 22:11:07] The server is fired up and ready to roll!\n[2026-11-02 22:11:08] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 0.69\n[2026-11-02 22:11:09] INFO:     127.0.0.1:16978 - \"GET /health HTTP/1.1\" 200 OK\n[2026-11-02 22:11:10] Prefill batch, #new-seq: 1, #new-token: 169, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 74.63\n[2026-11-02 22:11:10] INFO:     127.0.0.1:18685 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:11] Prefill batch, #new-seq: 1, #new-token: 119, #cached-token: 43, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 157.02\n[2026-11-02 22:11:11] INFO:     127.0.0.1:43798 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:12] Prefill batch, #new-seq: 1, #new-token: 45, #cached-token: 40, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 57.03\n[2026-11-02 22:11:12] INFO:     127.0.0.1:47659 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:12] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 42, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 63.04\n[2026-11-02 22:11:13] INFO:     127.0.0.1:57501 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:13] Prefill batch, #new-seq: 1, #new-token: 50, #cached-token: 42, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 78.75\n[2026-11-02 22:11:13] INFO:     127.0.0.1:58722 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:20] Prefill batch, #new-seq: 1, #new-token: 112, #cached-token: 43, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 16.46\n[2026-11-02 22:11:20] INFO:     127.0.0.1:31482 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:21] Prefill batch, #new-seq: 1, #new-token: 232, #cached-token: 43, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 222.72\n[2026-11-02 22:11:21] INFO:     127.0.0.1:20710 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:22] Prefill batch, #new-seq: 1, #new-token: 57, #cached-token: 6, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 74.19\n[2026-11-02 22:11:22] Decode batch, #running-req: 1, #token: 74, token usage: 0.00, cuda graph: True, gen throughput (token/s): 2.34, #queue-req: 0\n[2026-11-02 22:11:22] Decode batch, #running-req: 1, #token: 114, token usage: 0.00, cuda graph: True, gen throughput (token/s): 168.10, #queue-req: 0\n[2026-11-02 22:11:22] Decode batch, #running-req: 1, #token: 154, token usage: 0.00, cuda graph: True, gen throughput (token/s): 167.07, #queue-req: 0\n[2026-11-02 22:11:23] Decode batch, #running-req: 1, #token: 194, token usage: 0.00, cuda graph: True, gen throughput (token/s): 166.43, #queue-req: 0\n[2026-11-02 22:11:23] Decode batch, #running-req: 1, #token: 234, token usage: 0.00, cuda graph: True, gen throughput (token/s): 166.41, #queue-req: 0\n[2026-11-02 22:11:23] Decode batch, #running-req: 1, #token: 274, token usage: 0.00, cuda graph: True, gen throughput (token/s): 166.36, #queue-req: 0\n[2026-11-02 22:11:23] Decode batch, #running-req: 1, #token: 314, token usage: 0.00, cuda graph: True, gen throughput (token/s): 166.20, #queue-req: 0\n[2026-11-02 22:11:23] INFO:     127.0.0.1:64599 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:24] Prefill batch, #new-seq: 1, #new-token: 113, #cached-token: 8, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 45.81\n[2026-11-02 22:11:24] INFO:     127.0.0.1:49876 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:25] Prefill batch, #new-seq: 1, #new-token: 98, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 133.32\n[2026-11-02 22:11:25] Decode batch, #running-req: 1, #token: 115, token usage: 0.00, cuda graph: True, gen throughput (token/s): 22.62, #queue-req: 0\n[2026-11-02 22:11:25] INFO:     127.0.0.1:57471 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:11:26] SIGTERM received. signum=None frame=None. Draining requests and shutting down...\n[2026-11-02 22:11:26] Subprocess detokenizer (pid=360) crashed with exit code -15. Triggering SIGQUIT for cleanup...\n[2026-11-02 22:11:26] SIGQUIT received. signum=None, frame=None. It usually means one child failed.\n[2026-11-02 22:11:26] Sleeping 5 seconds before crash diagnostics to let GPU activity settle.\n[2026-11-02 22:11:31] No live scheduler processes found; skipping py-spy and CUDA coredump.\n[2026-11-02 22:11:31] kill_process_tree called: parent_pid=337, include_parent=True, pid=337\n"
+    },
+    {
+      "model": {
+        "id": "Qwen/Qwen3.5-27B",
+        "revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+        "gpu": "H200",
+        "tp": 1,
+        "gpu_usd_per_s": 0.001261
+      },
+      "rows": [
+        {
+          "fixed_id": "smoke-01",
+          "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+          "task_name": "mmlu",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 1.3509801849999974,
+          "error": null,
+          "api_response": {
+            "id": "24048bb59fd64a5683f7b90b05d69e5f",
+            "object": "chat.completion",
+            "created": 1793657681,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Based on the text provided, Kitty explicitly states, \"And he has a big sports collection.\" Later, the text lists the items in his collection (two baseballs, four soccer balls, and five basketballs). Since the text confirms he has a big (which implies great in this context) sports collection, the answer to the question \"Does Mike have a great sports collection?\" is affirmative.\n\n(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 179,
+              "total_tokens": 262,
+              "completion_tokens": 83,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 83
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-02",
+          "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+          "task_name": "mmlu_pro",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 2.0084607699999992,
+          "error": null,
+          "api_response": {
+            "id": "43c66dc3323a4b99837d6acda1a5a0f9",
+            "object": "chat.completion",
+            "created": 1793657686,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The description provided in the question highlights three key behaviors: modifying data to disrupt system functionality, preventing access to specific data, and demanding a ransom to restore access. These are the defining characteristics of ransomware, which is often delivered via a Trojan horse. Among the given options, \"Ransom Trojan\" specifically refers to this type of malware designed to encrypt files or lock systems and demand payment for the decryption key or unlock code. Other options like Banking Trojans (stealing financial info), Spyware Trojans (monitoring activity), or Backdoor Trojans (providing remote access) do not primarily focus on the ransom demand aspect described.\n\n(I)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 169,
+              "total_tokens": 305,
+              "completion_tokens": 136,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 136
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-03",
+          "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+          "task_name": "arc_challenge",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 3.9891301490000046,
+          "error": null,
+          "api_response": {
+            "id": "ca04c959e802434ab801bc737db55d6f",
+            "object": "chat.completion",
+            "created": 1793657691,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To determine which substance is least likely to change from a solid to a liquid when heat is applied, let's analyze the behavior of each option:\n\n*   **(A) Butter**: Butter is a fat that melts at relatively low temperatures (around 32–35°C or 90–95°F). When heated, it readily turns into a liquid.\n*   **(C) Ice**: Ice is solid water. It melts at 0°C (32°F). Applying heat causes it to turn into liquid water very easily.\n*   **(D) Candle wax**: Wax is a hydrocarbon mixture that melts at temperatures typically between 46°C and 68°C (115°F–154°F). It is designed to melt when a candle is lit.\n*   **(B) Paper**: Paper is made of cellulose fibers. When heat is applied, paper does not melt into a liquid. Instead, as the temperature rises, the cellulose undergoes thermal decomposition (pyrolysis) and eventually ignites, turning into ash and gases (combustion) before it could ever reach a melting point. While some plastics melt, paper burns.\n\nTherefore, paper is the substance that will not transition to a liquid state upon heating; it will burn or char instead.\n\n(B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 90,
+              "total_tokens": 363,
+              "completion_tokens": 273,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 273
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-04",
+          "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+          "task_name": "openbook_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 5.680478633999996,
+          "error": null,
+          "api_response": {
+            "id": "66f5243693a34e7198cd11ea43746a7a",
+            "object": "chat.completion",
+            "created": 1793657698,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To determine which scenario involves the most friction, we must analyze the roughness of the surfaces involved in each option, as the question states that friction increases with surface roughness.\n\n1.  **River stones smashing (A)**: River stones are typically smooth due to erosion by water over time. While they are harder than skin, their surfaces are relatively smooth compared to raw stone or rough materials.\n2.  **Hands clapping (B)**: Human skin has a textured surface with ridges (fingerprints) and is generally rougher than polished glass or smooth river stones. When hands clap, the friction between the skin surfaces is significant enough to create a sound and a sensation of resistance.\n3.  **Mirrors pressing together (C)**: Mirrors have glass surfaces that are polished to be extremely smooth. When two smooth glass surfaces are pressed together, the friction is very low (though they might stick due to air pressure or molecular adhesion, the *friction* caused by roughness is minimal).\n4.  **Stone falling (D)**: A falling stone is primarily interacting with air. Air resistance (drag) is a form of friction, but it is generally much lower than the solid-on-solid friction found in the other options. If the stone hits the ground, the friction depends on the ground, but the act of \"falling\" itself implies motion through air.\n\nComparing the surface roughness:\n*   Mirrors are the smoothest.\n*   River stones are smooth.\n*   Air offers very little resistance compared to solid contact.\n*   Human skin (hands) is the roughest surface among the primary interacting objects in these specific scenarios. The texture of skin creates more interlocking irregularities than the smooth surfaces of stones or glass.\n\nTherefore, the interaction between two rough surfaces like hands clapping generates the most friction in this context.\n\n(B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 95,
+              "total_tokens": 485,
+              "completion_tokens": 390,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 390
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-05",
+          "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+          "task_name": "commonsense_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 1.9921972719999985,
+          "error": null,
+          "api_response": {
+            "id": "58002273360a475d8a6b015c430571d3",
+            "object": "chat.completion",
+            "created": 1793657704,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The question refers to a specific scene or character description, likely involving a family TV personality (such as a host of a children's show) dressed in a weasel costume. In the context of children's entertainment, a character dressed as an animal would typically engage in activities suitable for a young audience, such as singing. Among the choices, \"children's song\" is the only logical object that one can \"play\" in this context (playing a song on an instrument or performing it). The other options (Washington D.C., chicken coop, dead, used car lot) do not fit grammatically or contextually with the phrase \"play a...\".\n\n(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 97,
+              "total_tokens": 232,
+              "completion_tokens": 135,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 135
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-06",
+          "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+          "task_name": "boolq",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 0.06592998300001796,
+          "error": null,
+          "api_response": {
+            "id": "dca53c7a929742eba6c75f5e08580465",
+            "object": "chat.completion",
+            "created": 1793657706,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "A",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 161,
+              "total_tokens": 163,
+              "completion_tokens": 2,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-07",
+          "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+          "task_name": "hellaswag",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 0.06819755899999791,
+          "error": null,
+          "api_response": {
+            "id": "3335abe75ff4460f811bd8cb0e2354e6",
+            "object": "chat.completion",
+            "created": 1793657707,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "B",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 285,
+              "total_tokens": 287,
+              "completion_tokens": 2,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-08",
+          "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+          "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+          "task_name": "gsm8k",
+          "metric": "GSM8K",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 3.6794369719999906,
+          "error": null,
+          "api_response": {
+            "id": "a6014ab05d46498ea95dbb856c1c040f",
+            "object": "chat.completion",
+            "created": 1793657713,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Here is the step-by-step solution to find the total number of jellybeans:\n\n**Step 1: Determine the number of black beans.**\nThe problem states there are **8** black beans.\n*   Black beans = 8\n\n**Step 2: Determine the number of green beans.**\nThe problem states there are \"2 more green beans\" than black beans.\n*   Green beans = Black beans + 2\n*   Green beans = $8 + 2 = 10$\n\n**Step 3: Determine the number of orange beans.**\nThe problem states there is \"1 less orange bean than green beans.\"\n*   Orange beans = Green beans - 1\n*   Orange beans = $10 - 1 = 9$\n\n**Step 4: Calculate the total number of jellybeans.**\nAdd the number of beans of each color together.\n*   Total = Black beans + Green beans + Orange beans\n*   Total = $8 + 10 + 9$\n*   Total = $18 + 9$\n*   Total = $27$\n\n**Answer:**\nThere are **27** jellybeans in the bag.",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 67,
+              "total_tokens": 319,
+              "completion_tokens": 252,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 252
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-09",
+          "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+          "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+          "task_name": "math",
+          "metric": "MATH",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 14.863827990000004,
+          "error": null,
+          "api_response": {
+            "id": "6810eef2e63c462f9376b71cab16658c",
+            "object": "chat.completion",
+            "created": 1793657729,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To find the greatest possible value of the sum of the eight products, let's denote the numbers assigned to the six faces of the cube as $x_1, x_2, x_3, x_4, x_5, x_6$. The set of these numbers is $\\{2, 3, 4, 5, 6, 7\\}$.\n\nLet the faces be paired as opposite faces. Let the pairs be $(a, a')$, $(b, b')$, and $(c, c')$, where $a$ and $a'$ are opposite, $b$ and $b'$ are opposite, and $c$ and $c'$ are opposite.\nThe eight vertices of a cube are formed by the intersection of three faces, one from each pair of opposite faces. Specifically, the vertices correspond to the combinations:\n1. $a, b, c$\n2. $a, b, c'$\n3. $a, b', c$\n4. $a, b', c'$\n5. $a', b, c$\n6. $a', b, c'$\n7. $a', b', c$\n8. $a', b', c'$\n\nThe product of the numbers at each vertex is the product of the numbers on the three faces meeting at that vertex. The sum of these eight products $S$ is:\n$$S = abc + abc' + ab'c + ab'c' + a'bc + a'bc' + a'b'c + a'b'c'$$\n\nWe can factor this expression by grouping terms:\n$$S = ab(c + c') + ab'(c + c') + a'b(c + c') + a'b'(c + c')$$\n$$S = (ab + ab' + a'b + a'b')(c + c')$$\n$$S = [a(b + b') + a'(b + b')](c + c')$$\n$$S = (a + a')(b + b')(c + c')$$\n\nSo, the sum of the eight products is equal to the product of the sums of the numbers on the three pairs of opposite faces.\nLet the three pairs of opposite faces have sums $S_1, S_2, S_3$. Then $S = S_1 \\times S_2 \\times S_3$.\nThe set of numbers is $\\{2, 3, 4, 5, 6, 7\\}$. The sum of all numbers is $2+3+4+5+6+7 = 27$.\nThus, $S_1 + S_2 + S_3 = 27$.\nWe need to partition the set $\\{2, 3, 4, 5, 6, 7\\}$ into three pairs such that the product of their sums is maximized.\n\nLet the pairs be $(x_1, y_1), (x_2, y_2), (x_3, y_3)$.\nThe sums are $s_1 = x_1+y_1$, $s_2 = x_2+y_2$, $s_3 = x_3+y_3$.\nWe want to maximize $P = s_1 s_2 s_3$ subject to $s_1+s_2+s_3 = 27$.\nFor a fixed sum, the product of positive numbers is maximized when the numbers are as close to each other as possible.\nThe average value is $27/3 = 9$. So we should try to make the sums as close to 9 as possible.\n\nLet's list possible pairings and their sums:\nThe numbers are $2, 3, 4, 5, 6, 7$.\nPossible sums of pairs range from $2+3=5$ to $6+7=13$.\n\nLet's try to get sums close to 9.\nPossible pairs summing to 9:\n- $2+7=9$\n- $3+6=9$\n- $4+5=9$\nIf we pair them as $(2,7), (3,6), (4,5)$, the sums are $9, 9, 9$.\nThe product is $9 \\times 9 \\times 9 = 729$.\n\nLet's check if any other combination yields a higher product.\nSuppose the sums are $9-k, 9, 9+k$. The product is $81(9-k^2)$, which is less than 729 for any $k \\neq 0$.\nSo we need to check if we can get sums closer to 9 than 9, 9, 9? No",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "length",
+                "matched_stop": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 125,
+              "total_tokens": 1149,
+              "completion_tokens": 1024,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 1024
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-10",
+          "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+          "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+          "task_name": "squad",
+          "metric": "f1_score",
+          "model_id": "Qwen/Qwen3.5-27B",
+          "model_revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+          "latency_s": 0.6450123820000044,
+          "error": null,
+          "api_response": {
+            "id": "78f321fee3584704a5f4f46d090fab1b",
+            "object": "chat.completion",
+            "created": 1793657731,
+            "model": "Qwen/Qwen3.5-27B",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Based on the provided context, producers have been accused of planting **ringers** within the show. The text specifically mentions that individual contestants have generated controversy for being \"'ringers' planted by the producers.\"",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 248046
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 108,
+              "total_tokens": 150,
+              "completion_tokens": 42,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 42
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "startup_s": 173.121190869,
+      "worker_wall_s": 232.197587656,
+      "gpu_info": "NVIDIA H200, 143771 MiB",
+      "server_error": null,
+      "server_log_tail": "atch, #running-req: 1, #full token: 345, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.10, #queue-req: 0\n[2026-11-02 22:14:51] INFO:     127.0.0.1:25842 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:14:53] Prefill batch, #new-seq: 1, #new-token: 95, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 17.76\n[2026-11-02 22:14:53] Decode batch, #running-req: 1, #full token: 117, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 20.24, #queue-req: 0\n[2026-11-02 22:14:54] Decode batch, #running-req: 1, #full token: 157, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.15, #queue-req: 0\n[2026-11-02 22:14:54] Decode batch, #running-req: 1, #full token: 197, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.13, #queue-req: 0\n[2026-11-02 22:14:55] Decode batch, #running-req: 1, #full token: 237, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.12, #queue-req: 0\n[2026-11-02 22:14:55] Decode batch, #running-req: 1, #full token: 277, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.10, #queue-req: 0\n[2026-11-02 22:14:56] Decode batch, #running-req: 1, #full token: 317, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.08, #queue-req: 0\n[2026-11-02 22:14:56] Decode batch, #running-req: 1, #full token: 357, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.12, #queue-req: 0\n[2026-11-02 22:14:57] Decode batch, #running-req: 1, #full token: 397, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.12, #queue-req: 0\n[2026-11-02 22:14:58] Decode batch, #running-req: 1, #full token: 437, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.13, #queue-req: 0\n[2026-11-02 22:14:58] Decode batch, #running-req: 1, #full token: 477, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.11, #queue-req: 0\n[2026-11-02 22:14:58] INFO:     127.0.0.1:33074 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:02] Prefill batch, #new-seq: 1, #new-token: 97, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 10.58\n[2026-11-02 22:15:02] Decode batch, #running-req: 1, #full token: 129, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 9.75, #queue-req: 0\n[2026-11-02 22:15:03] Decode batch, #running-req: 1, #full token: 169, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.12, #queue-req: 0\n[2026-11-02 22:15:03] Decode batch, #running-req: 1, #full token: 209, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.13, #queue-req: 0\n[2026-11-02 22:15:04] INFO:     127.0.0.1:62776 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:05] Prefill batch, #new-seq: 1, #new-token: 161, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 43.92\n[2026-11-02 22:15:06] INFO:     127.0.0.1:62760 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:07] Prefill batch, #new-seq: 1, #new-token: 285, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 209.12\n[2026-11-02 22:15:07] INFO:     127.0.0.1:33269 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:09] Prefill batch, #new-seq: 1, #new-token: 67, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 29.44\n[2026-11-02 22:15:09] Decode batch, #running-req: 1, #full token: 80, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 6.81, #queue-req: 0\n[2026-11-02 22:15:10] Decode batch, #running-req: 1, #full token: 120, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.14, #queue-req: 0\n[2026-11-02 22:15:10] Decode batch, #running-req: 1, #full token: 160, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.14, #queue-req: 0\n[2026-11-02 22:15:11] Decode batch, #running-req: 1, #full token: 200, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.29, #queue-req: 0\n[2026-11-02 22:15:12] Decode batch, #running-req: 1, #full token: 240, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.39, #queue-req: 0\n[2026-11-02 22:15:12] Decode batch, #running-req: 1, #full token: 280, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.08, #queue-req: 0\n[2026-11-02 22:15:13] INFO:     127.0.0.1:27690 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:13] Decode batch, #running-req: 1, #full token: 0, full token usage: 0.00, mamba num: 0, mamba usage: 0.00, cuda graph: True, gen throughput (token/s): 69.09, #queue-req: 0\n[2026-11-02 22:15:14] Prefill batch, #new-seq: 1, #new-token: 125, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 24.67\n[2026-11-02 22:15:15] Decode batch, #running-req: 1, #full token: 166, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 19.97, #queue-req: 0\n[2026-11-02 22:15:15] Decode batch, #running-req: 1, #full token: 206, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.12, #queue-req: 0\n[2026-11-02 22:15:16] Decode batch, #running-req: 1, #full token: 246, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.14, #queue-req: 0\n[2026-11-02 22:15:17] Decode batch, #running-req: 1, #full token: 286, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.08, #queue-req: 0\n[2026-11-02 22:15:17] Decode batch, #running-req: 1, #full token: 326, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.10, #queue-req: 0\n[2026-11-02 22:15:18] Decode batch, #running-req: 1, #full token: 366, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.12, #queue-req: 0\n[2026-11-02 22:15:18] Decode batch, #running-req: 1, #full token: 406, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.13, #queue-req: 0\n[2026-11-02 22:15:19] Decode batch, #running-req: 1, #full token: 446, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.11, #queue-req: 0\n[2026-11-02 22:15:19] Decode batch, #running-req: 1, #full token: 486, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.11, #queue-req: 0\n[2026-11-02 22:15:20] Decode batch, #running-req: 1, #full token: 526, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.08, #queue-req: 0\n[2026-11-02 22:15:21] Decode batch, #running-req: 1, #full token: 566, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.09, #queue-req: 0\n[2026-11-02 22:15:21] Decode batch, #running-req: 1, #full token: 606, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.10, #queue-req: 0\n[2026-11-02 22:15:22] Decode batch, #running-req: 1, #full token: 646, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.10, #queue-req: 0\n[2026-11-02 22:15:22] Decode batch, #running-req: 1, #full token: 686, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.08, #queue-req: 0\n[2026-11-02 22:15:23] Decode batch, #running-req: 1, #full token: 726, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.09, #queue-req: 0\n[2026-11-02 22:15:23] Decode batch, #running-req: 1, #full token: 766, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.08, #queue-req: 0\n[2026-11-02 22:15:24] Decode batch, #running-req: 1, #full token: 806, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.07, #queue-req: 0\n[2026-11-02 22:15:25] Decode batch, #running-req: 1, #full token: 846, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.06, #queue-req: 0\n[2026-11-02 22:15:25] Decode batch, #running-req: 1, #full token: 886, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.07, #queue-req: 0\n[2026-11-02 22:15:26] Decode batch, #running-req: 1, #full token: 926, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.07, #queue-req: 0\n[2026-11-02 22:15:26] Decode batch, #running-req: 1, #full token: 966, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.06, #queue-req: 0\n[2026-11-02 22:15:27] Decode batch, #running-req: 1, #full token: 1006, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.02, #queue-req: 0\n[2026-11-02 22:15:28] Decode batch, #running-req: 1, #full token: 1046, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.02, #queue-req: 0\n[2026-11-02 22:15:28] Decode batch, #running-req: 1, #full token: 1086, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.01, #queue-req: 0\n[2026-11-02 22:15:29] Decode batch, #running-req: 1, #full token: 1126, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 69.01, #queue-req: 0\n[2026-11-02 22:15:29] INFO:     127.0.0.1:36583 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:30] Prefill batch, #new-seq: 1, #new-token: 108, #cached-token: 0, full token usage: 0.00, mamba usage: 0.02, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 6.62\n[2026-11-02 22:15:31] Decode batch, #running-req: 1, #full token: 126, full token usage: 0.00, mamba num: 4, mamba usage: 0.02, cuda graph: True, gen throughput (token/s): 19.26, #queue-req: 0\n[2026-11-02 22:15:31] INFO:     127.0.0.1:55475 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:15:33] SIGTERM received. signum=None frame=None. Draining requests and shutting down...\n[2026-11-02 22:15:33] Subprocess detokenizer (pid=33) crashed with exit code -15. Triggering SIGQUIT for cleanup...\n[2026-11-02 22:15:33] SIGQUIT received. signum=None, frame=None. It usually means one child failed.\n[2026-11-02 22:15:33] Sleeping 5 seconds before crash diagnostics to let GPU activity settle.\n[2026-11-02 22:15:38] No live scheduler processes found; skipping py-spy and CUDA coredump.\n[2026-11-02 22:15:38] kill_process_tree called: parent_pid=4, include_parent=True, pid=4\n"
+    },
+    {
+      "model": {
+        "id": "Qwen/Qwen2.5-72B-Instruct",
+        "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+        "gpu": "H200:2",
+        "tp": 2,
+        "gpu_usd_per_s": 0.002522
+      },
+      "rows": [
+        {
+          "fixed_id": "smoke-01",
+          "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+          "task_name": "mmlu",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 2.435058055000013,
+          "error": null,
+          "api_response": {
+            "id": "c291c07081d74166bf25f1d62d9dcfe2",
+            "object": "chat.completion",
+            "created": 1793658342,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 169,
+              "total_tokens": 172,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-02",
+          "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+          "task_name": "mmlu_pro",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.07701624099996707,
+          "error": null,
+          "api_response": {
+            "id": "c07010a03de64e7bb8e68be4e8e3d59c",
+            "object": "chat.completion",
+            "created": 1793658343,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(I)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 162,
+              "total_tokens": 165,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-03",
+          "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+          "task_name": "arc_challenge",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.07468207200003008,
+          "error": null,
+          "api_response": {
+            "id": "93f7f36deb4d49809679cc12a15db6d7",
+            "object": "chat.completion",
+            "created": 1793658343,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 85,
+              "total_tokens": 88,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-04",
+          "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+          "task_name": "openbook_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.07452593699997578,
+          "error": null,
+          "api_response": {
+            "id": "d846a5e930c64feb98b4d6a5db886f98",
+            "object": "chat.completion",
+            "created": 1793658345,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 91,
+              "total_tokens": 94,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-05",
+          "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+          "task_name": "commonsense_qa",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.134868718000007,
+          "error": null,
+          "api_response": {
+            "id": "aac0bd36d4b3454d9202e23ff640df28",
+            "object": "chat.completion",
+            "created": 1793658346,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(A) children's song",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 92,
+              "total_tokens": 98,
+              "completion_tokens": 6,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 6
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-06",
+          "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+          "task_name": "boolq",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.1561082220000003,
+          "error": null,
+          "api_response": {
+            "id": "fc7f04e2a62a47d9a4045c4b2e7813c0",
+            "object": "chat.completion",
+            "created": 1793658347,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(A)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 155,
+              "total_tokens": 158,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-07",
+          "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+          "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+          "task_name": "hellaswag",
+          "metric": "em_mc",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.16911045000000513,
+          "error": null,
+          "api_response": {
+            "id": "2e15d7214906444db286147a1810d1b4",
+            "object": "chat.completion",
+            "created": 1793658348,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "(B)",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 275,
+              "total_tokens": 278,
+              "completion_tokens": 3,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-08",
+          "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+          "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+          "task_name": "gsm8k",
+          "metric": "GSM8K",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 4.978769575999991,
+          "error": null,
+          "api_response": {
+            "id": "868eae779aef4b088f880013b6acb04d",
+            "object": "chat.completion",
+            "created": 1793658354,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "To solve this problem, we need to determine the total number of jellybeans in the bag by finding out how many beans of each color are present. Let's break it down step by step:\n\n1. **Determine the number of green beans:**\n   - The problem states that there are 2 more green beans than black beans.\n   - There are 8 black beans.\n   - Therefore, the number of green beans is \\( 8 + 2 = 10 \\).\n\n2. **Determine the number of orange beans:**\n   - The problem states that there is 1 less orange bean than green beans.\n   - We already found that there are 10 green beans.\n   - Therefore, the number of orange beans is \\( 10 - 1 = 9 \\).\n\n3. **Calculate the total number of jellybeans:**\n   - We have 8 black beans, 10 green beans, and 9 orange beans.\n   - The total number of jellybeans is \\( 8 + 10 + 9 = 27 \\).\n\nThus, the total number of jellybeans in the bag is \\( \\boxed{27} \\).",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 63,
+              "total_tokens": 307,
+              "completion_tokens": 244,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 244
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-09",
+          "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+          "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+          "task_name": "math",
+          "metric": "MATH",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.1776480709999646,
+          "error": null,
+          "api_response": {
+            "id": "e49a5617111247e9bc622b6cd8a60ec0",
+            "object": "chat.completion",
+            "created": 1793658355,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "\\boxed{729}",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 121,
+              "total_tokens": 129,
+              "completion_tokens": 8,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 8
+                }
+              ]
+            }
+          }
+        },
+        {
+          "fixed_id": "smoke-10",
+          "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+          "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+          "task_name": "squad",
+          "metric": "f1_score",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+          "latency_s": 0.3389131799999632,
+          "error": null,
+          "api_response": {
+            "id": "970f17995bba433389aed93c264f4cea",
+            "object": "chat.completion",
+            "created": 1793658356,
+            "model": "Qwen/Qwen2.5-72B-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Producers have been accused of planting 'ringers' within the show.",
+                  "reasoning_content": null
+                },
+                "logprobs": null,
+                "finish_reason": "stop",
+                "matched_stop": 151645
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 103,
+              "total_tokens": 119,
+              "completion_tokens": 16,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "completion_tokens_details": null
+            },
+            "metadata": {
+              "weight_version": "default",
+              "weight_versions": [
+                {
+                  "version": "default",
+                  "start": 0,
+                  "end": 16
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "startup_s": 331.215119951,
+      "worker_wall_s": 355.167904962,
+      "gpu_info": "NVIDIA H200, 143771 MiB\nNVIDIA H200, 143771 MiB",
+      "server_error": null,
+      "server_log_tail": "apturing prefill shape (num_tokens=144 avail_mem=24.05 GB):  76%|███████▌  | 44/58 [01:04<00:04,  3.50it/s]\nCapturing prefill shape (num_tokens=128 avail_mem=24.04 GB):  76%|███████▌  | 44/58 [01:04<00:04,  3.50it/s]\nCapturing prefill shape (num_tokens=128 avail_mem=24.04 GB):  78%|███████▊  | 45/58 [01:04<00:03,  3.59it/s]\nCapturing prefill shape (num_tokens=112 avail_mem=24.02 GB):  78%|███████▊  | 45/58 [01:04<00:03,  3.59it/s]\nCapturing prefill shape (num_tokens=112 avail_mem=24.02 GB):  79%|███████▉  | 46/58 [01:04<00:03,  3.68it/s]\nCapturing prefill shape (num_tokens=96 avail_mem=24.01 GB):  79%|███████▉  | 46/58 [01:04<00:03,  3.68it/s] \nCapturing prefill shape (num_tokens=96 avail_mem=24.01 GB):  81%|████████  | 47/58 [01:04<00:02,  3.69it/s]\nCapturing prefill shape (num_tokens=80 avail_mem=24.00 GB):  81%|████████  | 47/58 [01:04<00:02,  3.69it/s]\nCapturing prefill shape (num_tokens=80 avail_mem=24.00 GB):  83%|████████▎ | 48/58 [01:05<00:02,  3.72it/s]\nCapturing prefill shape (num_tokens=64 avail_mem=23.99 GB):  83%|████████▎ | 48/58 [01:05<00:02,  3.72it/s]\nCapturing prefill shape (num_tokens=64 avail_mem=23.99 GB):  84%|████████▍ | 49/58 [01:05<00:02,  3.68it/s]\nCapturing prefill shape (num_tokens=48 avail_mem=23.98 GB):  84%|████████▍ | 49/58 [01:05<00:02,  3.68it/s]\nCapturing prefill shape (num_tokens=48 avail_mem=23.98 GB):  86%|████████▌ | 50/58 [01:05<00:02,  3.48it/s]\nCapturing prefill shape (num_tokens=32 avail_mem=23.96 GB):  86%|████████▌ | 50/58 [01:05<00:02,  3.48it/s]\nCapturing prefill shape (num_tokens=32 avail_mem=23.96 GB):  88%|████████▊ | 51/58 [01:05<00:01,  3.57it/s]\nCapturing prefill shape (num_tokens=28 avail_mem=23.95 GB):  88%|████████▊ | 51/58 [01:05<00:01,  3.57it/s]\nCapturing prefill shape (num_tokens=28 avail_mem=23.95 GB):  90%|████████▉ | 52/58 [01:06<00:01,  3.67it/s]\nCapturing prefill shape (num_tokens=24 avail_mem=23.94 GB):  90%|████████▉ | 52/58 [01:06<00:01,  3.67it/s]\nCapturing prefill shape (num_tokens=24 avail_mem=23.94 GB):  91%|█████████▏| 53/58 [01:06<00:01,  3.73it/s]\nCapturing prefill shape (num_tokens=20 avail_mem=23.94 GB):  91%|█████████▏| 53/58 [01:06<00:01,  3.73it/s]\nCapturing prefill shape (num_tokens=20 avail_mem=23.94 GB):  93%|█████████▎| 54/58 [01:06<00:01,  3.72it/s]\nCapturing prefill shape (num_tokens=16 avail_mem=23.93 GB):  93%|█████████▎| 54/58 [01:06<00:01,  3.72it/s]\nCapturing prefill shape (num_tokens=16 avail_mem=23.93 GB):  95%|█████████▍| 55/58 [01:07<00:00,  3.69it/s]\nCapturing prefill shape (num_tokens=12 avail_mem=23.91 GB):  95%|█████████▍| 55/58 [01:07<00:00,  3.69it/s]\nCapturing prefill shape (num_tokens=12 avail_mem=23.91 GB):  97%|█████████▋| 56/58 [01:07<00:00,  3.78it/s]\nCapturing prefill shape (num_tokens=8 avail_mem=23.90 GB):  97%|█████████▋| 56/58 [01:07<00:00,  3.78it/s] \nCapturing prefill shape (num_tokens=8 avail_mem=23.90 GB):  98%|█████████▊| 57/58 [01:07<00:00,  3.79it/s]\nCapturing prefill shape (num_tokens=4 avail_mem=23.89 GB):  98%|█████████▊| 57/58 [01:07<00:00,  3.79it/s]\nCapturing prefill shape (num_tokens=4 avail_mem=23.89 GB): 100%|██████████| 58/58 [01:07<00:00,  3.78it/s]\nCapturing prefill shape (num_tokens=4 avail_mem=23.89 GB): 100%|██████████| 58/58 [01:07<00:00,  1.17s/it]\n[2026-11-02 22:25:26 TP0] Capture target prefill CUDA graph end. elapsed=68.79 s, mem usage=2.13 GB, avail mem=25.36 GB.\n[2026-11-02 22:25:26 TP0] Capture target decode CUDA graph begin. backend=full, num_tokens_per_req=1, avail mem=25.36 GB\n[2026-11-02 22:25:26 TP1] Capture target prefill CUDA graph end. elapsed=68.80 s, mem usage=2.13 GB, avail mem=25.29 GB.\n[2026-11-02 22:25:26 TP1] Capture target decode CUDA graph begin. backend=full, num_tokens_per_req=1, avail mem=25.29 GB\n\n  0%|          | 0/3 [00:00<?, ?it/s]\nCapturing batches (bs=4 avail_mem=25.36 GB):   0%|          | 0/3 [00:00<?, ?it/s]\nCapturing batches (bs=4 avail_mem=25.36 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.56it/s]\nCapturing batches (bs=2 avail_mem=25.32 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.56it/s]\nCapturing batches (bs=2 avail_mem=25.32 GB):  67%|██████▋   | 2/3 [00:00<00:00,  2.65it/s]\nCapturing batches (bs=1 avail_mem=25.31 GB):  67%|██████▋   | 2/3 [00:00<00:00,  2.65it/s]\nCapturing batches (bs=1 avail_mem=25.31 GB): 100%|██████████| 3/3 [00:01<00:00,  2.90it/s]\nCapturing batches (bs=1 avail_mem=25.31 GB): 100%|██████████| 3/3 [00:01<00:00,  2.63it/s]\n[2026-11-02 22:25:28 TP0] Capture target decode CUDA graph end. bs=[1, 2, 4], elapsed=2.17 s, mem usage=0.05 GB, avail mem=25.31 GB.\n[2026-11-02 22:25:28 TP0] max_total_num_tokens=279859, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=4, context_len=8192, available_gpu_mem=25.31 GB\n[2026-11-02 22:25:28 TP1] Capture target decode CUDA graph end. bs=[1, 2, 4], elapsed=2.17 s, mem usage=0.05 GB, avail mem=25.24 GB.\n[2026-11-02 22:25:28 TP0] Init Unified Radix Cache. Components: (<ComponentType.FULL: 0>,). Tree Core: RustUnifiedTreeCore\n[2026-11-02 22:25:28 TP1] Init Unified Radix Cache. Components: (<ComponentType.FULL: 0>,). Tree Core: RustUnifiedTreeCore\n[2026-11-02 22:25:28 TP0] Tree cache initialized: source=default impl=UnifiedRadixCache hybrid_swa=False hybrid_ssm=False hicache_attached=False\n[2026-11-02 22:25:28 TP1] Tree cache initialized: source=default impl=UnifiedRadixCache hybrid_swa=False hybrid_ssm=False hicache_attached=False\n[2026-11-02 22:25:29] Engine startup timings (s): load_weight=166.37, kv_cache_allocation=0.50, scheduler_e2e=262.48, cuda_graph={prefill=68.80, decode=2.17, target_verify=0.00, draft_prefill=0.00, draft_decode=0.00, draft_extend=0.00}, tokenizer_e2e=281.07\n[2026-11-02 22:25:29] INFO:     Started server process [4]\n[2026-11-02 22:25:29] INFO:     Waiting for application startup.\n[2026-11-02 22:25:29] Using default chat sampling params from model generation config: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}\n[2026-11-02 22:25:29] INFO:     Application startup complete.\n[2026-11-02 22:25:29] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)\n[2026-11-02 22:25:30] INFO:     127.0.0.1:61817 - \"GET /model_info HTTP/1.1\" 200 OK\n[2026-11-02 22:25:30] INFO:     127.0.0.1:38493 - \"GET /health HTTP/1.1\" 503 Service Unavailable\n[2026-11-02 22:25:32] INFO:     127.0.0.1:31087 - \"GET /health HTTP/1.1\" 503 Service Unavailable\n[2026-11-02 22:25:34] INFO:     127.0.0.1:42277 - \"GET /health HTTP/1.1\" 503 Service Unavailable\n[2026-11-02 22:25:36] INFO:     127.0.0.1:17837 - \"GET /health HTTP/1.1\" 503 Service Unavailable\n[2026-11-02 22:25:38 TP0] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 0.64\n[2026-11-02 22:25:38] INFO:     127.0.0.1:47597 - \"POST /generate HTTP/1.1\" 200 OK\n[2026-11-02 22:25:38] INFO:     127.0.0.1:64672 - \"POST /freeze_gc HTTP/1.1\" 200 OK\n[2026-11-02 22:25:38] The server is fired up and ready to roll!\n[2026-11-02 22:25:38 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 1.90\n[2026-11-02 22:25:39] INFO:     127.0.0.1:51387 - \"GET /health HTTP/1.1\" 200 OK\n[2026-11-02 22:25:42 TP0] Prefill batch, #new-seq: 1, #new-token: 169, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 52.12\n[2026-11-02 22:25:42] INFO:     127.0.0.1:45649 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:42 TP0] Prefill batch, #new-seq: 1, #new-token: 119, #cached-token: 43, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 140.66\n[2026-11-02 22:25:43] INFO:     127.0.0.1:63650 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:43 TP0] Prefill batch, #new-seq: 1, #new-token: 45, #cached-token: 40, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 47.83\n[2026-11-02 22:25:43] INFO:     127.0.0.1:25718 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:45 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 42, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 37.84\n[2026-11-02 22:25:45] INFO:     127.0.0.1:30525 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:46 TP0] Prefill batch, #new-seq: 1, #new-token: 50, #cached-token: 42, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 49.43\n[2026-11-02 22:25:46] INFO:     127.0.0.1:21545 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:47 TP0] Prefill batch, #new-seq: 1, #new-token: 112, #cached-token: 43, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 107.72\n[2026-11-02 22:25:47] INFO:     127.0.0.1:28415 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:48 TP0] Prefill batch, #new-seq: 1, #new-token: 232, #cached-token: 43, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 198.56\n[2026-11-02 22:25:48] INFO:     127.0.0.1:62953 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:49 TP0] Prefill batch, #new-seq: 1, #new-token: 57, #cached-token: 6, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 46.36\n[2026-11-02 22:25:49 TP0] Decode batch, #running-req: 1, #token: 73, token usage: 0.00, cuda graph: True, gen throughput (token/s): 1.91, #queue-req: 0\n[2026-11-02 22:25:50 TP0] Decode batch, #running-req: 1, #token: 113, token usage: 0.00, cuda graph: True, gen throughput (token/s): 49.27, #queue-req: 0\n[2026-11-02 22:25:51 TP0] Decode batch, #running-req: 1, #token: 153, token usage: 0.00, cuda graph: True, gen throughput (token/s): 49.17, #queue-req: 0\n[2026-11-02 22:25:52 TP0] Decode batch, #running-req: 1, #token: 193, token usage: 0.00, cuda graph: True, gen throughput (token/s): 49.07, #queue-req: 0\n[2026-11-02 22:25:53 TP0] Decode batch, #running-req: 1, #token: 233, token usage: 0.00, cuda graph: True, gen throughput (token/s): 49.09, #queue-req: 0\n[2026-11-02 22:25:53 TP0] Decode batch, #running-req: 1, #token: 273, token usage: 0.00, cuda graph: True, gen throughput (token/s): 49.07, #queue-req: 0\n[2026-11-02 22:25:54] INFO:     127.0.0.1:65216 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:55 TP0] Prefill batch, #new-seq: 1, #new-token: 113, #cached-token: 8, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 19.61\n[2026-11-02 22:25:55 TP0] Decode batch, #running-req: 1, #token: 127, token usage: 0.00, cuda graph: True, gen throughput (token/s): 24.85, #queue-req: 0\n[2026-11-02 22:25:55] INFO:     127.0.0.1:47525 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:56 TP0] Prefill batch, #new-seq: 1, #new-token: 98, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: True, input throughput (token/s): 82.54\n[2026-11-02 22:25:56] INFO:     127.0.0.1:44012 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\n[2026-11-02 22:25:57] SIGTERM received. signum=None frame=None. Draining requests and shutting down...\n[2026-11-02 22:25:58] Subprocess scheduler_1 (pid=33) crashed with exit code -15. Triggering SIGQUIT for cleanup...\n[2026-11-02 22:25:58] SIGQUIT received. signum=None, frame=None. It usually means one child failed.\n[2026-11-02 22:25:58] Sleeping 5 seconds before crash diagnostics to let GPU activity settle.\n[2026-11-02 22:26:03] No live scheduler processes found; skipping py-spy and CUDA coredump.\n[2026-11-02 22:26:03] kill_process_tree called: parent_pid=4, include_parent=True, pid=4\n"
+    }
+  ]
+}
