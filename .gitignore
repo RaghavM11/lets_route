@@ -19,6 +19,7 @@ __pycache__/
 
 # Generated experiment artifacts
 results/
+data/processed/
 
 # Local model checkpoints
 models/
