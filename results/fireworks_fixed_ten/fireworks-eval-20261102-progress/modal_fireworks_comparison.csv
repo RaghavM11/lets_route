@@ -1,0 +1,10 @@
+provider,model,results,full_score_count,mean_local_score,latency_s,latency_scope
+Modal/SGLang,Qwen/Qwen3.5-0.8B,10,2,0.20465116279069767,0.6159839639000027,worker-local HTTP; excludes internet round trip
+Modal/SGLang,Qwen/Qwen2.5-7B-Instruct,10,8,0.82,0.3524967845999953,worker-local HTTP; excludes internet round trip
+Modal/SGLang,Qwen/Qwen3.5-27B,10,7,0.7068965517241379,3.434365189600001,worker-local HTTP; excludes internet round trip
+Modal/SGLang,Qwen/Qwen2.5-72B-Instruct,10,8,0.82,0.8616700521999917,worker-local HTTP; excludes internet round trip
+Fireworks,auto,10,9,0.9199999999999999,2.1387560377999764,client API request including internet round trip
+Fireworks,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,10,7,0.7777777777777778,18.42135468019951,client API request including internet round trip
+Fireworks,accounts/fireworks/models/gpt-oss-120b,10,8,0.8,0.707379925299756,client API request including internet round trip
+Fireworks,accounts/fireworks/models/glm-5p3-flash,10,9,0.9199999999999999,1.490468264800802,client API request including internet round trip
+Fireworks,accounts/fireworks/models/qwen3p8-max,10,8,0.8071428571428572,1.974121650399684,client API request including internet round trip

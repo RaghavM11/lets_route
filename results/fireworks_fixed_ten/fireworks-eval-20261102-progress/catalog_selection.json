@@ -1,0 +1,55 @@
+{
+  "total_catalog_models": 319,
+  "selected_entries": [
+    {
+      "name": "accounts/fireworks/models/glm-5p3-flash",
+      "displayName": "GLM 5.3 Flash",
+      "huggingFaceUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "supportsServerless": true,
+      "state": "READY"
+    },
+    {
+      "name": "accounts/fireworks/models/gpt-oss-120b",
+      "displayName": "OpenAI gpt-oss-120b",
+      "huggingFaceUrl": "https://huggingface.co/openai/gpt-oss-120b",
+      "supportsServerless": true,
+      "state": "READY"
+    },
+    {
+      "name": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "displayName": "Nemotron Lightning 3.5 30B A3B",
+      "huggingFaceUrl": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "supportsServerless": true,
+      "state": "READY"
+    },
+    {
+      "name": "accounts/fireworks/models/qwen2p5-72b-instruct",
+      "displayName": "Qwen2.5 72B Instruct",
+      "huggingFaceUrl": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+      "supportsServerless": false,
+      "state": "READY"
+    },
+    {
+      "name": "accounts/fireworks/models/qwen2p5-7b-instruct",
+      "displayName": "Qwen2.5 7B Instruct",
+      "huggingFaceUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+      "supportsServerless": false,
+      "state": "READY"
+    },
+    {
+      "name": "accounts/fireworks/models/qwen3p5-27b",
+      "displayName": "Qwen3.5 27B",
+      "huggingFaceUrl": "https://huggingface.co/Qwen/Qwen3.5-27B",
+      "supportsServerless": false,
+      "state": "READY"
+    },
+    {
+      "name": "accounts/fireworks/models/qwen3p8-max",
+      "displayName": "Qwen 3.8 Max",
+      "huggingFaceUrl": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "supportsServerless": true,
+      "state": "READY"
+    }
+  ],
+  "qwen_0p8b_catalog_match": false
+}

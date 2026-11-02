@@ -123,6 +123,15 @@ same ten prompts. Read the English report at
 Its local scores, token usage, latency matrices, and raw completion responses
 are included alongside the report. Scores use the documented local evaluator.
 
+## Fireworks hosted-model and Nexus Auto evaluation
+
+See [`experiments/fireworks_eval/README.md`](experiments/fireworks_eval/README.md)
+for direct Fireworks API evaluation of four hosted models plus Nexus Auto on
+the same ten fixed prompts. The runner records the actual serving model on
+every Auto turn and reuses the local Modal scorer. Set `FIREWORKS_API_KEY` in
+the ignored `.env` file. Results are saved under `results/fireworks_fixed_ten/`
+and remain local unless explicitly selected for publication.
+
 ## Dataset — xRouteBench
 
 See [ulab-ai/xRouteBench](https://huggingface.co/datasets/ulab-ai/xRouteBench)

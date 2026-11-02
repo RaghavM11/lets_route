@@ -1,0 +1,4092 @@
+[
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-01",
+    "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+    "task_name": "mmlu",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+    "ground_truth": "A",
+    "response": "A",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 169,
+    "cached_input_tokens": 0,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.869892503000301,
+    "estimated_token_cost_usd": 2.685e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.869892503000301,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-ceb2ad5a",
+      "created": 1793661564,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "A",
+            "role": "assistant"
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 169,
+        "total_tokens": 172,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 2.6849999999999995e-05,
+        "cost_details": {
+          "uncached_input": 2.5349999999999996e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 1.5e-06
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-02",
+    "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+    "task_name": "mmlu_pro",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+    "ground_truth": "I",
+    "response": "I\n\nThe answer is (I).",
+    "score": 1.0,
+    "prediction": "I",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 162,
+    "cached_input_tokens": 0,
+    "output_tokens": 10,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.5608126409970282,
+    "estimated_token_cost_usd": 2.93e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.5608126409970282,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-eece3a44",
+      "created": 1793661565,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "I\n\nThe answer is (I).",
+            "role": "assistant"
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 162,
+        "total_tokens": 172,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 2.93e-05,
+        "cost_details": {
+          "uncached_input": 2.43e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 4.9999999999999996e-06
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-03",
+    "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+    "task_name": "arc_challenge",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+    "ground_truth": "B",
+    "response": "(B) paper",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 85,
+    "cached_input_tokens": 0,
+    "output_tokens": 11,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 2.7628816260003077,
+    "estimated_token_cost_usd": 1.825e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.7628816260003077,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-578a628010f4405db25efd1edb51f90c-chatcmpl-402726a",
+      "created": 1793661567,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "(B) paper",
+            "role": "assistant",
+            "reasoning_content": "Paper burns rather than melts."
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 85,
+        "total_tokens": 96,
+        "completion_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 1.825e-05,
+        "output_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "cost_details": {
+          "uncached_input": 1.275e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 5.5e-06
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-05",
+    "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+    "task_name": "commonsense_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+    "ground_truth": "A",
+    "response": "(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 92,
+    "cached_input_tokens": 0,
+    "output_tokens": 23,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.5976324869989185,
+    "estimated_token_cost_usd": 2.53e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.5976324869989185,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-4e96ea5f",
+      "created": 1793661697,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "(A)",
+            "role": "assistant",
+            "reasoning_content": "Weasel... \"pop goes the weasel\" — play a tune? Children's song."
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 92,
+        "total_tokens": 115,
+        "completion_tokens_details": {
+          "reasoning_tokens": 19
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 2.53e-05,
+        "cost_details": {
+          "uncached_input": 1.3799999999999998e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 1.15e-05
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-06",
+    "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+    "task_name": "boolq",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+    "ground_truth": "A",
+    "response": "A",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 153,
+    "cached_input_tokens": 0,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.3474531700012449,
+    "estimated_token_cost_usd": 2.4449999999999998e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.3474531700012449,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-21c0cb88",
+      "created": 1793661699,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "A",
+            "role": "assistant"
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 153,
+        "total_tokens": 156,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 2.4449999999999998e-05,
+        "cost_details": {
+          "uncached_input": 2.295e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 1.5e-06
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-07",
+    "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+    "task_name": "hellaswag",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+    "ground_truth": "B",
+    "response": "B",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 274,
+    "cached_input_tokens": 0,
+    "output_tokens": 5,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.069497679000051,
+    "estimated_token_cost_usd": 4.36e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.069497679000051,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-fd58ab9e",
+      "created": 1793661700,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "B",
+            "role": "assistant",
+            "reasoning_content": "B."
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 274,
+        "total_tokens": 279,
+        "completion_tokens_details": {
+          "reasoning_tokens": 2
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 4.36e-05,
+        "cost_details": {
+          "uncached_input": 4.11e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 2.4999999999999998e-06
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-08",
+    "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+    "task_name": "gsm8k",
+    "metric": "GSM8K",
+    "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+    "ground_truth": "There are 8 + 2 = <<8+2=10>>10 green beans.\nThere are 10 -1 = <<10-1=9>>9 orange beans.\nThere are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.\n#### 27",
+    "response": "Green beans: 8 + 2 = 10\nOrange beans: 10 − 1 = 9\n\nTotal: 8 + 10 + 9 = **27 jellybeans**",
+    "score": 1.0,
+    "prediction": "27",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 63,
+    "cached_input_tokens": 0,
+    "output_tokens": 42,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 5.534150240000599,
+    "estimated_token_cost_usd": 3.0449999999999998e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 5.534150240000599,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question step by step."
+        },
+        {
+          "role": "user",
+          "content": "Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-3c6abc8fa53c49b692dcb4ff0cbfa354-chatcmpl-9f14542",
+      "created": 1793661702,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "Green beans: 8 + 2 = 10\nOrange beans: 10 − 1 = 9\n\nTotal: 8 + 10 + 9 = **27 jellybeans**",
+            "role": "assistant"
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 63,
+        "total_tokens": 105,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 3.0449999999999998e-05,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_details": {
+          "uncached_input": 9.45e-06,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 2.1e-05
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-09",
+    "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+    "task_name": "math",
+    "metric": "MATH",
+    "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+    "ground_truth": "Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is\n\\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\\]By AM-GM,\n\\[(a + b)(c + d)(e + f) \\le \\left[ \\frac{(a + b) + (c + d) + (e + f)}{3} \\right]^3 = \\left( \\frac{27}{3} \\right)^3 = 729.\\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\\boxed{729}.$",
+    "response": "\\boxed{729}",
+    "score": 1.0,
+    "prediction": "729",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 121,
+    "cached_input_tokens": 0,
+    "output_tokens": 121,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 2.129755792000651,
+    "estimated_token_cost_usd": 7.865e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.129755792000651,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}."
+        },
+        {
+          "role": "user",
+          "content": "Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-2d2e7b9a",
+      "created": 1793661707,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "\\boxed{729}",
+            "role": "assistant",
+            "reasoning_content": "Classic answer: 970? Let's compute. Assign pairs of opposite faces: a,a'; b,b'; c,c'. Sum of vertex products = (a+a')(b+b')(c+c'). Maximize with pairs summing to 9: (2,7),(3,6),(4,5): 9·9·9=729? Wait sum of all numbers =27, each pair sums 9, product 729. But known answer is 970? No, that's different problem. Answer 729."
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 121,
+        "prompt_tokens": 121,
+        "total_tokens": 242,
+        "completion_tokens_details": {
+          "reasoning_tokens": 113
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 7.865e-05,
+        "cost_details": {
+          "uncached_input": 1.8149999999999997e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 6.05e-05
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-10",
+    "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+    "task_name": "squad",
+    "metric": "f1_score",
+    "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+    "ground_truth": "ringers",
+    "response": "Producers have been accused of planting \"ringers\" within the show.",
+    "score": 0.2,
+    "prediction": "Producers have been accused of planting \"ringers\" within the show.",
+    "scorer": "local_normalized_token_f1",
+    "input_tokens": 103,
+    "cached_input_tokens": 0,
+    "output_tokens": 17,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.2278308109998761,
+    "estimated_token_cost_usd": 2.395e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.2278308109998761,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the question using the provided context."
+        },
+        {
+          "role": "user",
+          "content": "Question: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-cc082fde",
+      "created": 1793661709,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "Producers have been accused of planting \"ringers\" within the show.",
+            "role": "assistant"
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 103,
+        "total_tokens": 120,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "cost": 2.395e-05,
+        "cost_details": {
+          "uncached_input": 1.545e-05,
+          "cache_read": 0.0,
+          "cache_write": 0.0,
+          "output": 8.5e-06
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-01",
+    "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+    "task_name": "mmlu",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+    "ground_truth": "A",
+    "response": "Final answer is:",
+    "score": 0.0,
+    "prediction": null,
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 174,
+    "cached_input_tokens": 0,
+    "output_tokens": 8,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.5968345860019326,
+    "estimated_token_cost_usd": 1.0300000000000001e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.5968345860019326,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-7e88caab973640c7a1aa11b0b9591dcb",
+      "object": "chat.completion",
+      "created": 1793661710,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Final answer is:",
+            "reasoning_content": "A",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 174,
+        "total_tokens": 182,
+        "completion_tokens": 8,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 1
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-02",
+    "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+    "task_name": "mmlu_pro",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+    "ground_truth": "I",
+    "response": "I",
+    "score": 1.0,
+    "prediction": "I",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 165,
+    "cached_input_tokens": 0,
+    "output_tokens": 2,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.42305497399866,
+    "estimated_token_cost_usd": 8.65e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.42305497399866,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-1c1f9d7bfbb74b919789435ee784e351",
+      "object": "chat.completion",
+      "created": 1793661710,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "I",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 165,
+        "total_tokens": 167,
+        "completion_tokens": 2,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-03",
+    "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+    "task_name": "arc_challenge",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+    "ground_truth": "B",
+    "response": "(B)",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 89,
+    "cached_input_tokens": 0,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.23814440199930687,
+    "estimated_token_cost_usd": 5.050000000000001e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.23814440199930687,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-36dc05a00a08419a999e11b68a5a54b1",
+      "object": "chat.completion",
+      "created": 1793661711,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(B)",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 89,
+        "total_tokens": 92,
+        "completion_tokens": 3,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-04",
+    "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+    "task_name": "openbook_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+    "ground_truth": "A",
+    "response": "(A) river stones smashing",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 96,
+    "cached_input_tokens": 0,
+    "output_tokens": 7,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.26922547399954055,
+    "estimated_token_cost_usd": 6.200000000000001e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.26922547399954055,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-de9e4a8794cd44c7b8e9bffcf3bdaec9",
+      "object": "chat.completion",
+      "created": 1793661711,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(A) river stones smashing",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 96,
+        "total_tokens": 103,
+        "completion_tokens": 7,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-05",
+    "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+    "task_name": "commonsense_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+    "ground_truth": "A",
+    "response": "(A) children's song",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 98,
+    "cached_input_tokens": 0,
+    "output_tokens": 6,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.3228017700021155,
+    "estimated_token_cost_usd": 6.100000000000001e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.3228017700021155,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-ea9241f9fbd54aa28764c8790cdef216",
+      "object": "chat.completion",
+      "created": 1793661712,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(A) children's song",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 98,
+        "total_tokens": 104,
+        "completion_tokens": 6,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-01",
+    "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+    "task_name": "mmlu",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+    "ground_truth": "A",
+    "response": "(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 226,
+    "cached_input_tokens": 0,
+    "output_tokens": 74,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.48033068499717047,
+    "estimated_token_cost_usd": 7.829999999999999e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.48033068499717047,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-7b695cde26ba46a8b7e26d970338a945",
+      "object": "chat.completion",
+      "created": 1793662027,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(A)",
+            "reasoning_content": "We need answer based on text: Mike has two baseballs, four soccer balls, five basketballs => that's a sports collection, described as big. So does Mike have a great sports collection? The text says \"He is Mike. And he has a big sports collection.\" So answer Yes. Option A."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 226,
+        "total_tokens": 300,
+        "completion_tokens": 74,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 62
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 62
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-02",
+    "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+    "task_name": "mmlu_pro",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+    "ground_truth": "I",
+    "response": "(I)",
+    "score": 1.0,
+    "prediction": "I",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 214,
+    "cached_input_tokens": 0,
+    "output_tokens": 33,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.5156648369993491,
+    "estimated_token_cost_usd": 5.190000000000001e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.5156648369993491,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-f4da4df354d743eabea05339f9dc88d9",
+      "object": "chat.completion",
+      "created": 1793662028,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(I)",
+            "reasoning_content": "We need correct term: modifies data, may ask for ransom. That's Ransom Trojan. Option I."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 214,
+        "total_tokens": 247,
+        "completion_tokens": 33,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 21
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-03",
+    "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+    "task_name": "arc_challenge",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+    "ground_truth": "B",
+    "response": "(B)",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 145,
+    "cached_input_tokens": 0,
+    "output_tokens": 51,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.521636708999722,
+    "estimated_token_cost_usd": 5.234999999999999e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.521636708999722,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-eb44c8edd2eb4d09b217153f818eb2c2",
+      "object": "chat.completion",
+      "created": 1793662028,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(B)",
+            "reasoning_content": "We need least likely to melt: paper burns before melting, but does it change to liquid? Paper will char, not melt. So least likely to change to liquid is paper. Answer B."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 145,
+        "total_tokens": 196,
+        "completion_tokens": 51,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-04",
+    "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+    "task_name": "openbook_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+    "ground_truth": "A",
+    "response": "The situation that involves the greatest amount of surface friction is **hands clapping**.  \n\n**Answer: (B)**",
+    "score": 0.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 151,
+    "cached_input_tokens": 0,
+    "output_tokens": 107,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.6263622869992105,
+    "estimated_token_cost_usd": 8.685e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.6263622869992105,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-5bd3aaa7e3504fdf89bd0ec5c32c1249",
+      "object": "chat.completion",
+      "created": 1793662029,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The situation that involves the greatest amount of surface friction is **hands clapping**.  \n\n**Answer: (B)**",
+            "reasoning_content": "We need pick scenario with most friction: friction occurs between surfaces sliding. River stones smashing (collision) not friction. Hands clapping involves skin contact sliding? Mirrors pressing together have smooth surfaces low friction. Stone falling: just gravity, minimal friction. Most friction likely hands clapping because skin rough? Actually stone smashing maybe internal friction but not surface. I'd choose B."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 151,
+        "total_tokens": 258,
+        "completion_tokens": 107,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 73
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 73
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-05",
+    "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+    "task_name": "commonsense_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+    "ground_truth": "A",
+    "response": "(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 151,
+    "cached_input_tokens": 0,
+    "output_tokens": 48,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.416077158999542,
+    "estimated_token_cost_usd": 5.145e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.416077158999542,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-736e192228364dc3afce188f579924cf",
+      "object": "chat.completion",
+      "created": 1793662029,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(A)",
+            "reasoning_content": "We need guess? Probably \"The family TV personality was dressed as a weasel, and he began to play a ...\". Likely \"children's song\". So answer A."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 151,
+        "total_tokens": 199,
+        "completion_tokens": 48,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 36
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 36
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-06",
+    "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+    "task_name": "boolq",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+    "ground_truth": "A",
+    "response": "(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 211,
+    "cached_input_tokens": 0,
+    "output_tokens": 38,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.49553076900338056,
+    "estimated_token_cost_usd": 5.445e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.49553076900338056,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-c85eeec5ff9841aeb73f8aac9a1201e0",
+      "object": "chat.completion",
+      "created": 1793662030,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(A)",
+            "reasoning_content": "We need answer: George Carlin is in the film, as passage says stars George Carlin. So Yes. Option A."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 211,
+        "total_tokens": 249,
+        "completion_tokens": 38,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 26
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 26
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-07",
+    "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+    "task_name": "hellaswag",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+    "ground_truth": "B",
+    "response": "(B)",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 324,
+    "cached_input_tokens": 0,
+    "output_tokens": 104,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.6442233400011901,
+    "estimated_token_cost_usd": 0.000111,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.6442233400011901,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-825202ba0f2c4606a98f8fc8e30e9e50",
+      "object": "chat.completion",
+      "created": 1793662030,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(B)",
+            "reasoning_content": "We need pick correct option that continues instructions logically. The question: How to make a vodka gimlet. Steps: Fill shaker with ice. Options: which is appropriate? Likely B about fresh ice and chilling shaker. A says keep lid off while dumping mixture, ice will melt, not good. C says if no shaker, fill tall glass, then add vodka to shaker (contradiction). D nonsense. So B is best. Return (B)."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 324,
+        "total_tokens": 428,
+        "completion_tokens": 104,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 92
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 92
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-08",
+    "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+    "task_name": "gsm8k",
+    "metric": "GSM8K",
+    "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+    "ground_truth": "There are 8 + 2 = <<8+2=10>>10 green beans.\nThere are 10 -1 = <<10-1=9>>9 orange beans.\nThere are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.\n#### 27",
+    "response": "**Step 1: Identify the given numbers**\n\n- Black jellybeans = **8**  \n- Green jellybeans = “2 more green beans” than the black beans.  \n- Orange jellybeans = “1 less orange bean than green beans”.\n\n**Step 2: Find the number of green beans**\n\nSince there are 2 more green beans than black beans:\n\n\\[\n\\text{Green beans} = 8 \\;(\\text{black}) + 2 = 10\n\\]\n\n**Step 3: Find the number of orange beans**\n\nThe orange beans are one fewer than the green beans:\n\n\\[\n\\text{Orange beans} = 10 \\;(\\text{green}) - 1 = 9\n\\]\n\n**Step 4: Add all the beans together**\n\n\\[\n\\text{Total beans} = \\text{black} + \\text{green} + \\text{orange}\n= 8 + 10 + 9 = 27\n\\]\n\n---\n\n\\[\n\\boxed{27}\n\\]",
+    "score": 1.0,
+    "prediction": "27",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 122,
+    "cached_input_tokens": 0,
+    "output_tokens": 297,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.9987120109981333,
+    "estimated_token_cost_usd": 0.0001965,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.9987120109981333,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question step by step."
+        },
+        {
+          "role": "user",
+          "content": "Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-c1d9b162e99e4ef0943ca2941afadce0",
+      "object": "chat.completion",
+      "created": 1793662031,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "**Step 1: Identify the given numbers**\n\n- Black jellybeans = **8**  \n- Green jellybeans = “2 more green beans” than the black beans.  \n- Orange jellybeans = “1 less orange bean than green beans”.\n\n**Step 2: Find the number of green beans**\n\nSince there are 2 more green beans than black beans:\n\n\\[\n\\text{Green beans} = 8 \\;(\\text{black}) + 2 = 10\n\\]\n\n**Step 3: Find the number of orange beans**\n\nThe orange beans are one fewer than the green beans:\n\n\\[\n\\text{Orange beans} = 10 \\;(\\text{green}) - 1 = 9\n\\]\n\n**Step 4: Add all the beans together**\n\n\\[\n\\text{Total beans} = \\text{black} + \\text{green} + \\text{orange}\n= 8 + 10 + 9 = 27\n\\]\n\n---\n\n\\[\n\\boxed{27}\n\\]",
+            "reasoning_content": "We need total. Black=8. Green = 2 more than black? Actually \"2 more green beans\" ambiguous: \"2 more green beans\" than what? Probably 2 more green beans than black beans. So green = 8+2 =10. Orange = 1 less than green =9. Total =8+10+9=27."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 122,
+        "total_tokens": 419,
+        "completion_tokens": 297,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 74
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 74
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-09",
+    "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+    "task_name": "math",
+    "metric": "MATH",
+    "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+    "ground_truth": "Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is\n\\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\\]By AM-GM,\n\\[(a + b)(c + d)(e + f) \\le \\left[ \\frac{(a + b) + (c + d) + (e + f)}{3} \\right]^3 = \\left( \\frac{27}{3} \\right)^3 = 729.\\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\\boxed{729}.$",
+    "response": "\\boxed{729}",
+    "score": 1.0,
+    "prediction": "729",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 180,
+    "cached_input_tokens": 0,
+    "output_tokens": 358,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.719462344000931,
+    "estimated_token_cost_usd": 0.0002418,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.719462344000931,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}."
+        },
+        {
+          "role": "user",
+          "content": "Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-fad819336ce743ba966e62c4c4653785",
+      "object": "chat.completion",
+      "created": 1793662032,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\\boxed{729}",
+            "reasoning_content": "We need maximize sum over vertices of product of three incident face numbers. For a cube, each face appears in 4 vertices. Sum = sum over vertices product of three faces meeting. Known identity: sum = (a+b)(c+d)(e+f)?? Actually labeling opposite faces pairs. Let opposite faces have numbers x1,x1', x2,x2', x3,x3'. Then each vertex picks one from each opposite pair. So sum = (x1 + x1')(x2 + x2')(x3 + x3'). Because each vertex corresponds to choice of one from each pair, product sum expands to that product. So we need assign numbers to opposite pairs to maximize product of sums. We have numbers 2-7. Choose pairing to maximize (a+b)(c+d)(e+f) where each pair are opposite faces. We can choose any partition into 3 pairs. Need maximize product of pair sums. Compute all pairings? Try to make sums as balanced as possible? Since product fixed total sum of numbers = 2+3+4+5+6+7=27. Pair sums sum to 27 as well. For given three sums S1,S2,S3 with S1+S2+S3=27, maximize product when they are equal: 9 each, product 729. But we may not achieve 9 each with integer pairs from set. Find pairs sums close to 9. Possible pairs: (2,7)=9, (3,6)=9, (4,5)=9 gives perfect. So product =9*9*9=729. That's maximum possible. So answer 729."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 180,
+        "total_tokens": 538,
+        "completion_tokens": 358,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 343
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 343
+        }
+      }
+    }
+  },
+  {
+    "arm": "gptoss120b",
+    "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+    "served_model": "accounts/fireworks/models/gpt-oss-120b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-10",
+    "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+    "task_name": "squad",
+    "metric": "f1_score",
+    "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+    "ground_truth": "ringers",
+    "response": "They’ve been accused of slipping “ringers” – contestants who were secretly planted by the producers – into the show.",
+    "score": 0.0,
+    "prediction": "They’ve been accused of slipping “ringers” – contestants who were secretly planted by the producers – into the show.",
+    "scorer": "local_normalized_token_f1",
+    "input_tokens": 163,
+    "cached_input_tokens": 67,
+    "output_tokens": 68,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.655799111998931,
+    "estimated_token_cost_usd": 5.6205e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.655799111998931,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the question using the provided context."
+        },
+        {
+          "role": "user",
+          "content": "Question: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-ab03ce89307a4f83b4618550e57b63c4",
+      "object": "chat.completion",
+      "created": 1793662034,
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "They’ve been accused of slipping “ringers” – contestants who were secretly planted by the producers – into the show.",
+            "reasoning_content": "We need answer: what have producers been accused of planting? Likely \"ringers\". So they planted \"ringers\" within the show. Answer: ringers."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 163,
+        "total_tokens": 231,
+        "completion_tokens": 68,
+        "prompt_tokens_details": {
+          "cached_tokens": 67
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 34
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 34
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-01",
+    "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+    "task_name": "mmlu",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+    "ground_truth": "A",
+    "response": "A",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 169,
+    "cached_input_tokens": 168,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.6520678650012997,
+    "estimated_token_cost_usd": 6.69e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.28242169599980116,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.3696461690014985,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-9f3babcd",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "A",
+            "role": "assistant"
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662034,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 169,
+        "completion_tokens": 3,
+        "total_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 168
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-02",
+    "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+    "task_name": "mmlu_pro",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+    "ground_truth": "I",
+    "response": "I\n\nThe answer is (I).",
+    "score": 1.0,
+    "prediction": "I",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 162,
+    "cached_input_tokens": 128,
+    "output_tokens": 10,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.0542890670003544,
+    "estimated_token_cost_usd": 1.3939999999999999e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.22878328899969347,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.8255057780006609,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-01da9bf1",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "I\n\nThe answer is (I).",
+            "role": "assistant"
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662035,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 162,
+        "completion_tokens": 10,
+        "total_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-03",
+    "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+    "task_name": "arc_challenge",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+    "ground_truth": "B",
+    "response": "(B) paper\n\nPaper does not melt when heated; instead, it burns/decomposes before it could ever become a liquid. Butter, ice, and candle wax all melt into liquids when heat is applied.",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 85,
+    "cached_input_tokens": 0,
+    "output_tokens": 51,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 3.6936596960040333,
+    "estimated_token_cost_usd": 3.825e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.13919853700281237,
+        "error": "Fireworks HTTP 400: {\"error\": {\"object\": \"error\", \"type\": \"invalid_request_error\", \"code\": \"invalid_request_error\", \"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\"}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 3.554461159001221,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-c008c343534243f8aa6d7699057f587e",
+      "object": "chat.completion",
+      "created": 1793662037,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(B) paper\n\nPaper does not melt when heated; instead, it burns/decomposes before it could ever become a liquid. Butter, ice, and candle wax all melt into liquids when heat is applied.",
+            "reasoning_content": "Paper burns, doesn't melt.",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 85,
+        "total_tokens": 136,
+        "completion_tokens": 51,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 7
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 7
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-04",
+    "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+    "task_name": "openbook_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+    "ground_truth": "A",
+    "response": "(A) river stones smashing",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 91,
+    "cached_input_tokens": 0,
+    "output_tokens": 30,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.9775689860034618,
+    "estimated_token_cost_usd": 2.865e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.15336609500081977,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.824202891002642,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-0ba06077",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "(A) river stones smashing",
+            "role": "assistant",
+            "reasoning_content": "Rough surfaces: stones smashing? Hands clapping vs river stones. Most friction: river stones smashing (rough)."
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662040,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 91,
+        "completion_tokens": 30,
+        "total_tokens": 121,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 23,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-05",
+    "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+    "task_name": "commonsense_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+    "ground_truth": "A",
+    "response": "(A) children's song",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 92,
+    "cached_input_tokens": 0,
+    "output_tokens": 26,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.8984504230029415,
+    "estimated_token_cost_usd": 2.6799999999999998e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.19924978700146312,
+        "error": "Fireworks HTTP 400: {\"error\": {\"object\": \"error\", \"type\": \"invalid_request_error\", \"code\": \"invalid_request_error\", \"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\"}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.6992006360014784,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-24349e714e554ba1b02266633e79f48b",
+      "object": "chat.completion",
+      "created": 1793662041,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(A) children's song",
+            "reasoning_content": "Weasel... \"pop goes the weasel\" — play a tune? Children's song.",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 92,
+        "total_tokens": 118,
+        "completion_tokens": 26,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 19
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 19
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-06",
+    "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+    "task_name": "boolq",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+    "ground_truth": "A",
+    "response": "A",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 153,
+    "cached_input_tokens": 152,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 2.34927915300068,
+    "estimated_token_cost_usd": 6.21e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 1.7224937200007844,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.6267854329998954,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-65aa32d0",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "A",
+            "role": "assistant"
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662043,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 3,
+        "total_tokens": 156,
+        "prompt_tokens_details": {
+          "cached_tokens": 152
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-07",
+    "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+    "task_name": "hellaswag",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+    "ground_truth": "B",
+    "response": "B",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 274,
+    "cached_input_tokens": 0,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.4798160689970246,
+    "estimated_token_cost_usd": 4.26e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.2573018969997065,
+        "error": "Fireworks HTTP 400: {\"error\": {\"object\": \"error\", \"type\": \"invalid_request_error\", \"code\": \"invalid_request_error\", \"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\"}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 1.222514171997318,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-0b55f67df5f84f29bf2242681494c7fc",
+      "object": "chat.completion",
+      "created": 1793662045,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "B",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 274,
+        "total_tokens": 277,
+        "completion_tokens": 3,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-08",
+    "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+    "task_name": "gsm8k",
+    "metric": "GSM8K",
+    "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+    "ground_truth": "There are 8 + 2 = <<8+2=10>>10 green beans.\nThere are 10 -1 = <<10-1=9>>9 orange beans.\nThere are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.\n#### 27",
+    "response": "Green beans: 8 + 2 = 10\nOrange beans: 10 − 1 = 9\nTotal: 8 + 10 + 9 = **27 jellybeans**",
+    "score": 1.0,
+    "prediction": "27",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 63,
+    "cached_input_tokens": 0,
+    "output_tokens": 42,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.0263856499987014,
+    "estimated_token_cost_usd": 3.0449999999999998e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.40502315200137673,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.6213624979973247,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question step by step."
+        },
+        {
+          "role": "user",
+          "content": "Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-1543cf02",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "Green beans: 8 + 2 = 10\nOrange beans: 10 − 1 = 9\nTotal: 8 + 10 + 9 = **27 jellybeans**",
+            "role": "assistant"
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662046,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 63,
+        "completion_tokens": 42,
+        "total_tokens": 105,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-09",
+    "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+    "task_name": "math",
+    "metric": "MATH",
+    "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+    "ground_truth": "Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is\n\\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\\]By AM-GM,\n\\[(a + b)(c + d)(e + f) \\le \\left[ \\frac{(a + b) + (c + d) + (e + f)}{3} \\right]^3 = \\left( \\frac{27}{3} \\right)^3 = 729.\\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\\boxed{729}.$",
+    "response": "\\boxed{729}",
+    "score": 1.0,
+    "prediction": "729",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 121,
+    "cached_input_tokens": 120,
+    "output_tokens": 130,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 1.8457971550014918,
+    "estimated_token_cost_usd": 6.875e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.2876453410026443,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 1.5581518139988475,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}."
+        },
+        {
+          "role": "user",
+          "content": "Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-12c34ffe",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "\\boxed{729}",
+            "role": "assistant",
+            "reasoning_content": "Known answer: 970? Let's compute. Assign pairs of opposite faces: a,a'; b,b'; c,c'. Sum of vertex products = (a+a')(b+b')(c+c'). Maximize with numbers 2..7, pairs summing to 9: (2,7),(3,6),(4,5) → 9^3=729. But could other pairings give more? Product maximized when sums equal; sums of pairs: total 27, three sums, product maximized at 9,9,9 achievable. Answer 729."
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662047,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 121,
+        "completion_tokens": 130,
+        "total_tokens": 251,
+        "prompt_tokens_details": {
+          "cached_tokens": 120
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 122,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "glmflash",
+    "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+    "served_model": "accounts/fireworks/models/glm-5p3-flash",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-10",
+    "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+    "task_name": "squad",
+    "metric": "f1_score",
+    "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+    "ground_truth": "ringers",
+    "response": "Producers have been accused of planting \"ringers\" within the show.",
+    "score": 0.2,
+    "prediction": "Producers have been accused of planting \"ringers\" within the show.",
+    "scorer": "local_normalized_token_f1",
+    "input_tokens": 103,
+    "cached_input_tokens": 64,
+    "output_tokens": 17,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 0.9273685839980317,
+    "estimated_token_cost_usd": 1.627e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 400,
+        "latency_s": 0.31103721399995266,
+        "error": "Fireworks HTTP 400: {\"error\": {\"message\": \"GLM-5.3 is a thinking-only model; disabling thinking (reasoning_effort='none') is not supported.\", \"type\": \"invalid_request_error\", \"code\": 400}}",
+        "reasoning_effort": "none"
+      },
+      {
+        "status": 200,
+        "latency_s": 0.616331369998079,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the question using the provided context."
+        },
+        {
+          "role": "user",
+          "content": "Question: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-b99cd5e9",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "Producers have been accused of planting \"ringers\" within the show.",
+            "role": "assistant"
+          },
+          "finish_reason": "stop",
+          "logprobs": null,
+          "raw_output": null
+        }
+      ],
+      "created": 1793662049,
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 17,
+        "total_tokens": 120,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-01",
+    "query_uid": "a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165",
+    "task_name": "mmlu",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't.",
+    "ground_truth": "A",
+    "response": "Looking at the passage, I need to determine if Mike has a great sports collection.\n\nThe passage states: \"He is Mike. And he has a big sports collection.\"\n\nIt also mentions: \"My brother has two baseballs, four soccer balls and five basketballs under his bed.\"\n\nThe text explicitly says Mike has a \"big sports collection,\" which aligns with having a \"great sports collection.\"\n\nThe answer is A. Yes, he does.\n\n(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 179,
+    "cached_input_tokens": 0,
+    "output_tokens": 98,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 2.021153363999474,
+    "estimated_token_cost_usd": 0.000946,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.021153363999474,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nMy name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?\n\n## Options:\nA. Yes, he does.\nB. No, he doesn't.\nC. We don't know.\nD. No, I don't."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-a272ce4f74904725addc8679b0baab77",
+      "object": "chat.completion",
+      "created": 1793662050,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Looking at the passage, I need to determine if Mike has a great sports collection.\n\nThe passage states: \"He is Mike. And he has a big sports collection.\"\n\nIt also mentions: \"My brother has two baseballs, four soccer balls and five basketballs under his bed.\"\n\nThe text explicitly says Mike has a \"big sports collection,\" which aligns with having a \"great sports collection.\"\n\nThe answer is A. Yes, he does.\n\n(A)",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 179,
+        "total_tokens": 277,
+        "completion_tokens": 98,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-02",
+    "query_uid": "a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73",
+    "task_name": "mmlu_pro",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans",
+    "ground_truth": "I",
+    "response": "The question describes malware that can modify data on your system so that it doesn't run correctly, you can no longer access specific data, or it may ask for ransom to give you access.\n\nLet me analyze the options:\n\n- **Email Trojans**: Related to email-based attacks\n- **Backdoor Trojans**: Create backdoors for unauthorized access\n- **Rootkit Trojans**: Hide malicious activity at system level\n- **Banking Trojans**: Target banking information\n- **Trojan-Downloader**: Downloads other malware\n- **Spyware Trojans**: Spy on user activity\n- **Network Trojans**: Target network communications\n- **Worm Trojans**: Self-replicating malware\n- **Ransom Trojan**: Modifies/encrypts data and demands ransom for access\n- **IM – Trojans**: Target instant messaging\n\nThe description clearly matches **Ransom Trojan** (option I). The key indicators are:\n1. \"modify data on your system\"\n2. \"system doesn't run correctly\"\n3. \"you can no longer access specific data\"\n4. \"ask for ransom in order to give your access\"\n\nThis is the classic definition of ransomware/Ransom Trojan behavior.\n\nThe answer is **(I)**.",
+    "score": 1.0,
+    "prediction": "I",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 169,
+    "cached_input_tokens": 0,
+    "output_tokens": 266,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 1.9891368290009268,
+    "estimated_token_cost_usd": 0.001934,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.9891368290009268,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.\n\n## Options:\nA. Email Trojans\nB. Backdoor Trojans\nC. Rootkit Trojans\nD. Banking Trojans\nE. Trojan-Downloader\nF. Spyware Trojans\nG. Network Trojans\nH. Worm Trojans\nI. Ransom Trojan\nJ. IM – Trojans"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-09f75081350f40a1916dd140b8300924",
+      "object": "chat.completion",
+      "created": 1793662052,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The question describes malware that can modify data on your system so that it doesn't run correctly, you can no longer access specific data, or it may ask for ransom to give you access.\n\nLet me analyze the options:\n\n- **Email Trojans**: Related to email-based attacks\n- **Backdoor Trojans**: Create backdoors for unauthorized access\n- **Rootkit Trojans**: Hide malicious activity at system level\n- **Banking Trojans**: Target banking information\n- **Trojan-Downloader**: Downloads other malware\n- **Spyware Trojans**: Spy on user activity\n- **Network Trojans**: Target network communications\n- **Worm Trojans**: Self-replicating malware\n- **Ransom Trojan**: Modifies/encrypts data and demands ransom for access\n- **IM – Trojans**: Target instant messaging\n\nThe description clearly matches **Ransom Trojan** (option I). The key indicators are:\n1. \"modify data on your system\"\n2. \"system doesn't run correctly\"\n3. \"you can no longer access specific data\"\n4. \"ask for ransom in order to give your access\"\n\nThis is the classic definition of ransomware/Ransom Trojan behavior.\n\nThe answer is **(I)**.",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 169,
+        "total_tokens": 435,
+        "completion_tokens": 266,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-03",
+    "query_uid": "06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6",
+    "task_name": "arc_challenge",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax",
+    "ground_truth": "B",
+    "response": "Looking at this question, I need to determine which substance is least likely to melt (change from solid to liquid) when heat is applied.\n\nLet me analyze each option:\n\n(A) Butter - Melts at around 32-35°C (90-95°F). It easily transitions from solid to liquid when heated.\n\n(B) Paper - Paper does NOT melt when heated. Instead, it undergoes combustion (burns) at around 233°C (451°F). Paper is made of cellulose fibers, which decompose and burn rather than melting into a liquid state. It goes from solid directly to ash/gases through chemical decomposition.\n\n(C) Ice - Melts at 0°C (32°F). It very easily transitions from solid to liquid when heat is applied.\n\n(D) Candle wax - Melts at around 46-68°C depending on the type. It easily transitions from solid to liquid when heated.\n\nThe answer is clearly (B) paper, because paper does not undergo a phase change from solid to liquid. Instead, when sufficient heat is applied, it burns (undergoes combustion/chemical decomposition) rather than melting.\n\n**(B)**",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 90,
+    "cached_input_tokens": 0,
+    "output_tokens": 250,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 2.2574782079973374,
+    "estimated_token_cost_usd": 0.00168,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.2574782079973374,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?\n(A) butter\n(B) paper\n(C) ice\n(D) candle wax"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-7ec6539bc15c4f3a9b2d35272422c51e",
+      "object": "chat.completion",
+      "created": 1793662054,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Looking at this question, I need to determine which substance is least likely to melt (change from solid to liquid) when heat is applied.\n\nLet me analyze each option:\n\n(A) Butter - Melts at around 32-35°C (90-95°F). It easily transitions from solid to liquid when heated.\n\n(B) Paper - Paper does NOT melt when heated. Instead, it undergoes combustion (burns) at around 233°C (451°F). Paper is made of cellulose fibers, which decompose and burn rather than melting into a liquid state. It goes from solid directly to ash/gases through chemical decomposition.\n\n(C) Ice - Melts at 0°C (32°F). It very easily transitions from solid to liquid when heat is applied.\n\n(D) Candle wax - Melts at around 46-68°C depending on the type. It easily transitions from solid to liquid when heated.\n\nThe answer is clearly (B) paper, because paper does not undergo a phase change from solid to liquid. Instead, when sufficient heat is applied, it burns (undergoes combustion/chemical decomposition) rather than melting.\n\n**(B)**",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 90,
+        "total_tokens": 340,
+        "completion_tokens": 250,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-04",
+    "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+    "task_name": "openbook_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+    "ground_truth": "A",
+    "response": "The question asks about which scenario would have the most friction based on surface roughness.\n\nLet me analyze each option:\n\n(A) River stones smashing - River stones are smooth (worn down by water), so they would have less friction.\n\n(B) Hands clapping - Hands have skin with ridges, fingerprints, and texture, making them relatively rough surfaces. When clapping, the rough skin surfaces press against each other, creating significant friction.\n\n(C) Mirrors pressing together - Mirrors have very smooth, polished glass surfaces, so they would have very little friction.\n\n(D) Stone falling - A stone falling through air involves air resistance, not surface-to-surface friction in the same way. Also, this doesn't involve two rough surfaces pressing against each other.\n\nThe key principle stated is: \"more rough a surface being touched has = more friction.\"\n\nHands have rough, textured skin (with ridges and fingerprints), making them the roughest surfaces among the options. When hands clap together, these rough surfaces create the most friction.\n\nThe answer is (B).\n\n(B)",
+    "score": 0.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 95,
+    "cached_input_tokens": 0,
+    "output_tokens": 224,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 1.8712791389989434,
+    "estimated_token_cost_usd": 0.001534,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.8712791389989434,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-69d2b48d2cee486489ac0b7c606b026f",
+      "object": "chat.completion",
+      "created": 1793662056,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The question asks about which scenario would have the most friction based on surface roughness.\n\nLet me analyze each option:\n\n(A) River stones smashing - River stones are smooth (worn down by water), so they would have less friction.\n\n(B) Hands clapping - Hands have skin with ridges, fingerprints, and texture, making them relatively rough surfaces. When clapping, the rough skin surfaces press against each other, creating significant friction.\n\n(C) Mirrors pressing together - Mirrors have very smooth, polished glass surfaces, so they would have very little friction.\n\n(D) Stone falling - A stone falling through air involves air resistance, not surface-to-surface friction in the same way. Also, this doesn't involve two rough surfaces pressing against each other.\n\nThe key principle stated is: \"more rough a surface being touched has = more friction.\"\n\nHands have rough, textured skin (with ridges and fingerprints), making them the roughest surfaces among the options. When hands clap together, these rough surfaces create the most friction.\n\nThe answer is (B).\n\n(B)",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 95,
+        "total_tokens": 319,
+        "completion_tokens": 224,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-05",
+    "query_uid": "37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742",
+    "task_name": "commonsense_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot",
+    "ground_truth": "A",
+    "response": "Looking at this question, I need to determine what a family TV personality dressed as a weasel would begin to play.\n\nLet me analyze the options:\n- (A) children's song - This makes sense in context. A family TV personality (like someone on a kids' show) dressed as a weasel would likely play a children's song. This fits the family-friendly, entertainment context.\n- (B) washington d.c - This is a place, not something you \"play.\"\n- (C) chicken coop - This is a place/object, not something you \"play.\"\n- (D) dead - This doesn't make grammatical sense with \"play a dead.\"\n- (E) used car lot - This is a place, not something you \"play.\"\n\nThe only option that makes grammatical and contextual sense with \"play a ___\" is (A) children's song. A family TV personality dressed as a weasel playing a children's song fits perfectly with the family entertainment context.\n\n(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 97,
+    "cached_input_tokens": 0,
+    "output_tokens": 212,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 2.035594975001004,
+    "estimated_token_cost_usd": 0.001466,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.035594975001004,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: The family TV personality was dressed as a weasel, and he began to play a what?\n(A) children's song\n(B) washington d.c\n(C) chicken coop\n(D) dead\n(E) used car lot"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-d5b31ffd12464530b2fcb791fbfaa218",
+      "object": "chat.completion",
+      "created": 1793662058,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Looking at this question, I need to determine what a family TV personality dressed as a weasel would begin to play.\n\nLet me analyze the options:\n- (A) children's song - This makes sense in context. A family TV personality (like someone on a kids' show) dressed as a weasel would likely play a children's song. This fits the family-friendly, entertainment context.\n- (B) washington d.c - This is a place, not something you \"play.\"\n- (C) chicken coop - This is a place/object, not something you \"play.\"\n- (D) dead - This doesn't make grammatical sense with \"play a dead.\"\n- (E) used car lot - This is a place, not something you \"play.\"\n\nThe only option that makes grammatical and contextual sense with \"play a ___\" is (A) children's song. A family TV personality dressed as a weasel playing a children's song fits perfectly with the family entertainment context.\n\n(A)",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 97,
+        "total_tokens": 309,
+        "completion_tokens": 212,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-06",
+    "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+    "task_name": "boolq",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+    "ground_truth": "A",
+    "response": "The passage clearly states that \"Bill & Ted's Excellent Adventure\" \"stars Alex Winter, Keanu Reeves, and George Carlin.\" This confirms that George Carlin was indeed in the film.\n\n(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 161,
+    "cached_input_tokens": 0,
+    "output_tokens": 44,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.970127771000989,
+    "estimated_token_cost_usd": 0.000586,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.970127771000989,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-3d6dd9a14e17429aa6124a89d36421be",
+      "object": "chat.completion",
+      "created": 1793662060,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The passage clearly states that \"Bill & Ted's Excellent Adventure\" \"stars Alex Winter, Keanu Reeves, and George Carlin.\" This confirms that George Carlin was indeed in the film.\n\n(A)",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 161,
+        "total_tokens": 205,
+        "completion_tokens": 44,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-07",
+    "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+    "task_name": "hellaswag",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+    "ground_truth": "B",
+    "response": "Looking at this question, I need to find the option that logically follows the step about filling a cocktail shaker with ice for making a vodka gimlet.\n\nLet me analyze each option:\n\nA. \"Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\" - This doesn't make sense. You want cold ice for cocktails, not room temperature ice. This is incorrect advice.\n\nB. \"For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\" - This is logical and practical advice that follows naturally from filling a shaker with ice. Using fresh ice and chilling the shaker are legitimate cocktail-making tips.\n\nC. \"[substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\" - The second part \"Add the vodka to the shaker, then mix in the liquor\" is redundant since vodka IS the liquor. This doesn't make logical sense.\n\nD. \"[substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.\" - This is nonsensical. Ice doesn't come in shades of red, and champagne riesling has nothing to do with a vodka gimlet.\n\nThe correct answer is B, as it provides logical, practical advice that naturally follows the instruction about filling the cocktail shaker with ice.\n\n(B)",
+    "score": 1.0,
+    "prediction": "B",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 285,
+    "cached_input_tokens": 0,
+    "output_tokens": 363,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 2.387216457998875,
+    "estimated_token_cost_usd": 0.002748,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.387216457998875,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-2921db3970de40a6915349ee576c379a",
+      "object": "chat.completion",
+      "created": 1793662062,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Looking at this question, I need to find the option that logically follows the step about filling a cocktail shaker with ice for making a vodka gimlet.\n\nLet me analyze each option:\n\nA. \"Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\" - This doesn't make sense. You want cold ice for cocktails, not room temperature ice. This is incorrect advice.\n\nB. \"For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\" - This is logical and practical advice that follows naturally from filling a shaker with ice. Using fresh ice and chilling the shaker are legitimate cocktail-making tips.\n\nC. \"[substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\" - The second part \"Add the vodka to the shaker, then mix in the liquor\" is redundant since vodka IS the liquor. This doesn't make logical sense.\n\nD. \"[substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.\" - This is nonsensical. Ice doesn't come in shades of red, and champagne riesling has nothing to do with a vodka gimlet.\n\nThe correct answer is B, as it provides logical, practical advice that naturally follows the instruction about filling the cocktail shaker with ice.\n\n(B)",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 285,
+        "total_tokens": 648,
+        "completion_tokens": 363,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-08",
+    "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+    "task_name": "gsm8k",
+    "metric": "GSM8K",
+    "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+    "ground_truth": "There are 8 + 2 = <<8+2=10>>10 green beans.\nThere are 10 -1 = <<10-1=9>>9 orange beans.\nThere are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.\n#### 27",
+    "response": "Let me work through this step by step.\n\n**Black beans:** 8\n\n**Green beans:** 2 more than black beans = 8 + 2 = 10\n\n**Orange beans:** 1 less than green beans = 10 - 1 = 9\n\n**Total jellybeans:** 8 + 10 + 9 = **27**",
+    "score": 1.0,
+    "prediction": "27",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 67,
+    "cached_input_tokens": 0,
+    "output_tokens": 79,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.9830565580014081,
+    "estimated_token_cost_usd": 0.000608,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.9830565580014081,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question step by step."
+        },
+        {
+          "role": "user",
+          "content": "Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-b3d90759ae994a178837f712a2a20890",
+      "object": "chat.completion",
+      "created": 1793662064,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Let me work through this step by step.\n\n**Black beans:** 8\n\n**Green beans:** 2 more than black beans = 8 + 2 = 10\n\n**Orange beans:** 1 less than green beans = 10 - 1 = 9\n\n**Total jellybeans:** 8 + 10 + 9 = **27**",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 67,
+        "total_tokens": 146,
+        "completion_tokens": 79,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-09",
+    "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+    "task_name": "math",
+    "metric": "MATH",
+    "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+    "ground_truth": "Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is\n\\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\\]By AM-GM,\n\\[(a + b)(c + d)(e + f) \\le \\left[ \\frac{(a + b) + (c + d) + (e + f)}{3} \\right]^3 = \\left( \\frac{27}{3} \\right)^3 = 729.\\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\\boxed{729}.$",
+    "response": "I need to find the assignment of numbers 2, 3, 4, 5, 6, 7 to the six faces of a cube that maximizes the sum of the eight vertex products.\n\n**Setting up the problem:**\n\nA cube has 3 pairs of opposite faces. Let me label the pairs as (a, a'), (b, b'), (c, c'). Each vertex is formed by choosing one face from each pair, so the eight vertex products are all combinations of choosing one from each pair.\n\nThe sum of all eight vertex products is:\n$(a + a')(b + b')(c + c')$\n\nThis is because each vertex product picks one element from each pair, and summing over all 8 combinations gives the product of the three sums.\n\n**So I need to maximize $(a + a')(b + b')(c + c')$ where {a, a', b, b', c, c'} = {2, 3, 4, 5, 6, 7}.**\n\nThe total sum is 2 + 3 + 4 + 5 + 6 + 7 = 27. I need to partition these into three pairs, and maximize the product of the three pair-sums.\n\nLet the three pair-sums be $s_1, s_2, s_3$ where $s_1 + s_2 + s_3 = 27$.\n\nBy AM-GM, the product $s_1 \\cdot s_2 \\cdot s_3$ is maximized when the sums are as equal as possible (i.e., each close to 9).\n\n**Possible pairings and their sums:**\n\nLet me find pairings where the sums are as balanced as possible:\n\n- (2,7), (3,6), (4,5): sums are 9, 9, 9 → product = 729\n- (2,6), (3,5), (4,7): sums are 8, 8, 11 → product = 704\n- (2,5), (3,4), (6,7): sums are 7, 7, 13 → product = 637\n- (2,4), (3,7), (5,6): sums are 6, 10, 11 → product = 660\n- (2,3), (4,5), (6,7): sums are 5, 9, 13 → product = 585\n- (2,7), (3,5), (4,6): sums are 9, 8, 10 → product = 720\n- (2,6), (3,7), (4,5): sums are 8, 10, 9 → product = 720\n- (2,5), (3,6), (4,7): sums are 7, 9, 11 → product = 693\n- (2,4), (3,6), (5,7): sums are 6, 9, 12 → product = 648\n- (2,3), (4,6), (5,7): sums are 5, 10, 12 → product = 600\n- (2,3), (4,7), (5,6): sums are 5, 11, 11 → product = 605\n- (2,4), (3,5), (6,7): sums are 6, 8, 13 → product = 624\n- (2,5), (3,7), (4,6): sums are 7, 10, 10 → product = 700\n- (2,6), (3,4), (5,7): sums are 8, 7, 12 → product = 672\n- (2,7), (3,4), (5,6): sums are 9, 7, 11 → product = 693\n\nThe maximum is achieved with pairing (2,7), (3,6), (4,5), giving sums 9, 9, 9 and product $9 \\times 9 \\times 9 = 729$.\n\n$$\\boxed{729}$$",
+    "score": 1.0,
+    "prediction": "729",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 125,
+    "cached_input_tokens": 0,
+    "output_tokens": 962,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 4.500201931998163,
+    "estimated_token_cost_usd": 0.006022,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 4.500201931998163,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}."
+        },
+        {
+          "role": "user",
+          "content": "Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-1ebd746d8beb4eb195497c717000e476",
+      "object": "chat.completion",
+      "created": 1793662065,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "I need to find the assignment of numbers 2, 3, 4, 5, 6, 7 to the six faces of a cube that maximizes the sum of the eight vertex products.\n\n**Setting up the problem:**\n\nA cube has 3 pairs of opposite faces. Let me label the pairs as (a, a'), (b, b'), (c, c'). Each vertex is formed by choosing one face from each pair, so the eight vertex products are all combinations of choosing one from each pair.\n\nThe sum of all eight vertex products is:\n$(a + a')(b + b')(c + c')$\n\nThis is because each vertex product picks one element from each pair, and summing over all 8 combinations gives the product of the three sums.\n\n**So I need to maximize $(a + a')(b + b')(c + c')$ where {a, a', b, b', c, c'} = {2, 3, 4, 5, 6, 7}.**\n\nThe total sum is 2 + 3 + 4 + 5 + 6 + 7 = 27. I need to partition these into three pairs, and maximize the product of the three pair-sums.\n\nLet the three pair-sums be $s_1, s_2, s_3$ where $s_1 + s_2 + s_3 = 27$.\n\nBy AM-GM, the product $s_1 \\cdot s_2 \\cdot s_3$ is maximized when the sums are as equal as possible (i.e., each close to 9).\n\n**Possible pairings and their sums:**\n\nLet me find pairings where the sums are as balanced as possible:\n\n- (2,7), (3,6), (4,5): sums are 9, 9, 9 → product = 729\n- (2,6), (3,5), (4,7): sums are 8, 8, 11 → product = 704\n- (2,5), (3,4), (6,7): sums are 7, 7, 13 → product = 637\n- (2,4), (3,7), (5,6): sums are 6, 10, 11 → product = 660\n- (2,3), (4,5), (6,7): sums are 5, 9, 13 → product = 585\n- (2,7), (3,5), (4,6): sums are 9, 8, 10 → product = 720\n- (2,6), (3,7), (4,5): sums are 8, 10, 9 → product = 720\n- (2,5), (3,6), (4,7): sums are 7, 9, 11 → product = 693\n- (2,4), (3,6), (5,7): sums are 6, 9, 12 → product = 648\n- (2,3), (4,6), (5,7): sums are 5, 10, 12 → product = 600\n- (2,3), (4,7), (5,6): sums are 5, 11, 11 → product = 605\n- (2,4), (3,5), (6,7): sums are 6, 8, 13 → product = 624\n- (2,5), (3,7), (4,6): sums are 7, 10, 10 → product = 700\n- (2,6), (3,4), (5,7): sums are 8, 7, 12 → product = 672\n- (2,7), (3,4), (5,6): sums are 9, 7, 11 → product = 693\n\nThe maximum is achieved with pairing (2,7), (3,6), (4,5), giving sums 9, 9, 9 and product $9 \\times 9 \\times 9 = 729$.\n\n$$\\boxed{729}$$",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 125,
+        "total_tokens": 1087,
+        "completion_tokens": 962,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "qwenmax",
+    "requested_model": "accounts/fireworks/models/qwen3p8-max",
+    "served_model": "Qwen 3.8 Max",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-10",
+    "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+    "task_name": "squad",
+    "metric": "f1_score",
+    "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+    "ground_truth": "ringers",
+    "response": "Based on the context provided, producers have been accused of planting **'ringers'** within the show. The context states that individual contestants have generated controversy \"for being 'ringers' planted by the producers.\"",
+    "score": 0.07142857142857142,
+    "prediction": "Based on the context provided, producers have been accused of planting **'ringers'** within the show. The context states that individual contestants have generated controversy \"for being 'ringers' planted by the producers.\"",
+    "scorer": "local_normalized_token_f1",
+    "input_tokens": 108,
+    "cached_input_tokens": 0,
+    "output_tokens": 42,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.7259712699997181,
+    "estimated_token_cost_usd": 0.000468,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.7259712699997181,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/qwen3p8-max",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the question using the provided context."
+        },
+        {
+          "role": "user",
+          "content": "Question: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-6bda44017ddf424f8d63e702ae4caa18",
+      "object": "chat.completion",
+      "created": 1793662069,
+      "model": "Qwen 3.8 Max",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Based on the context provided, producers have been accused of planting **'ringers'** within the show. The context states that individual contestants have generated controversy \"for being 'ringers' planted by the producers.\"",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 108,
+        "total_tokens": 150,
+        "completion_tokens": 42,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "glm-5p3-flash",
+    "auto_model_resolved": true,
+    "fixed_id": "smoke-04",
+    "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+    "task_name": "openbook_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+    "ground_truth": "A",
+    "response": "(A)",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 91,
+    "cached_input_tokens": 64,
+    "output_tokens": 30,
+    "finish_reason": "stop",
+    "reasoning_effort": "low",
+    "latency_s": 2.287653429000784,
+    "estimated_token_cost_usd": 2.0969999999999997e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 2.287653429000784,
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {
+      "id": "chatcmpl-9ec69c23",
+      "created": 1793662071,
+      "model": "glm-5p3-flash",
+      "object": "chat.completion",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "(A)",
+            "role": "assistant",
+            "reasoning_content": "Rough surfaces: stones smashing? Hands clapping vs river stones. Most friction: river stones smashing (rough). Answer A."
+          }
+        }
+      ],
+      "usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 91,
+        "total_tokens": 121,
+        "completion_tokens_details": {
+          "reasoning_tokens": 26
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "cost": 2.0906e-05,
+        "cost_details": {
+          "uncached_input": 4.049999999999999e-06,
+          "cache_read": 1.856e-06,
+          "cache_write": 0.0,
+          "output": 1.4999999999999999e-05
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-06",
+    "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+    "task_name": "boolq",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+    "ground_truth": "A",
+    "response": "A",
+    "score": 1.0,
+    "prediction": "A",
+    "scorer": "local_mc_A_to_J",
+    "input_tokens": 157,
+    "cached_input_tokens": 156,
+    "output_tokens": 2,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.4232838139978412,
+    "estimated_token_cost_usd": 2.0100000000000002e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.4232838139978412,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-15ad7b9d8b7242d8beda17d16fea5df4",
+      "object": "chat.completion",
+      "created": 1793662072,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "A",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 157,
+        "total_tokens": 159,
+        "completion_tokens": 2,
+        "prompt_tokens_details": {
+          "cached_tokens": 156
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-07",
+    "query_uid": "cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c",
+    "task_name": "hellaswag",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",
+    "ground_truth": "B",
+    "response": "",
+    "score": null,
+    "prediction": null,
+    "scorer": "request_error",
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "finish_reason": null,
+    "reasoning_effort": "none",
+    "latency_s": 180.0503789989998,
+    "estimated_token_cost_usd": null,
+    "error": "HTTPSConnectionPool(host='api.fireworks.ai', port=443): Read timed out. (read timeout=180)",
+    "empty_answer": true,
+    "attempts": [
+      {
+        "status": null,
+        "latency_s": 180.0503789989998,
+        "error": "HTTPSConnectionPool(host='api.fireworks.ai', port=443): Read timed out. (read timeout=180)"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\n[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.\n\n## Options:\nA. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.\nB. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.\nC. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.\nD. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {}
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-08",
+    "query_uid": "2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac",
+    "task_name": "gsm8k",
+    "metric": "GSM8K",
+    "query": "[System Instruction]\nAnswer the following math question step by step.\n\n[User Query]\nQuestion: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?",
+    "ground_truth": "There are 8 + 2 = <<8+2=10>>10 green beans.\nThere are 10 -1 = <<10-1=9>>9 orange beans.\nThere are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.\n#### 27",
+    "response": "Let's break down the problem step by step:\n\n1. **Black beans**: The problem states there are 8 black beans.\n\n2. **Green beans**: It says there are \"2 more green beans\" than black beans.\n   - Black beans = 8\n   - Green beans = 8 + 2 = 10\n\n3. **Orange beans**: It says there are \"1 less orange bean than green beans.\"\n   - Green beans = 10\n   - Orange beans = 10 - 1 = 9\n\n4. **Total jellybeans**: Add up all the beans.\n   - Black: 8\n   - Green: 10\n   - Orange: 9\n   - Total = 8 + 10 + 9 = 27\n\n**Answer**: There are 27 jellybeans in the bag.",
+    "score": 1.0,
+    "prediction": "27",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 66,
+    "cached_input_tokens": 0,
+    "output_tokens": 180,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 1.0146723420002672,
+    "estimated_token_cost_usd": 3.93e-05,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 1.0146723420002672,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question step by step."
+        },
+        {
+          "role": "user",
+          "content": "Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-45308810ae274ff899cf0300546e7184",
+      "object": "chat.completion",
+      "created": 1793662253,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Let's break down the problem step by step:\n\n1. **Black beans**: The problem states there are 8 black beans.\n\n2. **Green beans**: It says there are \"2 more green beans\" than black beans.\n   - Black beans = 8\n   - Green beans = 8 + 2 = 10\n\n3. **Orange beans**: It says there are \"1 less orange bean than green beans.\"\n   - Green beans = 10\n   - Orange beans = 10 - 1 = 9\n\n4. **Total jellybeans**: Add up all the beans.\n   - Black: 8\n   - Green: 10\n   - Orange: 9\n   - Total = 8 + 10 + 9 = 27\n\n**Answer**: There are 27 jellybeans in the bag.",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 66,
+        "total_tokens": 246,
+        "completion_tokens": 180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-09",
+    "query_uid": "c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b",
+    "task_name": "math",
+    "metric": "MATH",
+    "query": "[System Instruction]\nAnswer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}.\n\n[User Query]\nQuestion: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",
+    "ground_truth": "Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is\n\\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\\]By AM-GM,\n\\[(a + b)(c + d)(e + f) \\le \\left[ \\frac{(a + b) + (c + d) + (e + f)}{3} \\right]^3 = \\left( \\frac{27}{3} \\right)^3 = 729.\\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\\boxed{729}.$",
+    "response": "120",
+    "score": 0.0,
+    "prediction": "120",
+    "scorer": "local_last_numeric_answer_fixed_smoke_tasks",
+    "input_tokens": 126,
+    "cached_input_tokens": 0,
+    "output_tokens": 4,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.3957447209977545,
+    "estimated_token_cost_usd": 7.100000000000001e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.3957447209977545,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following math question. Make sure to put the answer (and only answer) inside \\boxed{}."
+        },
+        {
+          "role": "user",
+          "content": "Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-f9b0f9a975664c779db59f9a229c5a86",
+      "object": "chat.completion",
+      "created": 1793662254,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "120",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 126,
+        "total_tokens": 130,
+        "completion_tokens": 4,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-10",
+    "query_uid": "53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152",
+    "task_name": "squad",
+    "metric": "f1_score",
+    "query": "[System Instruction]\nAnswer the question using the provided context.\n\n[User Query]\nQuestion: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",
+    "ground_truth": "ringers",
+    "response": "ringers",
+    "score": 1.0,
+    "prediction": "ringers",
+    "scorer": "local_normalized_token_f1",
+    "input_tokens": 106,
+    "cached_input_tokens": 0,
+    "output_tokens": 3,
+    "finish_reason": "stop",
+    "reasoning_effort": "none",
+    "latency_s": 0.47940571999788517,
+    "estimated_token_cost_usd": 5.9e-06,
+    "error": null,
+    "empty_answer": false,
+    "attempts": [
+      {
+        "status": 200,
+        "latency_s": 0.47940571999788517,
+        "reasoning_effort": "none"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the question using the provided context."
+        },
+        {
+          "role": "user",
+          "content": "Question: Producers have been accused of planting what within the show?\n\nContext: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {
+      "id": "chatcmpl-20e7d4b143ef45deb4c94db8e1546205",
+      "object": "chat.completion",
+      "created": 1793662255,
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "ringers",
+            "tools": null
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 106,
+        "total_tokens": 109,
+        "completion_tokens": 3,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  }
+]

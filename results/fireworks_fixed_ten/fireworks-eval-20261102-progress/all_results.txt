@@ -1,0 +1,1629 @@
+FIREWORKS-HOSTED MODEL AND NEXUS AUTO EVALUATION
+Same ten fixed prompts; live Fireworks API responses.
+The four hosted baselines are not size-matched equivalents of the Modal Qwen checkpoints.
+Local scoring is shared with the Modal run and is not the official xRouteBench evaluator.
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-01 | mmlu | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 169/0/3
+Request latency: 1.870s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.685e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+A
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-02 | mmlu_pro | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 162/0/10
+Request latency: 1.561s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.93e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER]
+I
+
+[LIVE MODEL OUTPUT]
+I
+
+The answer is (I).
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-03 | arc_challenge | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 85/0/11
+Request latency: 2.763s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 1.825e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+(B) paper
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-05 | commonsense_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 92/0/23
+Request latency: 1.598s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.53e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A)
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-06 | boolq | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 153/0/3
+Request latency: 1.347s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.4449999999999998e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+A
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-07 | hellaswag | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 274/0/5
+Request latency: 1.069s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 4.36e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+B
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-08 | gsm8k | GSM8K
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 63/0/42
+Request latency: 5.534s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 3.0449999999999998e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[LIVE MODEL OUTPUT]
+Green beans: 8 + 2 = 10
+Orange beans: 10 − 1 = 9
+
+Total: 8 + 10 + 9 = **27 jellybeans**
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-09 | math | MATH
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 121/0/121
+Request latency: 2.130s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 7.865e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[LIVE MODEL OUTPUT]
+\boxed{729}
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-10 | squad | f1_score
+Local score: 0.2 | scorer: local_normalized_token_f1
+Input/cached/output tokens: 103/0/17
+Request latency: 1.228s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.395e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER]
+ringers
+
+[LIVE MODEL OUTPUT]
+Producers have been accused of planting "ringers" within the show.
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-01 | mmlu | em_mc
+Local score: 0.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 174/0/8
+Request latency: 0.597s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 1.0300000000000001e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+Final answer is:
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-02 | mmlu_pro | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 165/0/2
+Request latency: 0.423s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 8.65e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER]
+I
+
+[LIVE MODEL OUTPUT]
+I
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-03 | arc_challenge | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 89/0/3
+Request latency: 0.238s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 5.050000000000001e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+(B)
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-04 | openbook_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 96/0/7
+Request latency: 0.269s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 6.200000000000001e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A) river stones smashing
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-05 | commonsense_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 98/0/6
+Request latency: 0.323s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 6.100000000000001e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A) children's song
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-01 | mmlu | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 226/0/74
+Request latency: 0.480s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 7.829999999999999e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A)
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-02 | mmlu_pro | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 214/0/33
+Request latency: 0.516s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 5.190000000000001e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER]
+I
+
+[LIVE MODEL OUTPUT]
+(I)
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-03 | arc_challenge | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 145/0/51
+Request latency: 0.522s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 5.234999999999999e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+(B)
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-04 | openbook_qa | em_mc
+Local score: 0.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 151/0/107
+Request latency: 0.626s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 8.685e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+The situation that involves the greatest amount of surface friction is **hands clapping**.  
+
+**Answer: (B)**
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-05 | commonsense_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 151/0/48
+Request latency: 0.416s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 5.145e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A)
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-06 | boolq | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 211/0/38
+Request latency: 0.496s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 5.445e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A)
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-07 | hellaswag | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 324/0/104
+Request latency: 0.644s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 0.000111
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+(B)
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-08 | gsm8k | GSM8K
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 122/0/297
+Request latency: 0.999s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 0.0001965
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[LIVE MODEL OUTPUT]
+**Step 1: Identify the given numbers**
+
+- Black jellybeans = **8**  
+- Green jellybeans = “2 more green beans” than the black beans.  
+- Orange jellybeans = “1 less orange bean than green beans”.
+
+**Step 2: Find the number of green beans**
+
+Since there are 2 more green beans than black beans:
+
+\[
+\text{Green beans} = 8 \;(\text{black}) + 2 = 10
+\]
+
+**Step 3: Find the number of orange beans**
+
+The orange beans are one fewer than the green beans:
+
+\[
+\text{Orange beans} = 10 \;(\text{green}) - 1 = 9
+\]
+
+**Step 4: Add all the beans together**
+
+\[
+\text{Total beans} = \text{black} + \text{green} + \text{orange}
+= 8 + 10 + 9 = 27
+\]
+
+---
+
+\[
+\boxed{27}
+\]
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-09 | math | MATH
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 180/0/358
+Request latency: 1.719s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 0.0002418
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[LIVE MODEL OUTPUT]
+\boxed{729}
+
+==========================================================================================
+ARM: gptoss120b | REQUESTED MODEL: accounts/fireworks/models/gpt-oss-120b
+SERVED MODEL: accounts/fireworks/models/gpt-oss-120b
+smoke-10 | squad | f1_score
+Local score: 0.0 | scorer: local_normalized_token_f1
+Input/cached/output tokens: 163/67/68
+Request latency: 0.656s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 5.6205e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER]
+ringers
+
+[LIVE MODEL OUTPUT]
+They’ve been accused of slipping “ringers” – contestants who were secretly planted by the producers – into the show.
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-01 | mmlu | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 169/168/3
+Request latency: 0.652s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 6.69e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+A
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-02 | mmlu_pro | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 162/128/10
+Request latency: 1.054s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 1.3939999999999999e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER]
+I
+
+[LIVE MODEL OUTPUT]
+I
+
+The answer is (I).
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-03 | arc_challenge | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 85/0/51
+Request latency: 3.694s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 3.825e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+(B) paper
+
+Paper does not melt when heated; instead, it burns/decomposes before it could ever become a liquid. Butter, ice, and candle wax all melt into liquids when heat is applied.
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-04 | openbook_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 91/0/30
+Request latency: 0.978s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.865e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A) river stones smashing
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-05 | commonsense_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 92/0/26
+Request latency: 0.898s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.6799999999999998e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A) children's song
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-06 | boolq | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 153/152/3
+Request latency: 2.349s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 6.21e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+A
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-07 | hellaswag | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 274/0/3
+Request latency: 1.480s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 4.26e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+B
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-08 | gsm8k | GSM8K
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 63/0/42
+Request latency: 1.026s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 3.0449999999999998e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[LIVE MODEL OUTPUT]
+Green beans: 8 + 2 = 10
+Orange beans: 10 − 1 = 9
+Total: 8 + 10 + 9 = **27 jellybeans**
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-09 | math | MATH
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 121/120/130
+Request latency: 1.846s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 6.875e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[LIVE MODEL OUTPUT]
+\boxed{729}
+
+==========================================================================================
+ARM: glmflash | REQUESTED MODEL: accounts/fireworks/models/glm-5p3-flash
+SERVED MODEL: accounts/fireworks/models/glm-5p3-flash
+smoke-10 | squad | f1_score
+Local score: 0.2 | scorer: local_normalized_token_f1
+Input/cached/output tokens: 103/64/17
+Request latency: 0.927s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 1.627e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER]
+ringers
+
+[LIVE MODEL OUTPUT]
+Producers have been accused of planting "ringers" within the show.
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-01 | mmlu | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 179/0/98
+Request latency: 2.021s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.000946
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+Looking at the passage, I need to determine if Mike has a great sports collection.
+
+The passage states: "He is Mike. And he has a big sports collection."
+
+It also mentions: "My brother has two baseballs, four soccer balls and five basketballs under his bed."
+
+The text explicitly says Mike has a "big sports collection," which aligns with having a "great sports collection."
+
+The answer is A. Yes, he does.
+
+(A)
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-02 | mmlu_pro | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 169/0/266
+Request latency: 1.989s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.001934
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER]
+I
+
+[LIVE MODEL OUTPUT]
+The question describes malware that can modify data on your system so that it doesn't run correctly, you can no longer access specific data, or it may ask for ransom to give you access.
+
+Let me analyze the options:
+
+- **Email Trojans**: Related to email-based attacks
+- **Backdoor Trojans**: Create backdoors for unauthorized access
+- **Rootkit Trojans**: Hide malicious activity at system level
+- **Banking Trojans**: Target banking information
+- **Trojan-Downloader**: Downloads other malware
+- **Spyware Trojans**: Spy on user activity
+- **Network Trojans**: Target network communications
+- **Worm Trojans**: Self-replicating malware
+- **Ransom Trojan**: Modifies/encrypts data and demands ransom for access
+- **IM – Trojans**: Target instant messaging
+
+The description clearly matches **Ransom Trojan** (option I). The key indicators are:
+1. "modify data on your system"
+2. "system doesn't run correctly"
+3. "you can no longer access specific data"
+4. "ask for ransom in order to give your access"
+
+This is the classic definition of ransomware/Ransom Trojan behavior.
+
+The answer is **(I)**.
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-03 | arc_challenge | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 90/0/250
+Request latency: 2.257s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.00168
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+Looking at this question, I need to determine which substance is least likely to melt (change from solid to liquid) when heat is applied.
+
+Let me analyze each option:
+
+(A) Butter - Melts at around 32-35°C (90-95°F). It easily transitions from solid to liquid when heated.
+
+(B) Paper - Paper does NOT melt when heated. Instead, it undergoes combustion (burns) at around 233°C (451°F). Paper is made of cellulose fibers, which decompose and burn rather than melting into a liquid state. It goes from solid directly to ash/gases through chemical decomposition.
+
+(C) Ice - Melts at 0°C (32°F). It very easily transitions from solid to liquid when heat is applied.
+
+(D) Candle wax - Melts at around 46-68°C depending on the type. It easily transitions from solid to liquid when heated.
+
+The answer is clearly (B) paper, because paper does not undergo a phase change from solid to liquid. Instead, when sufficient heat is applied, it burns (undergoes combustion/chemical decomposition) rather than melting.
+
+**(B)**
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-04 | openbook_qa | em_mc
+Local score: 0.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 95/0/224
+Request latency: 1.871s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.001534
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+The question asks about which scenario would have the most friction based on surface roughness.
+
+Let me analyze each option:
+
+(A) River stones smashing - River stones are smooth (worn down by water), so they would have less friction.
+
+(B) Hands clapping - Hands have skin with ridges, fingerprints, and texture, making them relatively rough surfaces. When clapping, the rough skin surfaces press against each other, creating significant friction.
+
+(C) Mirrors pressing together - Mirrors have very smooth, polished glass surfaces, so they would have very little friction.
+
+(D) Stone falling - A stone falling through air involves air resistance, not surface-to-surface friction in the same way. Also, this doesn't involve two rough surfaces pressing against each other.
+
+The key principle stated is: "more rough a surface being touched has = more friction."
+
+Hands have rough, textured skin (with ridges and fingerprints), making them the roughest surfaces among the options. When hands clap together, these rough surfaces create the most friction.
+
+The answer is (B).
+
+(B)
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-05 | commonsense_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 97/0/212
+Request latency: 2.036s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.001466
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+Looking at this question, I need to determine what a family TV personality dressed as a weasel would begin to play.
+
+Let me analyze the options:
+- (A) children's song - This makes sense in context. A family TV personality (like someone on a kids' show) dressed as a weasel would likely play a children's song. This fits the family-friendly, entertainment context.
+- (B) washington d.c - This is a place, not something you "play."
+- (C) chicken coop - This is a place/object, not something you "play."
+- (D) dead - This doesn't make grammatical sense with "play a dead."
+- (E) used car lot - This is a place, not something you "play."
+
+The only option that makes grammatical and contextual sense with "play a ___" is (A) children's song. A family TV personality dressed as a weasel playing a children's song fits perfectly with the family entertainment context.
+
+(A)
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-06 | boolq | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 161/0/44
+Request latency: 0.970s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.000586
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+The passage clearly states that "Bill & Ted's Excellent Adventure" "stars Alex Winter, Keanu Reeves, and George Carlin." This confirms that George Carlin was indeed in the film.
+
+(A)
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-07 | hellaswag | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 285/0/363
+Request latency: 2.387s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.002748
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+Looking at this question, I need to find the option that logically follows the step about filling a cocktail shaker with ice for making a vodka gimlet.
+
+Let me analyze each option:
+
+A. "Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better." - This doesn't make sense. You want cold ice for cocktails, not room temperature ice. This is incorrect advice.
+
+B. "For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail." - This is logical and practical advice that follows naturally from filling a shaker with ice. Using fresh ice and chilling the shaker are legitimate cocktail-making tips.
+
+C. "[substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor." - The second part "Add the vodka to the shaker, then mix in the liquor" is redundant since vodka IS the liquor. This doesn't make logical sense.
+
+D. "[substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling." - This is nonsensical. Ice doesn't come in shades of red, and champagne riesling has nothing to do with a vodka gimlet.
+
+The correct answer is B, as it provides logical, practical advice that naturally follows the instruction about filling the cocktail shaker with ice.
+
+(B)
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-08 | gsm8k | GSM8K
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 67/0/79
+Request latency: 0.983s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.000608
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[LIVE MODEL OUTPUT]
+Let me work through this step by step.
+
+**Black beans:** 8
+
+**Green beans:** 2 more than black beans = 8 + 2 = 10
+
+**Orange beans:** 1 less than green beans = 10 - 1 = 9
+
+**Total jellybeans:** 8 + 10 + 9 = **27**
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-09 | math | MATH
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 125/0/962
+Request latency: 4.500s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.006022
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[LIVE MODEL OUTPUT]
+I need to find the assignment of numbers 2, 3, 4, 5, 6, 7 to the six faces of a cube that maximizes the sum of the eight vertex products.
+
+**Setting up the problem:**
+
+A cube has 3 pairs of opposite faces. Let me label the pairs as (a, a'), (b, b'), (c, c'). Each vertex is formed by choosing one face from each pair, so the eight vertex products are all combinations of choosing one from each pair.
+
+The sum of all eight vertex products is:
+$(a + a')(b + b')(c + c')$
+
+This is because each vertex product picks one element from each pair, and summing over all 8 combinations gives the product of the three sums.
+
+**So I need to maximize $(a + a')(b + b')(c + c')$ where {a, a', b, b', c, c'} = {2, 3, 4, 5, 6, 7}.**
+
+The total sum is 2 + 3 + 4 + 5 + 6 + 7 = 27. I need to partition these into three pairs, and maximize the product of the three pair-sums.
+
+Let the three pair-sums be $s_1, s_2, s_3$ where $s_1 + s_2 + s_3 = 27$.
+
+By AM-GM, the product $s_1 \cdot s_2 \cdot s_3$ is maximized when the sums are as equal as possible (i.e., each close to 9).
+
+**Possible pairings and their sums:**
+
+Let me find pairings where the sums are as balanced as possible:
+
+- (2,7), (3,6), (4,5): sums are 9, 9, 9 → product = 729
+- (2,6), (3,5), (4,7): sums are 8, 8, 11 → product = 704
+- (2,5), (3,4), (6,7): sums are 7, 7, 13 → product = 637
+- (2,4), (3,7), (5,6): sums are 6, 10, 11 → product = 660
+- (2,3), (4,5), (6,7): sums are 5, 9, 13 → product = 585
+- (2,7), (3,5), (4,6): sums are 9, 8, 10 → product = 720
+- (2,6), (3,7), (4,5): sums are 8, 10, 9 → product = 720
+- (2,5), (3,6), (4,7): sums are 7, 9, 11 → product = 693
+- (2,4), (3,6), (5,7): sums are 6, 9, 12 → product = 648
+- (2,3), (4,6), (5,7): sums are 5, 10, 12 → product = 600
+- (2,3), (4,7), (5,6): sums are 5, 11, 11 → product = 605
+- (2,4), (3,5), (6,7): sums are 6, 8, 13 → product = 624
+- (2,5), (3,7), (4,6): sums are 7, 10, 10 → product = 700
+- (2,6), (3,4), (5,7): sums are 8, 7, 12 → product = 672
+- (2,7), (3,4), (5,6): sums are 9, 7, 11 → product = 693
+
+The maximum is achieved with pairing (2,7), (3,6), (4,5), giving sums 9, 9, 9 and product $9 \times 9 \times 9 = 729$.
+
+$$\boxed{729}$$
+
+==========================================================================================
+ARM: qwenmax | REQUESTED MODEL: accounts/fireworks/models/qwen3p8-max
+SERVED MODEL: Qwen 3.8 Max
+smoke-10 | squad | f1_score
+Local score: 0.07142857142857142 | scorer: local_normalized_token_f1
+Input/cached/output tokens: 108/0/42
+Request latency: 0.726s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 0.000468
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER]
+ringers
+
+[LIVE MODEL OUTPUT]
+Based on the context provided, producers have been accused of planting **'ringers'** within the show. The context states that individual contestants have generated controversy "for being 'ringers' planted by the producers."
+
+==========================================================================================
+ARM: auto | REQUESTED MODEL: auto
+SERVED MODEL: glm-5p3-flash
+smoke-04 | openbook_qa | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 91/64/30
+Request latency: 2.288s | finish reason: stop | effort: low
+Estimated token cost (not invoice): 2.0969999999999997e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+(A)
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-06 | boolq | em_mc
+Local score: 1.0 | scorer: local_mc_A_to_J
+Input/cached/output tokens: 157/156/2
+Request latency: 0.423s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 2.0100000000000002e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER]
+A
+
+[LIVE MODEL OUTPUT]
+A
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: 
+smoke-07 | hellaswag | em_mc
+Local score: None | scorer: request_error
+Input/cached/output tokens: None/None/None
+Request latency: 180.050s | finish reason: None | effort: none
+Estimated token cost (not invoice): None
+Request error: HTTPSConnectionPool(host='api.fireworks.ai', port=443): Read timed out. (read timeout=180)
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER]
+B
+
+[LIVE MODEL OUTPUT]
+
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-08 | gsm8k | GSM8K
+Local score: 1.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 66/0/180
+Request latency: 1.015s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 3.93e-05
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[LIVE MODEL OUTPUT]
+Let's break down the problem step by step:
+
+1. **Black beans**: The problem states there are 8 black beans.
+
+2. **Green beans**: It says there are "2 more green beans" than black beans.
+   - Black beans = 8
+   - Green beans = 8 + 2 = 10
+
+3. **Orange beans**: It says there are "1 less orange bean than green beans."
+   - Green beans = 10
+   - Orange beans = 10 - 1 = 9
+
+4. **Total jellybeans**: Add up all the beans.
+   - Black: 8
+   - Green: 10
+   - Orange: 9
+   - Total = 8 + 10 + 9 = 27
+
+**Answer**: There are 27 jellybeans in the bag.
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-09 | math | MATH
+Local score: 0.0 | scorer: local_last_numeric_answer_fixed_smoke_tasks
+Input/cached/output tokens: 126/0/4
+Request latency: 0.396s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 7.100000000000001e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[LIVE MODEL OUTPUT]
+120
+
+==========================================================================================
+ARM: nemotron30b | REQUESTED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+SERVED MODEL: accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b
+smoke-10 | squad | f1_score
+Local score: 1.0 | scorer: local_normalized_token_f1
+Input/cached/output tokens: 106/0/3
+Request latency: 0.479s | finish reason: stop | effort: none
+Estimated token cost (not invoice): 5.9e-06
+Request error: None
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER]
+ringers
+
+[LIVE MODEL OUTPUT]
+ringers

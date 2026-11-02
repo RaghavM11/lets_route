@@ -1,0 +1,103 @@
+[
+  {
+    "arm": "auto",
+    "requested_model": "auto",
+    "served_model": "",
+    "auto_model_resolved": false,
+    "fixed_id": "smoke-04",
+    "query_uid": "46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb",
+    "task_name": "openbook_qa",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\nQuestion: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling",
+    "ground_truth": "A",
+    "response": "",
+    "score": null,
+    "prediction": null,
+    "scorer": "request_error",
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "finish_reason": null,
+    "reasoning_effort": "low",
+    "latency_s": 127.99921703400105,
+    "estimated_token_cost_usd": null,
+    "error": "Fireworks HTTP 503: {\"message\": \"Service Unavailable\"}",
+    "empty_answer": true,
+    "attempts": [
+      {
+        "status": 503,
+        "latency_s": 127.99921703400105,
+        "error": "Fireworks HTTP 503: {\"message\": \"Service Unavailable\"}",
+        "reasoning_effort": "low"
+      }
+    ],
+    "effective_request": {
+      "model": "auto",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "Question: There is more friction the more rough a surface being touched has, so the most friction would be found in\n(A) river stones smashing\n(B) hands clapping\n(C) mirrors pressing together\n(D) stone falling"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "low"
+    },
+    "api_response": {}
+  },
+  {
+    "arm": "nemotron30b",
+    "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+    "served_model": "",
+    "auto_model_resolved": null,
+    "fixed_id": "smoke-06",
+    "query_uid": "06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e",
+    "task_name": "boolq",
+    "metric": "em_mc",
+    "query": "[System Instruction]\nAnswer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.\n\n[User Query]\n## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No",
+    "ground_truth": "A",
+    "response": "",
+    "score": null,
+    "prediction": null,
+    "scorer": "request_error",
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "finish_reason": null,
+    "reasoning_effort": "none",
+    "latency_s": 180.0037805639986,
+    "estimated_token_cost_usd": null,
+    "error": "HTTPSConnectionPool(host='api.fireworks.ai', port=443): Read timed out. (read timeout=180)",
+    "empty_answer": true,
+    "attempts": [
+      {
+        "status": null,
+        "latency_s": 180.0037805639986,
+        "error": "HTTPSConnectionPool(host='api.fireworks.ai', port=443): Read timed out. (read timeout=180)"
+      }
+    ],
+    "effective_request": {
+      "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis."
+        },
+        {
+          "role": "user",
+          "content": "## Question:\nQuestion: was george carlin in bill and ted's excellent adventure\n\nPassage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.\n\n## Options:\nA. Yes\nB. No"
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 1024,
+      "reasoning_effort": "none"
+    },
+    "api_response": {}
+  }
+]

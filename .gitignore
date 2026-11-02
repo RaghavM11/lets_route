@@ -24,6 +24,10 @@ results/*
 results/sglang_fixed_ten/*
 # Explicitly requested published smoke-test run; keep other results local.
 !results/sglang_fixed_ten/qwen-four-fixed-ten-20261102/
+!results/fireworks_fixed_ten/
+results/fireworks_fixed_ten/*
+# User-requested stable progress snapshot; the live run stays ignored.
+!results/fireworks_fixed_ten/fireworks-eval-20261102-progress/
 
 # Local model checkpoints
 models/*

@@ -1,0 +1,165 @@
+{
+  "run_id": "fireworks-eval-20261102-progress",
+  "arms": [
+    "auto",
+    "nemotron30b",
+    "gptoss120b",
+    "glmflash",
+    "qwenmax"
+  ],
+  "max_tokens": 1024,
+  "temperature": 0,
+  "seed": 42,
+  "manifest_sha256": "64743bae2c42b0c0c6b61ec1ef8207a75b739d37eb80dadae0b777d75363486a",
+  "created_at": "2026-11-02T23:19:22.599185+00:00",
+  "expected_requests": 50,
+  "price_source": "https://docs.fireworks.ai/serverless/pricing",
+  "rates_usd_per_million": {
+    "nemotron-lightning-3p5-30b-a3b": [
+      0.05,
+      0.01,
+      0.2
+    ],
+    "gpt-oss-120b": [
+      0.15,
+      0.015,
+      0.6
+    ],
+    "glm-5p3-flash": [
+      0.15,
+      0.03,
+      0.5
+    ],
+    "qwen3p8-max": [
+      2.0,
+      0.25,
+      6.0
+    ],
+    "qwen3p8-2p4t-a95b": [
+      2.0,
+      0.25,
+      6.0
+    ],
+    "glm-5p3": [
+      1.4,
+      0.26,
+      4.4
+    ],
+    "kimi-k3": [
+      3.0,
+      0.3,
+      15.0
+    ],
+    "deepseek-v4p1-flash": [
+      0.3,
+      0.006,
+      1.2
+    ],
+    "deepseek-v4p1-flash-1017": [
+      0.3,
+      0.006,
+      1.2
+    ]
+  },
+  "candidate_pool_note": "Nexus Auto manages its own pool; it is not constrained to the four pinned baselines.",
+  "model_match_note": "Four serverless alternatives, not the same checkpoints or parameter tiers as Modal.",
+  "provider_credentials_forwarded": false,
+  "execution_order": [
+    "gptoss120b",
+    "glmflash",
+    "qwenmax",
+    "auto",
+    "nemotron30b"
+  ],
+  "retried_error_records": 2,
+  "live_run_id": "fireworks-eval-20261102",
+  "snapshot_created_at": "2026-11-02T23:31:57.734535+00:00",
+  "price_model_aliases": {
+    "Qwen 3.8 Max": "qwen3p8-max"
+  },
+  "state": "incomplete_snapshot",
+  "failure": null,
+  "recorded_requests": 50,
+  "summaries": [
+    {
+      "arm": "auto",
+      "requested_model": "auto",
+      "completed_requests": 10,
+      "request_errors": 0,
+      "full_score_count": 9,
+      "mean_local_score": 0.9199999999999999,
+      "mean_request_latency_s": 2.1387560377999764,
+      "length_limited_count": 0,
+      "empty_answer_count": 0,
+      "priced_request_count": 10,
+      "estimated_token_cost_usd": 0.00032177,
+      "served_model_counts": {
+        "glm-5p3-flash": 10
+      }
+    },
+    {
+      "arm": "nemotron30b",
+      "requested_model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "completed_requests": 10,
+      "request_errors": 1,
+      "full_score_count": 7,
+      "mean_local_score": 0.7777777777777778,
+      "mean_request_latency_s": 18.42135468019951,
+      "length_limited_count": 0,
+      "empty_answer_count": 1,
+      "priced_request_count": 9,
+      "estimated_token_cost_usd": 9.061e-05,
+      "served_model_counts": {
+        "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b": 9
+      }
+    },
+    {
+      "arm": "gptoss120b",
+      "requested_model": "accounts/fireworks/models/gpt-oss-120b",
+      "completed_requests": 10,
+      "request_errors": 0,
+      "full_score_count": 8,
+      "mean_local_score": 0.8,
+      "mean_request_latency_s": 0.707379925299756,
+      "length_limited_count": 0,
+      "empty_answer_count": 0,
+      "priced_request_count": 10,
+      "estimated_token_cost_usd": 0.000980805,
+      "served_model_counts": {
+        "accounts/fireworks/models/gpt-oss-120b": 10
+      }
+    },
+    {
+      "arm": "glmflash",
+      "requested_model": "accounts/fireworks/models/glm-5p3-flash",
+      "completed_requests": 10,
+      "request_errors": 0,
+      "full_score_count": 9,
+      "mean_local_score": 0.9199999999999999,
+      "mean_request_latency_s": 1.490468264800802,
+      "length_limited_count": 0,
+      "empty_answer_count": 0,
+      "priced_request_count": 10,
+      "estimated_token_cost_usd": 0.00027861,
+      "served_model_counts": {
+        "accounts/fireworks/models/glm-5p3-flash": 10
+      }
+    },
+    {
+      "arm": "qwenmax",
+      "requested_model": "accounts/fireworks/models/qwen3p8-max",
+      "completed_requests": 10,
+      "request_errors": 0,
+      "full_score_count": 8,
+      "mean_local_score": 0.8071428571428572,
+      "mean_request_latency_s": 1.974121650399684,
+      "length_limited_count": 0,
+      "empty_answer_count": 0,
+      "priced_request_count": 10,
+      "estimated_token_cost_usd": 0.017992,
+      "served_model_counts": {
+        "Qwen 3.8 Max": 10
+      }
+    }
+  ]
+}
