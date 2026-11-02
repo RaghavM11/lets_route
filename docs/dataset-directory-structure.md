@@ -18,7 +18,7 @@ lets_route/
 │   ├── README.md
 │   ├── xroutebench.md         # dataset reference (configs, schema, usage)
 │   └── dataset-directory-structure.md  # this file
-├── study_xroutebench.ipynb    # dataset study notebook (route_f kernel)
+├── notebooks/archive/study_xroutebench.ipynb    # dataset study notebook
 └── (the HF cache still holds a separate per-machine copy)
 ```
 

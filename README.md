@@ -23,8 +23,16 @@ lets_route/
 ├── experiments/
 │   ├── xroutebench_official_baseline/  # official-matrix router baseline
 │   └── qwen3_5_27b_modal/        # Qwen3.5-27B xRouteBench run on Modal H200
-├── route_f_playground.ipynb      # env sanity-check notebook (route_f kernel)
-└── study_xroutebench.ipynb       # dataset study notebook
+├── notebooks/archive/
+│   ├── route_f_playground.ipynb  # env sanity-check notebook (route_f kernel)
+│   └── study_xroutebench.ipynb   # dataset study notebook
+├── router/
+│   ├── build_oracle_matrix.py    # counterfactual matrix + oracle labels
+│   ├── prepare_dataset.py        # stratified cost/perf splits
+│   ├── train_lora.py             # LoRA training script
+│   └── metrics.py                # shared aggregate helpers
+└── training/
+    └── system1_router_baseline.ipynb  # Qwen LoRA System-1 baseline
 ```
 
 ## Environment — `route_f`

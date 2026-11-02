@@ -83,7 +83,7 @@ cost = row_cost(ds[0], price)
 
 ---
 
-## Study highlights (from `study_xroutebench.ipynb`)
+## Study highlights (from `notebooks/archive/study_xroutebench.ipynb`)
 
 - `llmrouter_generic` train: **80,802 rows = 4,488 queries × 18 models**.
 - **Best model per query:** `qwen2.5-7b-instruct` 58.6%, `gemma-2-9b-it` 23.3%.

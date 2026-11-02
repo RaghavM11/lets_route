@@ -2,7 +2,7 @@
 
 This experiment uses the pinned `lmsysorg/sglang:v0.5.23` CUDA image to run the
 deterministic xRouteBench multiple-choice suite from
-`route_f_playground.ipynb` with the official `Qwen/Qwen3.5-27B` checkpoint on
+`notebooks/archive/route_f_playground.ipynb` with the official `Qwen/Qwen3.5-27B` checkpoint on
 one Modal H200. It evaluates two queries from each of six tasks by default, then
 compares Qwen with all 18 recorded xRouteBench candidates on the same query IDs.
 
