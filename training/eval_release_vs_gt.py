@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Compare the released System-1 router vs the ground-truth oracle (GTY)."""
+"""Compare the released System-1 router vs the ground truth model (oracle)."""
 import json
 import sys
 from collections import Counter

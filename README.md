@@ -177,7 +177,7 @@ batch 4 (1,600 presentations) · ~19 min on one RTX 3060.
 Realized cost/performance vs the oracle on the same test split
 (`router/eval_router.py`):
 
-| Quantity | Oracle (GTY) | Our router |
+| Quantity | Ground truth model (oracle) | Our router |
 |---|---|---|
 | Mean per-query performance | 0.922 | **0.717** |
 | Mean per-query cost | $28.8e-6 | **$11.9e-6** |
