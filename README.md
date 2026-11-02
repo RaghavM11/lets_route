@@ -20,6 +20,9 @@ lets_route/
 │   ├── README.md                 # docs index
 │   ├── xroutebench.md            # dataset reference (configs, schema, usage)
 │   └── dataset-directory-structure.md  # where/how dataset files are organized
+├── experiments/
+│   ├── xroutebench_official_baseline/  # official-matrix router baseline
+│   └── qwen3_5_27b_modal/        # Qwen3.5-27B xRouteBench run on Modal H200
 ├── route_f_playground.ipynb      # env sanity-check notebook (route_f kernel)
 └── study_xroutebench.ipynb       # dataset study notebook
 ```
@@ -94,4 +97,12 @@ Main configs: `llmrouter_generic`, `memory_locomo`, `memory_longmemeval`,
 `timeseries`, `video`, `multimodal_geometry3k`, `multimodal_mathvista`,
 `personalized`, plus raw-query `*_queries` variants and `llm_candidates`
 (pricing pool).
+
+## Modal H200 experiment
+
+The reproducible Qwen3.5-27B launcher is documented in
+[`experiments/qwen3_5_27b_modal/README.md`](experiments/qwen3_5_27b_modal/README.md).
+It uses the existing Modal profile in `~/.modal.toml`, caches the pinned model in
+a Modal Volume, runs the six-task multiple-choice suite on one H200, and saves
+complete local and remote result artifacts.
 
