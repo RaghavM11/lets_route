@@ -4,70 +4,45 @@ Where `xRouteBench` data lives and how it is organized.
 
 ---
 
-## 1. Hugging Face cache (on-disk, per machine)
-
-When you load a config with `datasets` (`stream=False`), `parquet` files are
-downloaded and cached under Hugging Face's cache root:
-
-```
-~/.cache/huggingface/
-└── datasets/
-    ├── <owner>___<dataset>/
-    │   ├── <config>/
-    │   │   └── <version>/
-    │   │       ├── <split>-00000-of-00001.parquet
-    │   │       ├── dataset_info.json
-    │   │       └── state.json
-    │   └── ...
-    └── <...>.lock            # lock files during download
-```
-
-Real example for this repo (owner `ulab-ai`, dataset `xRouteBench`):
-
-```
-~/.cache/huggingface/datasets/
-└── ulab-ai___x_route_bench/
-    ├── llmrouter_generic/0.0.0/   # train.parquet + test.parquet
-    ├── llm_candidates/0.0.0/      # train.parquet (18 rows)
-    └── ... (one dir per config)
-```
-
-Notes:
-- Dataset names are normalized in the path (`xRouteBench` → `x_route_bench`).
-- The cache is machine-local and is **never** committed to git.
-- `stream=True` downloads parquet lazily in chunks and does not keep a full copy
-  (it still uses the cache for fetched chunks).
-
----
-
-## 2. This repo's data layer
+## 1. This repo's data layer
 
 ```
 lets_route/
 ├── data/
-│   └── load_xroutebench.py    # lazy loader + helpers (no bulk download by default)
+│   ├── load_xroutebench.py    # lazy loader + helpers (no bulk download by default)
+│   ├── download_to_raw.py     # download all parquet files into ./data/raw
+│   └── raw/                   # project-local copy of the dataset (pinned)
+│       ├── <config>/<split>-000.parquet   # e.g. llmrouter_generic/train-000.parquet
+│       └── ... (41 parquet files, ~46 MB total)
 ├── docs/
 │   ├── README.md
 │   ├── xroutebench.md         # dataset reference (configs, schema, usage)
 │   └── dataset-directory-structure.md  # this file
-├── study_xroutebench.ipynb    # dataset study notebook (README_f kernel)
-└── (downloaded parquet files are NOT stored here — they live in the HF cache)
+├── study_xroutebench.ipynb    # dataset study notebook (route_f kernel)
+└── (the HF cache still holds a separate per-machine copy)
 ```
 
-By design, raw dataset files are **not** copied into the repo; we always load
-via `datasets` from the HF cache. If you later want a pinned local copy, add a
-`data/raw/` folder and document it here.
+We keep a **project-local pinned copy** in `data/raw/` (mirroring the HF cache
+layout) so the whole team shares the exact same files. Load it locally with:
+
+```python
+from datasets import load_dataset
+ds = load_dataset("parquet",
+                  data_files="data/raw/llmrouter_generic/train-000.parquet",
+                  split="train")
+```
+
+Re-download (or fetch a single config) with:
+
+```bash
+python data/download_to_raw.py                # everything
+python data/download_to_raw.py --config llmrouter_generic
+```
 
 ---
 
-## 3. Flow
+## 2. Flow
 
 ```
-query text ──> load("llmrouter_generic", split, stream=True/False)
-                    │
-                    ▼
-               HF cache (~/.cache/huggingface/datasets/...)
-                    │
-                    ▼
-        data/load_xroutebench.py  ->  study/notebooks
+query text ──> data/load_xroutebench.py  ──>  data/raw/ (or HF cache)  ──>  study/notebooks
 ```
