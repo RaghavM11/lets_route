@@ -98,6 +98,54 @@ Main configs: `llmrouter_generic`, `memory_locomo`, `memory_longmemeval`,
 `personalized`, plus raw-query `*_queries` variants and `llm_candidates`
 (pricing pool).
 
+## Counterfactual Matrix (Ground Truth)
+
+The router's training signal is a **counterfactual query × model matrix** derived
+from the benchmark's own output structure (see `docs/dataset-directory-structure.md`):
+
+```
+data/raw/llmrouter_generic/<split>-000.parquet   # one row per (query, model) execution
+data/raw/llm_candidates/train-000.parquet        # 18-model pricing pool
+```
+
+### 1. Build the matrix
+
+For each query `q` (unique `embedding_id`/`task_id`) and each model `m`, pull:
+
+| Field | Where | Meaning |
+|-------|-------|---------|
+| `performance` `y_{q,m}` | routing parquet | task score of `m` on `q` (0–1) |
+| `cost` `c_{q,m}` | `llm_candidates` × token counts | realized per-row cost |
+| `task_name`, `metric` | routing parquet | group queries for eval splits |
+
+`performance` values are normalized **per metric** (e.g. `em_mc`, `GSM8K`,
+`code_eval`, `MATH`, `f1_score`) before use as labels.
+
+### 2. Oracle target (ε-optimal cheapest-tier)
+
+For each query, the acceptable set keeps models within `ε` of the best score:
+
+```
+A_ε(q) = { m : y_{q,m} ≥ max_k y_{q,k} − ε }
+target(q) = argmin_{m ∈ A_ε(q)} c_{q,m}      # cheapest acceptable model
+```
+
+If `max_k y_{q,k} = 0` (no model solves it), default to the cheapest model.
+
+### 3. Labels for training
+
+- **Multi-label BCE** on the raw matrix `y_{q,m}` (every model that solves the
+  query is a valid target — avoids penalizing a bigger model that also got it right).
+- **Oracle class** `target(q)` for a hard/soft decision head (cost-aware routing).
+
+### 4. Pipeline order
+
+1. Materialize the matrix + oracle labels (`data/` or a notebook).
+2. **Lock evals & metrics** — a fixed held-out evaluation recipe
+   (task-stratified sample, exact-score MC extraction, cost/latency accounting).
+3. Train the System-1 router head against the oracle labels.
+4. Evaluate vs fixed baselines (always-cheapest, always-best-category, official baseline).
+
 ## Modal H200 experiment
 
 The reproducible Qwen3.5-27B launcher is documented in
