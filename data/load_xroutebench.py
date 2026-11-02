@@ -96,13 +96,27 @@ def peek(config: str, split: str = "train", n: int = 5) -> list[dict]:
     return out
 
 
-def row_cost(row: dict, prices: dict[str, dict[str, float]]) -> float:
-    """Cost of one executed row in $, given a pricing table keyed by model."""
+def build_price_table(candidates_rows) -> dict[str, tuple[float, float]]:
+    """Map model_name -> (input_price_per_1m, output_price_per_1m).
+
+    `candidates_rows` is the iterable of the llm_candidates config.
+    """
+    return {
+        r["model_name"]: (r["input_price_per_1m"], r["output_price_per_1m"])
+        for r in candidates_rows
+    }
+
+
+def row_cost(row: dict, prices: dict[str, tuple[float, float]]) -> float:
+    """Cost of one executed row in $, given a pricing table keyed by model.
+
+    `prices` maps model_name -> (input_price_per_1m, output_price_per_1m),
+    as returned by build_price_table().
+    """
     model = row.get("model_name")
     p = prices.get(model)
     if p is None:
         return float("nan")
-    return (
-        row.get("input_tokens", 0) * p["input_price"] / 1e6
-        + row.get("output_tokens", 0) * p["output_price"] / 1e6
-    )
+    return row.get("input_tokens", 0) * p[0] / 1e6 + row.get(
+        "output_tokens", 0
+    ) * p[1] / 1e6

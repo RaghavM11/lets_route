@@ -1,3 +1,8 @@
+# Secrets / local env
+.env
+.env.*
+*.token
+
 # Python / uv environments
 .route_f/
 .venv/
