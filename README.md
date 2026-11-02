@@ -20,6 +20,9 @@ lets_route/
 │   ├── README.md                 # docs index
 │   ├── xroutebench.md            # dataset reference (configs, schema, usage)
 │   └── dataset-directory-structure.md  # where/how dataset files are organized
+├── hf/
+│   ├── push_release.py           # publish a release to Hugging Face Hub
+│   └── README.md                 # HF publishing guide
 ├── experiments/
 │   ├── xroutebench_official_baseline/  # official-matrix router baseline
 │   └── qwen3_5_27b_modal/        # Qwen3.5-27B xRouteBench run on Modal H200
@@ -153,6 +156,45 @@ If `max_k y_{q,k} = 0` (no model solves it), default to the cheapest model.
    (task-stratified sample, exact-score MC extraction, cost/latency accounting).
 3. Train the System-1 router head against the oracle labels.
 4. Evaluate vs fixed baselines (always-cheapest, always-best-category, official baseline).
+
+## Initial results — System-1 router baseline
+
+Trained a **Qwen3.5-0.8B** backbone (frozen) + LoRA + joint choice-head router
+against the xRouteBench counterfactual oracle (`llmrouter_generic`, ε-optimal
+cheapest-tier). See `training/system1_router_baseline.ipynb`.
+
+**Setup:** 1,200 train queries · 200 held-out test queries · 400 steps ×
+batch 4 (1,600 presentations) · ~19 min on one RTX 3060.
+
+| Metric | Training (200 test queries) |
+|---|---|
+| **Exact oracle match** (`pred == oracle_target`) | **0.73** |
+| **Within acceptable set** (`pred ∈ acceptable_models`) | **0.795** |
+| Batched decision latency | ~201 ms/query |
+| Generative baseline (oracle match) | 0.00 (192/200 invalid JSON) |
+| Generative baseline (acceptable hit) | 0.02 |
+
+Realized cost/performance vs the oracle on the same test split
+(`router/eval_router.py`):
+
+| Quantity | Oracle (GTY) | Our router |
+|---|---|---|
+| Mean per-query performance | 0.922 | **0.717** |
+| Mean per-query cost | $28.8e-6 | **$11.9e-6** |
+
+**Takeaways**
+- The router matches the oracle's exact cheapest-acceptable pick 73% of the
+  time and lands inside the acceptable set 79.5% — far above the generative
+  baseline, which emitted invalid JSON on 192/200 queries.
+- It runs at roughly **half the oracle's per-query cost** while giving up some
+  peak accuracy — the intended cost/accuracy tradeoff.
+- The decision head currently collapses onto cheap small models (gpt-oss-20b,
+  gemma-2-9b-it); distinguishing *when* to escalate to strong/expensive
+  candidates is the main open improvement.
+
+The published release (adapter + head + tokenizer + manifest) lives on HF:
+`RaghavM11/Fireworks_Hack_JEV_Style_System1_router_base_qwen3.5_0.8B`
+(see `hf/` for the publishing tooling).
 
 ## Modal H200 experiment
 

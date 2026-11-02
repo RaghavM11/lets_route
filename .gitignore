@@ -24,6 +24,9 @@ data/processed/
 # Local model checkpoints
 models/
 
+# Local router releases (canonical copy is on Hugging Face Hub)
+training/router_releases/
+
 # OS junk
 .DS_Store
 
