@@ -185,10 +185,10 @@ def _wait_for_server(process: subprocess.Popen[bytes], base_url: str) -> float:
     raise TimeoutError("SGLang did not become ready within 15 minutes")
 
 
-def _stop_process_group(process: subprocess.Popen[bytes]) -> None:
+def _stop_server(process: subprocess.Popen[bytes]) -> None:
     if process.poll() is not None:
         return
-    os.killpg(process.pid, signal.SIGTERM)
+    process.terminate()
     try:
         process.wait(timeout=30)
     except subprocess.TimeoutExpired:
@@ -295,9 +295,8 @@ def run_sglang_benchmark(
 
     base_url = "http://127.0.0.1:30000"
     command = [
-        "python",
-        "-m",
-        "sglang.launch_server",
+        "sglang",
+        "serve",
         "--model-path",
         str(model_path),
         "--host",
@@ -383,7 +382,7 @@ def run_sglang_benchmark(
             )
         benchmark_s = time.perf_counter() - benchmark_started
     finally:
-        _stop_process_group(server)
+        _stop_server(server)
 
     results = pd.DataFrame(rows)
     comparison = _candidate_comparison(
