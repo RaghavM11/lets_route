@@ -162,3 +162,15 @@ It uses SGLang, caches the pinned model in a Modal Volume, runs the six-task
 multiple-choice suite on one H200, and saves complete local and remote result
 artifacts.
 
+## Checkpoint & rollback
+
+| Ref | Hash | What |
+|-----|------|------|
+| tag `checkpoint-baseline` | `d04dbb3` (`d04dbb3329f33987087e61c311e2aa4e10d398cd`) | dataset + router + training code baseline, before training experiments |
+
+To restore if later changes break something:
+
+```bash
+git reset --hard d04dbb3        # or: git checkout checkpoint-baseline
+```
+
