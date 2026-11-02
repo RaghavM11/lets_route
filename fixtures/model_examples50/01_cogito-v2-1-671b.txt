@@ -1,0 +1,436 @@
+5 models x the same 10 fixed tasks = 50 recorded executions
+Source: xRouteBench / llmrouter_generic / train; no new model calls were made.
+Ordered by model size, largest first; strength is contextualized by full-training-set mean scores, not these ten tasks.
+A zero score does not always imply a semantic error; formatting or scoring rules may affect it. Partial F1 scores are preserved.
+The fixed set requires at least one successful candidate per task and is not an unbiased evaluation sample.
+
+==========================================================================================
+Model 1: cogito-v2-1-671b | Parameter count 671B (MoE total)
+Mean score over all 4489 training executions: 0.747045
+Recorded provider: Together | API model ID: deepcogito/cogito-v2-1-671b
+Open-weight model card: https://huggingface.co/deepcogito/cogito-671b-v2.1
+
+------------------------------------------------------------------------------------------
+smoke-01 | mmlu | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 167/147 | Recorded latency: 1.611000s | Estimated token cost: $0.000392500
+query_uid: a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+Let me analyze the information given:
+
+1. The text states: "I have a very big and nice room and I have a great school things collection."
+2. Then it says: "My brother's room is near my room. He is Mike. And he has a big sports collection."
+3. The question asks: "Does Mike have a great sports collection?"
+
+The text explicitly states that Mike "has a big sports collection." The word "big" in this context is synonymous with "great" when describing a collection. The passage directly tells us that Mike has a big (great) sports collection.
+
+Therefore, the answer is A. Yes, he does.
+
+(A)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-02 | mmlu_pro | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 159/233 | Recorded latency: 2.426000s | Estimated token cost: $0.000490000
+query_uid: a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER / GROUND TRUTH]
+I
+
+[ORIGINAL MODEL RESPONSE]
+The correct answer is (I) Ransom Trojan.
+
+Explanation:
+A Ransom Trojan (also known as Ransomware) is a type of malicious software that encrypts files on a victim's system, making them inaccessible. The attacker then demands a ransom payment in exchange for the decryption key. This directly matches the description in the question, which mentions modifying data so the system doesn't run correctly, blocking access to specific data, and demanding ransom for access.
+
+While other types of Trojans may cause damage or steal data, they don't typically demand ransom as their primary function:
+- Email Trojans spread via email
+- Backdoor Trojans create remote access points
+- Rootkit Trojans hide malicious activity
+- Banking Trojans target financial information
+- Trojan-Downloaders download other malware
+- Spyware Trojans monitor user activity
+- Network Trojans target network resources
+- Worm Trojans self-replicate
+- IM Trojans spread via instant messaging
+
+Only Ransom Trojans are specifically designed to encrypt data and demand payment for its release.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-03 | arc_challenge | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 80/229 | Recorded latency: 2.413000s | Estimated token cost: $0.000386250
+query_uid: 06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER / GROUND TRUTH]
+B
+
+[ORIGINAL MODEL RESPONSE]
+Let me analyze each option to determine which is least likely to change from solid to liquid when heat is applied:
+
+(A) Butter - Melts easily at room temperature (around 32-35°C/90-95°F). It's very heat-sensitive.
+
+(B) Paper - Doesn't actually melt; it undergoes combustion (burns) at around 233°C (451°F) rather than turning into a liquid.
+
+(C) Ice - Melts at 0°C (32°F), which is a very low temperature. It changes state very easily with heat.
+
+(D) Candle wax - Melts at relatively low temperatures (around 46-68°C/115-154°F), which is why candles work.
+
+The key here is that paper doesn't actually melt into a liquid when heated - it burns instead. The other options (butter, ice, and candle wax) all undergo a clear solid-to-liquid phase change when heated.
+
+Therefore, the correct answer is (B) paper.
+
+Answer: (B)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-04 | openbook_qa | metric=em_mc
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 85/248 | Recorded latency: 2.599000s | Estimated token cost: $0.000416250
+query_uid: 46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+Let me analyze this step by step:
+
+1) The question is about friction, which is the force that resists relative motion between two surfaces in contact.
+
+2) Friction increases with:
+   - Rougher surfaces
+   - Greater force pressing the surfaces together
+
+3) Let's evaluate each option:
+
+   (A) River stones smashing: River stones are typically smooth from water erosion, so their surfaces are relatively smooth.
+
+   (B) Hands clapping: Human skin has some texture and can produce significant friction, especially when pressed together firmly.
+
+   (C) Mirrors pressing together: Mirrors have extremely smooth, polished surfaces designed to minimize friction.
+
+   (D) Stone falling: This involves a single object moving through air, not two surfaces rubbing against each other, so friction is minimal.
+
+4) Among these, hands clapping (B) would create the most friction because:
+   - Skin has a relatively rough texture compared to the other options
+   - When clapping, there's significant force as hands come together
+   - The contact area is substantial
+
+Therefore, the correct answer is (B).
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-05 | commonsense_qa | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 91/170 | Recorded latency: 2.050000s | Estimated token cost: $0.000326250
+query_uid: 37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+The question appears to be referencing a specific cultural reference or joke. The key elements are:
+- A family TV personality
+- Dressed as a weasel
+- Playing something
+
+This is likely referring to the children's song "Pop Goes the Weasel," which is a well-known nursery rhyme. The song's title and lyrics involve a weasel, and it's commonly associated with children's entertainment.
+
+Given the options:
+(A) children's song - This fits perfectly with "Pop Goes the Weasel"
+(B) washington d.c - Not relevant
+(C) chicken coop - Not directly related
+(D) dead - Not relevant
+(E) used car lot - Not relevant
+
+The most logical answer is (A) children's song.
+
+(A)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-06 | boolq | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 146/44 | Recorded latency: 0.625000s | Estimated token cost: $0.000237500
+query_uid: 06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+Based on the passage provided, George Carlin is listed among the stars of "Bill & Ted's Excellent Adventure" along with Alex Winter and Keanu Reeves. Therefore, the correct answer is:
+
+(A)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-07 | hellaswag | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 274/257 | Recorded latency: 2.723000s | Estimated token cost: $0.000663750
+query_uid: cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+B
+
+[ORIGINAL MODEL RESPONSE]
+Let me analyze each option to determine which one provides the best continuation for making a vodka gimlet.
+
+The original text is about filling a cocktail shaker with ice for a vodka gimlet. We need to find the option that logically follows this step.
+
+Option A: Talks about keeping the lid off while dumping the mixture, which doesn't make sense at this stage since we're just starting and haven't added any liquid yet.
+
+Option B: Discusses using fresh ice and chilling the shaker beforehand. This is good advice for making cocktails as it helps keep the drink colder. It logically follows the initial step of filling the shaker with ice.
+
+Option C: Suggests using a glass if you don't have a shaker, but then mentions adding vodka and "mix in the liquor" which is redundant since vodka is already a liquor.
+
+Option D: Recommends using red ice or cherry-flavored ice and mentions champagne riesling, which is completely unrelated to making a traditional vodka gimlet.
+
+The best option is B because it provides relevant advice about using fresh ice and pre-chilling the shaker, which are both good practices for making a quality cocktail.
+
+Answer: (B)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-08 | gsm8k | metric=GSM8K
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 48/156 | Recorded latency: 1.787000s | Estimated token cost: $0.000255000
+query_uid: 2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER / GROUND TRUTH]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[ORIGINAL MODEL RESPONSE]
+Let me solve this step by step.
+
+1. First, I know there are 8 black jellybeans.
+
+2. There are 2 more green beans than black beans.
+   * So, number of green beans = 8 + 2 = 10 green beans
+
+3. There is 1 less orange bean than green beans.
+   * Number of orange beans = 10 - 1 = 9 orange beans
+
+4. Now, to find the total number of jellybeans, I add them all up:
+   * Black beans: 8
+   * Green beans: 10
+   * Orange beans: 9
+   * Total = 8 + 10 + 9 = 27
+
+Therefore, there are 27 jellybeans in the bag.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-09 | math | metric=MATH
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 106/569 | Recorded latency: 5.667000s | Estimated token cost: $0.000843750
+query_uid: c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER / GROUND TRUTH]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[ORIGINAL MODEL RESPONSE]
+Let me solve this step by step.
+
+1) First, let's understand what we're calculating. At each vertex, we multiply the numbers on the three faces that meet at that vertex, and then we sum these products for all eight vertices.
+
+2) Let's label the faces of the cube:
+   - Let's call the front and back faces A and B
+   - Left and right faces C and D
+   - Top and bottom faces E and F
+
+3) The eight vertices will have these products:
+   - A*C*E
+   - A*C*F
+   - A*D*E
+   - A*D*F
+   - B*C*E
+   - B*C*F
+   - B*D*E
+   - B*D*F
+
+4) The sum of all these products is:
+   A*C*E + A*C*F + A*D*E + A*D*F + B*C*E + B*C*F + B*D*E + B*D*F
+
+5) We can factor this expression:
+   = A*C*(E + F) + A*D*(E + F) + B*C*(E + F) + B*D*(E + F)
+   = (A*C + A*D + B*C + B*D)*(E + F)
+   = (A*(C + D) + B*(C + D))*(E + F)
+   = (A + B)*(C + D)*(E + F)
+
+6) So the sum of the eight products equals (A + B)(C + D)(E + F)
+
+7) We need to assign the numbers 2,3,4,5,6,7 to A,B,C,D,E,F to maximize this product.
+
+8) To maximize a product of sums, we should pair the largest numbers together. This is because the product of sums is maximized when the sums are as equal as possible.
+
+9) The three pairs should be as equal as possible. Let's try to make the three sums as close as possible.
+
+10) The total sum of all numbers is 2+3+4+5+6+7 = 27
+    So we want three sums that multiply to maximum, with each sum being around 9.
+
+11) Let's try to make the pairs:
+    (7,2) = 9
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-10 | squad | metric=f1_score
+Recorded score: 0.048780487804878 | Partial score / 0<score<1
+Input/output tokens: 92/57 | Recorded latency: 0.773000s | Estimated token cost: $0.000186250
+query_uid: 53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+ringers
+
+[ORIGINAL MODEL RESPONSE]
+Based on the provided context, producers have been accused of planting "ringers" within the show. The context mentions that contestants have generated controversy for being "ringers" planted by the producers, suggesting that some contestants may have been strategically placed in the competition by the show's producers.
+
+[REVIEW NOTES]
+This is token F1, not binary accuracy. An answer containing the correct phrase may still receive a low score because of extra text.

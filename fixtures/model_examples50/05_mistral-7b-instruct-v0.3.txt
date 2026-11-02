@@ -1,0 +1,338 @@
+5 models x the same 10 fixed tasks = 50 recorded executions
+Source: xRouteBench / llmrouter_generic / train; no new model calls were made.
+Ordered by model size, largest first; strength is contextualized by full-training-set mean scores, not these ten tasks.
+A zero score does not always imply a semantic error; formatting or scoring rules may affect it. Partial F1 scores are preserved.
+The fixed set requires at least one successful candidate per task and is not an unbiased evaluation sample.
+
+==========================================================================================
+Model 5: mistral-7b-instruct-v0.3 | Parameter count 7B
+Mean score over all 4489 training executions: 0.372485
+Recorded provider: NVIDIA | API model ID: mistralai/mistral-7b-instruct-v0.3
+Open-weight model card: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3
+
+------------------------------------------------------------------------------------------
+smoke-01 | mmlu | metric=em_mc
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 167/7 | Recorded latency: 0.325000s | Estimated token cost: $0.000034800
+query_uid: a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+A. Yes, he does.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-02 | mmlu_pro | metric=em_mc
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 159/5 | Recorded latency: 0.360000s | Estimated token cost: $0.000032800
+query_uid: a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER / GROUND TRUTH]
+I
+
+[ORIGINAL MODEL RESPONSE]
+I. Ransom Trojan
+
+[REVIEW NOTES]
+Review note: the response is 'I. Ransom Trojan' and the reference is I, but the recorded score is zero. Formatting/extraction may explain this; the original score is unchanged.
+
+------------------------------------------------------------------------------------------
+smoke-03 | arc_challenge | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 80/4 | Recorded latency: 0.329000s | Estimated token cost: $0.000016800
+query_uid: 06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER / GROUND TRUTH]
+B
+
+[ORIGINAL MODEL RESPONSE]
+(B) paper
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-04 | openbook_qa | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 85/97 | Recorded latency: 2.277000s | Estimated token cost: $0.000036400
+query_uid: 46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+(A) river stones smashing
+
+Explanation: The more rough a surface is, the more friction it generates. River stones are typically rougher than hands, mirrors, or a falling stone. When river stones smash together, there is a lot of surface area in contact, which increases the friction. In hands clapping, the surfaces are smoother, and in mirrors pressing together or a stone falling, there is usually less surface area in contact, resulting in less friction.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-05 | commonsense_qa | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 91/6 | Recorded latency: 0.357000s | Estimated token cost: $0.000019400
+query_uid: 37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+(A) children's song
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-06 | boolq | metric=em_mc
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 146/3 | Recorded latency: 0.275000s | Estimated token cost: $0.000029800
+query_uid: 06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+B. No
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-07 | hellaswag | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 274/48 | Recorded latency: 2.573000s | Estimated token cost: $0.000064400
+query_uid: cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+B
+
+[ORIGINAL MODEL RESPONSE]
+(B) For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-08 | gsm8k | metric=GSM8K
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 48/415 | Recorded latency: 9.897000s | Estimated token cost: $0.000092600
+query_uid: 2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER / GROUND TRUTH]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[ORIGINAL MODEL RESPONSE]
+Let's denote the number of green beans as G, the number of orange beans as O, and the total number of jellybeans as T.
+
+From the problem, we have three equations:
+
+1. G + O + 8 = T (total number of beans)
+2. G + 2 = O (number of green beans is 2 more than the number of orange beans)
+3. O - 1 < O (there is 1 less orange bean than green beans)
+
+Since equation 3 implies that O >= 1, we can rewrite equation 2 as O = G + 2.
+
+Now we have two equations with two variables:
+
+1. G + (G + 2) + 8 = T
+2. G + 2 >= 1
+
+Combining the two equations gives us:
+
+1. 2G + 10 = T
+
+From equation 2, we know that G >= 1. Let's assume G = 1 for now. Then, 2G + 10 = 13. If we plug this value of G back into equation 1, we get T = 24.
+
+However, since G >= 1, our initial assumption of G = 1 is not the minimum possible value. Let's try G = 2 instead. Then, 2G + 10 = 18. If we plug this value of G back into equation 1, we get T = 26.
+
+Since 26 is greater than the total number of black beans (8), our assumption of G = 2 is also too large. Let's try G = 3. Then, 2G + 10 = 23. If we plug this value of G back into equation 1, we get T = 25.
+
+Now, we have found a solution where the total number of jellybeans (T) is 25. Since G = 3, the number of green beans is 3, the number of orange beans is 3 + 2 - 1 = 4, and the number of black beans is 8.
+
+So, there are 25 jellybeans in the bag.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-09 | math | metric=MATH
+Recorded score: 0 | Zero score / score=0
+Input/output tokens: 106/454 | Recorded latency: 10.850000s | Estimated token cost: $0.000112000
+query_uid: c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER / GROUND TRUTH]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[ORIGINAL MODEL RESPONSE]
+To find the greatest possible value of the sum of these eight products, we need to consider the maximum product that can be formed for each vertex.
+
+Let's analyze the products for each vertex:
+
+1. A vertex where three prime numbers meet (e.g., 2, 3, 5): The maximum product is 2 * 3 * 5 = 30.
+2. A vertex where two prime numbers and a non-prime number meet (e.g., 2, 3, 4): The maximum product is 2 * 3 * 4 = 24.
+3. A vertex where three non-prime numbers meet (e.g., 2, 4, 6): The maximum product is 2 * 4 * 6 = 48.
+
+Now, let's find the number of vertices for each case:
+
+1. Vertices with three prime numbers: There are 3! (3 factorial) ways to arrange three prime numbers, which is 6.
+2. Vertices with two prime numbers and a non-prime number: There are 3 * 3 * 2 = 18 ways to arrange two prime numbers and one non-prime number.
+3. Vertices with three non-prime numbers: There are 3 * 3 * 2 = 18 ways to arrange three non-prime numbers.
+
+Since there are 8 vertices in total, the number of vertices in each category should add up to 8:
+
+6 (prime-prime-prime) + 18 (prime-non-prime) + 18 (non-prime-non-prime) = 42
+
+However, we have overcounted the vertices with two prime numbers and one non-prime number. Since there are 6 vertices with three prime numbers, there must be 12 vertices with two prime numbers and one non-prime number (8 - 6 = 12). So, the actual number of vertices in each category is:
+
+6 (prime-prime-prime) + 12 (prime-non-prime) + 18 (non-prime-non-prime) = 46
+
+Now, let's find the greatest possible sum of the eight products:
+
+6 * 30 (prime-prime-prime) + 12 * 24
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-10 | squad | metric=f1_score
+Recorded score: 0.028169014084507 | Partial score / 0<score<1
+Input/output tokens: 92/93 | Recorded latency: 2.097000s | Estimated token cost: $0.000037000
+query_uid: 53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+ringers
+
+[ORIGINAL MODEL RESPONSE]
+The question asks about what the producers have been accused of planting within the show. Based on the provided context, it seems that the producers have been accused of planting 'ringers' within the competition. A ringer is a person who is especially skilled or experienced and is introduced into a competition to ensure a particular outcome. However, the text does not explicitly state that the producers have confirmed to have planted such individuals, only that they have been accused of doing so.
+
+[REVIEW NOTES]
+This is token F1, not binary accuracy. An answer containing the correct phrase may still receive a low score because of extra text.

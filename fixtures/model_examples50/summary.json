@@ -1,0 +1,65 @@
+{
+  "count": 50,
+  "unique_queries": 10,
+  "model_count": 5,
+  "execution_source": "recorded dataset results; not live inference",
+  "frozen_manifest_sha256": "64743bae2c42b0c0c6b61ec1ef8207a75b739d37eb80dadae0b777d75363486a",
+  "source_sha256": "6ae53d6b619396271e345a242bd32c253fc9796a45a75d3c122ad74843f8a7ef",
+  "models": [
+    {
+      "model_name": "cogito-v2-1-671b",
+      "size": "671B (MoE total)",
+      "model_card": "https://huggingface.co/deepcogito/cogito-671b-v2.1",
+      "full_train_mean_score": 0.7470446578195179,
+      "sample_mean_score": 0.7048780487804878,
+      "full_score_count": 7,
+      "zero_score_count": 2,
+      "partial_score_count": 1,
+      "text_file": "01_cogito-v2-1-671b.txt"
+    },
+    {
+      "model_name": "llama-3.3-70b-instruct-turbo",
+      "size": "70B",
+      "model_card": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+      "full_train_mean_score": 0.7393917101613486,
+      "sample_mean_score": 0.82,
+      "full_score_count": 8,
+      "zero_score_count": 1,
+      "partial_score_count": 1,
+      "text_file": "02_llama-3.3-70b-instruct-turbo.txt"
+    },
+    {
+      "model_name": "mistral-small-3-24b-instruct",
+      "size": "24B",
+      "model_card": "https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501",
+      "full_train_mean_score": 0.703319840608879,
+      "sample_mean_score": 0.9142857142857143,
+      "full_score_count": 9,
+      "zero_score_count": 0,
+      "partial_score_count": 1,
+      "text_file": "03_mistral-small-3-24b-instruct.txt"
+    },
+    {
+      "model_name": "gemma-2-9b-it",
+      "size": "9B",
+      "model_card": "https://huggingface.co/google/gemma-2-9b-it",
+      "full_train_mean_score": 0.6758329211739039,
+      "sample_mean_score": 0.7153846153846153,
+      "full_score_count": 7,
+      "zero_score_count": 2,
+      "partial_score_count": 1,
+      "text_file": "04_gemma-2-9b-it.txt"
+    },
+    {
+      "model_name": "mistral-7b-instruct-v0.3",
+      "size": "7B",
+      "model_card": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+      "full_train_mean_score": 0.37248521572043164,
+      "sample_mean_score": 0.4028169014084507,
+      "full_score_count": 4,
+      "zero_score_count": 5,
+      "partial_score_count": 1,
+      "text_file": "05_mistral-7b-instruct-v0.3.txt"
+    }
+  ]
+}

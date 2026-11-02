@@ -20,6 +20,7 @@ lets_route/
 │   ├── README.md                 # docs index
 │   ├── xroutebench.md            # dataset reference (configs, schema, usage)
 │   └── dataset-directory-structure.md  # where/how dataset files are organized
+├── models/mercury.py             # Inception Mercury 3 API client
 ├── experiments/
 │   ├── xroutebench_official_baseline/  # official-matrix router baseline
 │   └── qwen3_5_27b_modal/        # Qwen3.5-27B xRouteBench run on Modal H200
@@ -29,8 +30,9 @@ lets_route/
 
 ## Environment — `route_f`
 
-A **uv**-managed Python 3.12 virtual environment, identical on **Linux (CUDA)**
-and **macOS (MPS/CPU)**. This is the single env used by both the terminal and
+A **uv**-managed Python 3.12 virtual environment for **Linux (CUDA)**
+and **macOS (MPS/CPU)**. Intel Macs use a compatible older ML stack, described
+below. This is the single env used by both the terminal and
 the VS Code notebook kernel.
 
 **Verified stack (on this Linux box):**
@@ -53,8 +55,11 @@ chmod +x setup_route_f.sh
 
 The script:
 1. Creates `.route_f/` (Python 3.12).
-2. Installs **torch 2.15.0** from PyPI — CUDA is bundled on Linux,
-   MPS/CPU on macOS; no extra index needed.
+2. Installs **torch 2.15.0** from PyPI on Linux and Apple Silicon Macs.
+   Intel Macs use **torch 2.2.2**, **NumPy 1.x**, **transformers 4.44.2**,
+   **peft 0.13.2**, **datasets 3.6.0**, and **pyarrow 18.1.0** because newer
+   PyTorch releases lack Intel macOS wheels. The Arrow pin preserves NumPy 1.x
+   compatibility.
 3. Installs the core ML stack.
 4. Registers the Jupyter kernel **route_f**.
 
@@ -67,9 +72,50 @@ The script:
 ### Notes
 
 - `.route_f/` lives only locally (already in `.gitignore`) — never commit it.
-- On macOS the backend is `device="mps"`; on Linux it's `device="cuda"`.
+- Choose `device="cuda"` if `torch.cuda.is_available()`, otherwise
+  `device="mps"` if `torch.backends.mps.is_available()`, otherwise `device="cpu"`.
+- The setup can be rerun to finish an interrupted installation; it reuses
+  the existing environment.
 - **macOS build difference:** torch on macOS is CPU/MPS, so the wheels are
   smaller and no NVIDIA libs are installed.
+
+## Model — Mercury 3
+
+The client reads `INCEPTION_API_KEY` from your environment or a local `.env`
+file (ignored by Git). See `.env.example` for the variable name.
+
+```bash
+source .route_f/bin/activate
+python -m models.mercury "What is a diffusion model?"
+```
+
+Use it from Python or the notebook:
+
+```python
+from models.mercury import chat
+
+response = chat([{"role": "user", "content": "What is a diffusion model?"}])
+print(response["choices"][0]["message"]["content"])
+```
+
+Requests use `mercury-3`, default to `reasoning_effort="low"`, time out after
+60 seconds, and raise on HTTP errors. Override reasoning effort or timeout
+with the matching `chat()` keyword argument.
+
+## Fixed English dataset examples
+
+Start with `fixtures/model_examples50/all_50_results.txt` to read five models'
+original responses to the same ten fixed prompts. Each model also has its own
+plain-text report in that folder. `fixtures/smoke10/tasks.json` is the fixed
+input manifest. These are small curated examples; full downloaded datasets
+under `data/raw/` remain local and are ignored by Git.
+
+All saved documentation, generated report labels, and annotations use English.
+Original dataset prompts, references, responses, and scores are preserved.
+See `AGENTS.md` for the persistent repository convention.
+
+For SGLang serving on Modal, see `experiments/sglang_modal/README.md`.
+The experimental workflow is recorded in `docs/experiment-plan.md`.
 
 ## Dataset — xRouteBench
 

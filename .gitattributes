@@ -1,0 +1,3 @@
+# Curated fixtures preserve the original model responses, including Markdown
+# hard line breaks represented by trailing spaces.
+fixtures/** whitespace=-blank-at-eol

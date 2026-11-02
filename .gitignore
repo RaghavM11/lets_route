@@ -1,6 +1,7 @@
 # Secrets / local env
 .env
 .env.*
+!.env.example
 *.token
 .aws/
 
@@ -21,7 +22,9 @@ __pycache__/
 results/
 
 # Local model checkpoints
-models/
+models/*
+!models/__init__.py
+!models/mercury.py
 
 # OS junk
 .DS_Store
@@ -30,3 +33,6 @@ models/
 data/raw/**
 !data/raw/**/
 !data/raw/**/*.gitkeep
+
+# Local dataset / package caches
+.cache/

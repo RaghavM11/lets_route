@@ -1,0 +1,333 @@
+5 models x the same 10 fixed tasks = 50 recorded executions
+Source: xRouteBench / llmrouter_generic / train; no new model calls were made.
+Ordered by model size, largest first; strength is contextualized by full-training-set mean scores, not these ten tasks.
+A zero score does not always imply a semantic error; formatting or scoring rules may affect it. Partial F1 scores are preserved.
+The fixed set requires at least one successful candidate per task and is not an unbiased evaluation sample.
+
+==========================================================================================
+Model 3: mistral-small-3-24b-instruct | Parameter count 24B
+Mean score over all 4489 training executions: 0.703320
+Recorded provider: Together | API model ID: mistralai/Mistral-Small-24B-Instruct-2501
+Open-weight model card: https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501
+
+------------------------------------------------------------------------------------------
+smoke-01 | mmlu | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 167/92 | Recorded latency: 8.330000s | Estimated token cost: $0.000044300
+query_uid: a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+To determine if Mike has a great sports collection, we need to consider the information provided about his sports items. Mike has two baseballs, four soccer balls, and five basketballs. This totals to 2 + 4 + 5 = 11 sports items. The description of his collection as "big" suggests that it is substantial. Therefore, based on the information given, it is reasonable to conclude that Mike does have a great sports collection.
+
+(A)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-02 | mmlu_pro | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 159/36 | Recorded latency: 0.576000s | Estimated token cost: $0.000026700
+query_uid: a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans
+
+[REFERENCE ANSWER / GROUND TRUTH]
+I
+
+[ORIGINAL MODEL RESPONSE]
+The description provided matches the characteristics of a Ransom Trojan, which is designed to encrypt or lock a user's data and demand a ransom for its release.
+
+(I)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-03 | arc_challenge | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 80/59 | Recorded latency: 1.040000s | Estimated token cost: $0.000025700
+query_uid: 06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax
+
+[REFERENCE ANSWER / GROUND TRUTH]
+B
+
+[ORIGINAL MODEL RESPONSE]
+The substance least likely to change from a solid state to a liquid state when heat is applied is (B) paper. Paper does not melt when heat is applied; instead, it typically burns or chars. The other options—butter, ice, and candle wax—all melt when heated.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-04 | openbook_qa | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 85/45 | Recorded latency: 0.686000s | Estimated token cost: $0.000022000
+query_uid: 46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+The amount of friction depends on the roughness of the surfaces in contact. Among the given options, river stones smashing would involve the roughest surfaces, leading to the most friction.
+
+Final answer: (A)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-05 | commonsense_qa | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 91/57 | Recorded latency: 0.801000s | Estimated token cost: $0.000026200
+query_uid: 37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+The correct answer is (A) children's song. The sentence implies that the TV personality, dressed as a weasel, started to perform or play something suitable for children, which fits best with a "children's song." The other options do not fit the context of the sentence.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-06 | boolq | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 146/3 | Recorded latency: 0.144000s | Estimated token cost: $0.000015500
+query_uid: 06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No
+
+[REFERENCE ANSWER / GROUND TRUTH]
+A
+
+[ORIGINAL MODEL RESPONSE]
+(A)
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-07 | hellaswag | metric=em_mc
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 274/52 | Recorded latency: 0.763000s | Estimated token cost: $0.000043000
+query_uid: cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+B
+
+[ORIGINAL MODEL RESPONSE]
+The correct option is (B). This option provides additional relevant information about using fresh ice and chilling the cocktail shaker, which are both important steps for making a well-chilled and tasty vodka gimlet. The other options contain irrelevant or incorrect information.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-08 | gsm8k | metric=GSM8K
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 48/231 | Recorded latency: 2.695000s | Estimated token cost: $0.000074100
+query_uid: 2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?
+
+[REFERENCE ANSWER / GROUND TRUTH]
+There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27
+
+[ORIGINAL MODEL RESPONSE]
+Let's solve this step by step:
+
+1. **Determine the number of green beans:**
+   The bag contains 2 more green beans than black beans. Since there are 8 black beans, the number of green beans is:
+   \[
+   8 + 2 = 10 \text{ green beans}
+   \]
+
+2. **Determine the number of orange beans:**
+   The bag contains 1 less orange bean than green beans. Since there are 10 green beans, the number of orange beans is:
+   \[
+   10 - 1 = 9 \text{ orange beans}
+   \]
+
+3. **Calculate the total number of jellybeans:**
+   Add the number of black, green, and orange beans together:
+   \[
+   8 \text{ (black)} + 10 \text{ (green)} + 9 \text{ (orange)} = 27 \text{ jellybeans}
+   \]
+
+So, there are 27 jellybeans in the bag.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-09 | math | metric=MATH
+Recorded score: 1 | Full score / score=1
+Input/output tokens: 106/384 | Recorded latency: 4.472000s | Estimated token cost: $0.000125800
+query_uid: c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?
+
+[REFERENCE ANSWER / GROUND TRUTH]
+Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$
+
+[ORIGINAL MODEL RESPONSE]
+Let the labels be $a, b, c, d, e, f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite. Then the sum of the eight products is
+\[
+ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).
+\]
+By AM-GM,
+\[
+(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3.
+\]
+Given the numbers 2, 3, 4, 5, 6, 7, the sum of all numbers is
+\[
+2 + 3 + 4 + 5 + 6 + 7 = 27.
+\]
+Thus,
+\[
+\frac{(a + b) + (c + d) + (e + f)}{3} = \frac{27}{3} = 9.
+\]
+Therefore,
+\[
+(a + b)(c + d)(e + f) \le 9^3 = 729.
+\]
+Equality occurs when $a + b = c + d = e + f = 9$, which is achievable. For example, assign the numbers as follows: $a = 2, b = 7, c = 3, d = 6, e = 4, f = 5$. This satisfies $a + b = 9$, $c + d = 9$, and $e + f = 9$.
+
+Thus, the maximum sum is $\boxed{729}$.
+
+[REVIEW NOTES]
+No additional notes; the original dataset score is preserved.
+
+------------------------------------------------------------------------------------------
+smoke-10 | squad | metric=f1_score
+Recorded score: 0.142857142857142 | Partial score / 0<score<1
+Input/output tokens: 92/22 | Recorded latency: 0.337000s | Estimated token cost: $0.000015800
+query_uid: 53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152
+
+[ORIGINAL PROMPT]
+[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.
+
+[REFERENCE ANSWER / GROUND TRUTH]
+ringers
+
+[ORIGINAL MODEL RESPONSE]
+Based on the provided context, producers have been accused of planting **"ringers"** within the show.
+
+[REVIEW NOTES]
+This is token F1, not binary accuracy. An answer containing the correct phrase may still receive a low score because of extra text.

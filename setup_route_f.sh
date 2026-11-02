@@ -13,16 +13,27 @@ PY_VERSION="3.12"
 # Detect OS. 'uv' works on both Linux and macOS.
 # ---------------------------------------------------------------------------
 OS="$(uname -s)"
+ARCH="$(uname -m)"
 echo "== Detected OS: ${OS} =="
 
 echo "== Creating uv venv: ${ENV_DIR} (py${PY_VERSION}) =="
-uv venv "${ENV_DIR}" --python "${PY_VERSION}"
+if [[ ! -x "${ENV_DIR}/bin/python" ]]; then
+  uv venv "${ENV_DIR}" --python "${PY_VERSION}"
+fi
 # uv creates a .venv-style layout; the interpreter is at .route_f/bin/python
 
 # ---------------------------------------------------------------------------
 # Install torch from PyPI. On Linux, PyPI wheels already bundle CUDA support;
 # on macOS they use the MPS/CPU backend. No special index needed.
 # ---------------------------------------------------------------------------
+if [[ "${OS}" == "Darwin" && "${ARCH}" == "x86_64" ]]; then
+  # PyTorch 2.2.2 is the last release with Intel macOS wheels.
+  echo "== Installing Intel macOS stack (torch 2.2.2, NumPy 1.x) =="
+  uv pip install --python "${ENV_DIR}/bin/python" \
+    "torch==2.2.2" "numpy<2" "transformers==4.44.2" "peft==0.13.2" \
+    "accelerate>=0.34,<1" "huggingface_hub<1" "datasets==3.6.0" \
+    safetensors "tokenizers>=0.19,<0.20" "pandas<3" tqdm "pyarrow==18.1.0"
+else
 echo "== Installing torch 2.15.0 from PyPI (CUDA on Linux / MPS on macOS) =="
 uv pip install --python "${ENV_DIR}/bin/python" "torch==2.15.0"
 
@@ -42,13 +53,14 @@ uv pip install --python "${ENV_DIR}/bin/python" \
   pandas==3.1.0 \
   tqdm==4.70.1 \
   pyarrow==26.0.0
+fi
 
 # ---------------------------------------------------------------------------
 # Jupyter kernel packages + register kernel
 # ---------------------------------------------------------------------------
 echo "== Jupyter kernel packages =="
 uv pip install --python "${ENV_DIR}/bin/python" \
-  ipykernel ipython jupyter_client
+  ipykernel ipython jupyter_client requests python-dotenv
 
 echo "== Register Jupyter kernel 'route_f' =="
 "${ENV_DIR}/bin/python" -m ipykernel install --user \
