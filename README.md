@@ -7,8 +7,10 @@ LLM-routing experimentation repo (hackathon project, `2026-11-02`).
 ```
 setup_route_f.sh          # builds the uv-managed "route_f" environment
 data/load_xroutebench.py  # lazy loader for the xRouteBench dataset (no bulk download)
+docs/                     # markdown docs (dataset reference, directory structure)
 route_f_playground.ipynb  # notebook on the route_f kernel
-.gitignore                # ignores environments / caches
+study_xroutebench.ipynb   # dataset study notebook
+.gitignore                # ignores environments / caches / secrets
 ```
 
 ## Environment — `route_f`
@@ -58,7 +60,9 @@ The script:
 ## Dataset — xRouteBench
 
 See [ulab-ai/xRouteBench](https://huggingface.co/datasets/ulab-ai/xRouteBench)
-(LLM-routing benchmark). `data/load_xroutebench.py` exposes:
+(LLM-routing benchmark). Full reference and on-disk storage layout live in
+`docs/xroutebench.md` and `docs/dataset-directory-structure.md`.
+`data/load_xroutebench.py` exposes:
 
 - `list_configs()` / `schema(config, split)` — via the HF API, no download.
 - `load(config, split, stream=True)` — **lazy** streaming (default); set
