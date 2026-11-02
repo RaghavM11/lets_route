@@ -5,12 +5,23 @@ LLM-routing experimentation repo (hackathon project, `2026-11-02`).
 ## Project structure
 
 ```
-setup_route_f.sh          # builds the uv-managed "route_f" environment
-data/load_xroutebench.py  # lazy loader for the xRouteBench dataset (no bulk download)
-docs/                     # markdown docs (dataset reference, directory structure)
-route_f_playground.ipynb  # notebook on the route_f kernel
-study_xroutebench.ipynb   # dataset study notebook
-.gitignore                # ignores environments / caches / secrets
+lets_route/
+├── setup_route_f.sh              # builds the uv-managed "route_f" env (Linux+macOS)
+├── .gitignore                    # envs, secrets, data/raw parquet content
+├── README.md
+├── data/
+│   ├── load_xroutebench.py       # lazy loader for xRouteBench (no bulk download)
+│   ├── download_to_raw.py        # download all parquet -> data/raw
+│   └── raw/                      # dataset skeleton only (.gitkeep per config)
+│       ├── llmrouter_generic/
+│       ├── llm_candidates/
+│       └── … (17 config folders; parquet content is gitignored)
+├── docs/
+│   ├── README.md                 # docs index
+│   ├── xroutebench.md            # dataset reference (configs, schema, usage)
+│   └── dataset-directory-structure.md  # where/how dataset files are organized
+├── route_f_playground.ipynb      # env sanity-check notebook (route_f kernel)
+└── study_xroutebench.ipynb       # dataset study notebook
 ```
 
 ## Environment — `route_f`
@@ -68,7 +79,8 @@ See [ulab-ai/xRouteBench](https://huggingface.co/datasets/ulab-ai/xRouteBench)
 - `load(config, split, stream=True)` — **lazy** streaming (default); set
   `stream=False` only when you actually want the full local download.
 - `peek(config, split, n)` — stream the first `n` rows only.
-- `row_cost(row, prices)` — price-aware routing cost helper.
+- `build_price_table(candidates)` / `row_cost(row, prices)` — price-aware
+  routing-cost helpers for the `llm_candidates` pool.
 
 ```python
 import sys; sys.path.insert(0, ".")
