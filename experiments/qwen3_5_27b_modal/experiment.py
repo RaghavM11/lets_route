@@ -308,6 +308,11 @@ def run_sglang_benchmark(
         "bfloat16",
         "--mem-fraction-static",
         "0.80",
+        "--max-running-requests",
+        "1",
+        "--disable-prefill-cuda-graph",
+        "--cuda-graph-bs-decode",
+        "1",
         "--model-loader-extra-config",
         '{"enable_multithread_load": true}',
     ]
