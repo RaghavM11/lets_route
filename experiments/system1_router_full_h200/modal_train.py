@@ -140,7 +140,12 @@ def _collate(encs, pad_id, device):
     secrets=[modal.Secret.from_name("hf-token")],
     volumes={"/data": VOLUME},
 )
-def train_on_h200():
+def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: int = 12, fast_eval: int = 32):
+    """Train the System-1 router on an H200.
+
+    Default (fast_test=False) runs the full dataset (~2 epochs). Set
+    fast_test=True for a quick pipeline smoke test on a small subset.
+    """
     import torch
     import torch.nn.functional as F
     from torch import nn
@@ -162,6 +167,12 @@ def train_on_h200():
     train = splits["train"] + splits["valid"]
     test = splits["test"]
     pool = {m: f"{m} (candidate)" for m in sorted({c["model"] for r in train for c in r["candidates"]})}
+
+    # --- FAST TEST MODE (pipeline smoke test) ---
+    if fast_test:
+        train = rng.sample(train, min(fast_train, len(train)))
+        test = rng.sample(test, min(fast_eval, len(test)))
+        print(f"[FAST TEST] train={len(train)} eval={len(test)} steps={fast_steps}", flush=True)
 
     tok = AutoTokenizer.from_pretrained(MODEL, revision=MODEL_REVISION, use_fast=True, trust_remote_code=False)
     if tok.pad_token_id is None:
@@ -229,22 +240,23 @@ def train_on_h200():
         rng.shuffle(keep)
         return _request(row["query"], {k: pool[k] for k in keep})
 
+    steps = fast_steps if fast_test else STEPS
     opt = torch.optim.AdamW([
         {"params": [p for p in model.parameters() if p.requires_grad], "lr": 2e-4},
         {"params": head.parameters(), "lr": 1e-3},
     ], weight_decay=0.01)
-    warmup = min(20, max(1, STEPS // 5))
+    warmup = min(20, max(1, steps // 5))
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: min(1, (s + 1) / warmup) if s < warmup
-                                              else 0.5 * (1 + math.cos(math.pi * (s - warmup) / max(1, STEPS - warmup))))
+                                              else 0.5 * (1 + math.cos(math.pi * (s - warmup) / max(1, steps - warmup))))
     trainable = [p for p in router.parameters() if p.requires_grad]
     rows = []
-    while len(rows) < STEPS * BATCH:
+    while len(rows) < steps * BATCH:
         order = list(train); rng.shuffle(order); rows.extend(order)
-    rows = rows[:STEPS * BATCH]
+    rows = rows[:steps * BATCH]
 
     router.train(); opt.zero_grad(set_to_none=True)
     t0 = time.perf_counter()
-    for step in range(STEPS):
+    for step in range(steps):
         part = rows[step * BATCH:(step + 1) * BATCH]
         encs = [_encode_record(tok, train_request(r)) for r in part]
         logits = router(_collate(encs, tok.pad_token_id, DEVICE))
@@ -256,8 +268,8 @@ def train_on_h200():
         loss.backward()
         torch.nn.utils.clip_grad_norm_(trainable, 1.0, error_if_nonfinite=True)
         opt.step(); sched.step(); opt.zero_grad(set_to_none=True)
-        if step % 50 == 0:
-            print(f"step {step}/{STEPS} loss={loss.item():.3f}", flush=True)
+        if step % 5 == 0 or step == steps - 1:
+            print(f"step {step}/{steps} loss={loss.item():.3f}", flush=True)
     train_secs = time.perf_counter() - t0
     print(f"training took {train_secs/60:.2f} min", flush=True)
 
@@ -285,9 +297,9 @@ def train_on_h200():
     tok.save_pretrained(release / "tokenizer")
     torch.save({k: v.detach().cpu() for k, v in head.state_dict().items()}, release / "head.pt")
     (release / "manifest.json").write_text(json.dumps({
-        "format": "router-adapter-v1", "model_id": MODEL, "steps": STEPS, "batch": BATCH,
+        "format": "router-adapter-v1", "model_id": MODEL, "steps": steps, "batch": BATCH,
         "seed": SEED, "train_size": len(train), "test_size": len(test),
-        "training_seconds": train_secs, "loss_at_end": loss.item(),
+        "fast_test": fast_test, "training_seconds": train_secs, "loss_at_end": loss.item(),
         "held_out": {"oracle_acc": oracle_acc, "acceptable_hit": acc_hit},
     }, indent=2))
     VOLUME.commit()
