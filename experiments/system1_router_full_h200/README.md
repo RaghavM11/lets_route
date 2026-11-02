@@ -80,6 +80,47 @@ router, tok, manifest = load_release("./downloaded_release/router_<uuid>")
 results = router_vs_gt("./downloaded_release/router_<uuid>")   # vs ground-truth oracle
 ```
 
+## Run log — volume vs run details
+
+Every training run writes its release into the **`route-training` Volume**
+under `/releases/router_<uuid>/`. The manifest captures the run config and
+held-out metrics. We track runs here.
+
+### Volume layout
+
+| Path (in `route-training` Volume) | Contents |
+|---|---|
+| `/processed/routing_train.jsonl` | training split (train+valid source) |
+| `/processed/routing_valid.jsonl` | validation split |
+| `/processed/routing_test.jsonl` | held-out test split (3,729 queries) |
+| `/releases/router_<uuid>/adapter` | LoRA adapter (PEFT) |
+| `/releases/router_<uuid>/head.pt` | trained choice-head weights |
+| `/releases/router_<uuid>/tokenizer` | matching tokenizer |
+| `/releases/router_<uuid>/manifest.json` | run config + metrics |
+
+### Run log
+
+| # | Date | Backbone | Scope | Steps | Volume release | oracle_acc | acceptable_hit | Status |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 2026-11-02 | Qwen3.5-0.8B | 1,200 train / 200 test | 400 | `releases/router_0c98a5eb3d` | 0.730 | 0.795 | ✅ done (baseline) |
+| 2 | 2026-11-02 | Qwen3.5-9B | fast-test: 100 train / 32 test | 12 | `releases/router_7fda15b1ca` | 0.688* | 0.875* | ✅ done (pipeline smoke) |
+| 3 | — | Qwen3.5-9B | full: 4,488 train / 3,729 test | 2,244 | _to be filled_ | — | — | ⏳ planned |
+
+\* Fast-test run is a 12-step smoke test on a tiny subset — numbers are not
+conclusive; it only validates the H200 pipeline end-to-end.
+
+**How to keep this log current after a new run:** after training finishes,
+run:
+
+```bash
+modal volume ls route-training /releases        # find newest router_<uuid>
+modal volume get route-training /releases/router_<uuid>/manifest.json ./manifest.json
+cat manifest.json
+```
+
+Then add a row above with the manifest's `steps`, `train_size`/`test_size`,
+and `held_out.oracle_acc` / `held_out.acceptable_hit`.
+
 ## Expected outcome
 
 Larger backbone (9B vs 0.8B) should improve exact oracle match beyond the

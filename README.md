@@ -197,6 +197,11 @@ The published release (adapter + head + tokenizer + manifest) lives on HF:
 `RaghavM11/Fireworks_Hack_JEV_Style_System1_router_base_qwen3.5_0.8B`
 (see `hf/` for the publishing tooling).
 
+**Modal run tracking:** all training runs persist their releases into the
+`route-training` Modal Volume (`/releases/router_<uuid>/`); the run log
+(volume path ↔ run details ↔ metrics) is maintained in
+[`experiments/system1_router_full_h200/README.md`](experiments/system1_router_full_h200/README.md#run-log--volume-vs-run-details).
+
 ## Modal H200 experiment
 
 The reproducible Qwen3.5-27B launcher is documented in
