@@ -3,3 +3,4 @@
 fixtures/** whitespace=-blank-at-eol
 results/sglang_fixed_ten/qwen-four-fixed-ten-20261102/** whitespace=-blank-at-eol
 results/fireworks_fixed_ten/fireworks-eval-20261102-progress/** whitespace=-blank-at-eol
+results/fireworks_fixed_ten/fireworks-eval-20261102/** whitespace=-blank-at-eol,-blank-at-eof

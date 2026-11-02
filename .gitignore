@@ -28,6 +28,9 @@ results/sglang_fixed_ten/*
 results/fireworks_fixed_ten/*
 # User-requested stable progress snapshot; the live run stays ignored.
 !results/fireworks_fixed_ten/fireworks-eval-20261102-progress/
+!results/fireworks_fixed_ten/fireworks-eval-20261102/
+# Keep the full provider catalog cache local; selected entries are published.
+results/fireworks_fixed_ten/fireworks-eval-20261102/catalog.json
 
 # Local model checkpoints
 models/*

@@ -132,6 +132,10 @@ every Auto turn and reuses the local Modal scorer. Set `FIREWORKS_API_KEY` in
 the ignored `.env` file. Results are saved under `results/fireworks_fixed_ten/`
 and remain local unless explicitly selected for publication.
 
+The user-requested [published Fireworks run](results/fireworks_fixed_ten/fireworks-eval-20261102/README.md)
+contains 49 valid responses and one recorded service timeout across 50 planned
+model/task pairs. The earlier progress snapshot is retained separately.
+
 ## Dataset — xRouteBench
 
 See [ulab-ai/xRouteBench](https://huggingface.co/datasets/ulab-ai/xRouteBench)

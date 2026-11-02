@@ -179,7 +179,11 @@ def main():
     parser.add_argument('--run-id',default='fireworks-eval-20261102')
     parser.add_argument('--max-tokens',type=int,default=1024)
     parser.add_argument('--retry-errors',action='store_true',help='Retry only saved request errors and preserve their history')
+    parser.add_argument('--retry-reasoning-effort',choices=['none','low','medium','high'],
+                        help='Explicit effort override for retried service-error pairs only')
     args=parser.parse_args()
+    if args.retry_reasoning_effort and not args.retry_errors:
+        raise ValueError('A retry effort override requires --retry-errors')
     if not args.run_id.replace('-','').replace('_','').isalnum():
         raise ValueError('Unsafe run ID')
     arms=args.arms.split(',')
@@ -213,8 +217,10 @@ def main():
         metadata['arms']=old['arms']
     metadata['execution_order']=arms
     metadata['retried_error_records']=old.get('retried_error_records',0)
+    retry_pairs=set()
     if args.retry_errors:
         failed=[r for r in rows if r['error'] is not None]
+        retry_pairs={(r['arm'],r['fixed_id']) for r in failed}
         if failed:
             history_path=folder/'failed_request_history.json'
             history=json.loads(history_path.read_text()) if history_path.exists() else []
@@ -222,6 +228,14 @@ def main():
             history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2))
             rows=[r for r in rows if r['error'] is None]
             metadata['retried_error_records']=len(history)
+            if args.retry_reasoning_effort:
+                settings_path=folder/'retry_settings_history.json'
+                settings=json.loads(settings_path.read_text()) if settings_path.exists() else []
+                settings.append({'at':datetime.now(timezone.utc).isoformat(),
+                    'pairs':[{'arm':r['arm'],'fixed_id':r['fixed_id'],'previous_effort':r['reasoning_effort']} for r in failed],
+                    'new_effort':args.retry_reasoning_effort,
+                    'note':'Explicit service-recovery attempt; successful prior requests were not repeated.'})
+                settings_path.write_text(json.dumps(settings,indent=2)+'\n')
     done={(r['arm'],r['fixed_id']) for r in rows}
     client=FireworksClient()
     for arm in arms:
@@ -229,6 +243,8 @@ def main():
             if (arm,task['fixed_id']) in done: continue
             payload={"model":ARMS[arm]['model'],"messages":messages(task['query']),"temperature":0,
                      "seed":42,"max_tokens":args.max_tokens,"reasoning_effort":ARMS[arm]['effort']}
+            if (arm,task['fixed_id']) in retry_pairs and args.retry_reasoning_effort:
+                payload['reasoning_effort']=args.retry_reasoning_effort
             try:
                 response,attempts,error,effective=invoke(client,payload)
             except FireworksError as exc:
@@ -238,7 +254,8 @@ def main():
             rows.append(client.sanitize(row))
             reports(folder,rows,metadata,tasks)
             print(f"{arm} {task['fixed_id']}: served={row['served_model']} score={row['score']} finish={row['finish_reason']} error={row['error']}",flush=True)
-    reports(folder,rows,metadata,tasks,'complete')
+    final_state='complete_with_service_errors' if any(row['error'] is not None for row in rows) else 'complete'
+    reports(folder,rows,metadata,tasks,final_state)
     print(f"Saved {len(rows)} Fireworks request records to {folder}",flush=True)
 
 

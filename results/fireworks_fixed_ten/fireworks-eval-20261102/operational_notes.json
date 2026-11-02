@@ -1,0 +1,10 @@
+{
+  "events": [
+    {
+      "arm": "nemotron30b",
+      "fixed_id": "smoke-07",
+      "event": "Client interrupted an outstanding slow request to prioritize other hosted models; no completion was received or scored. Billing for the interrupted request is unknown."
+    }
+  ],
+  "transport": "New requests close their HTTP connection after each response."
+}

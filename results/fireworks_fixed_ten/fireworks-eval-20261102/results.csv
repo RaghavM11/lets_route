@@ -1,0 +1,726 @@
+arm,requested_model,served_model,auto_model_resolved,fixed_id,query_uid,task_name,metric,query,ground_truth,response,score,prediction,scorer,input_tokens,cached_input_tokens,output_tokens,finish_reason,reasoning_effort,latency_s,estimated_token_cost_usd,error,empty_answer
+auto,auto,glm-5p3-flash,True,smoke-01,a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165,mmlu,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.",A,A,1.0,A,local_mc_A_to_J,169,0,3,stop,low,1.869892503000301,2.685e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-02,a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73,mmlu_pro,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans",I,"I
+
+The answer is (I).",1.0,I,local_mc_A_to_J,162,0,10,stop,low,1.5608126409970282,2.93e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-03,06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6,arc_challenge,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax",B,(B) paper,1.0,B,local_mc_A_to_J,85,0,11,stop,low,2.7628816260003077,1.825e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-05,37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742,commonsense_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot",A,(A),1.0,A,local_mc_A_to_J,92,0,23,stop,low,1.5976324869989185,2.53e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-06,06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e,boolq,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No",A,A,1.0,A,local_mc_A_to_J,153,0,3,stop,low,1.3474531700012449,2.4449999999999998e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-07,cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c,hellaswag,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",B,B,1.0,B,local_mc_A_to_J,274,0,5,stop,low,1.069497679000051,4.36e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-08,2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac,gsm8k,GSM8K,"[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?","There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27","Green beans: 8 + 2 = 10
+Orange beans: 10 − 1 = 9
+
+Total: 8 + 10 + 9 = **27 jellybeans**",1.0,27,local_last_numeric_answer_fixed_smoke_tasks,63,0,42,stop,low,5.534150240000599,3.0449999999999998e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-09,c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b,math,MATH,"[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?","Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$",\boxed{729},1.0,729,local_last_numeric_answer_fixed_smoke_tasks,121,0,121,stop,low,2.129755792000651,7.865e-05,,False
+auto,auto,glm-5p3-flash,True,smoke-10,53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152,squad,f1_score,"[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",ringers,"Producers have been accused of planting ""ringers"" within the show.",0.2,"Producers have been accused of planting ""ringers"" within the show.",local_normalized_token_f1,103,0,17,stop,low,1.2278308109998761,2.395e-05,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-01,a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165,mmlu,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.",A,Final answer is:,0.0,,local_mc_A_to_J,174,0,8,stop,none,0.5968345860019326,1.0300000000000001e-05,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-02,a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73,mmlu_pro,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans",I,I,1.0,I,local_mc_A_to_J,165,0,2,stop,none,0.42305497399866,8.65e-06,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-03,06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6,arc_challenge,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax",B,(B),1.0,B,local_mc_A_to_J,89,0,3,stop,none,0.23814440199930687,5.050000000000001e-06,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-04,46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb,openbook_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling",A,(A) river stones smashing,1.0,A,local_mc_A_to_J,96,0,7,stop,none,0.26922547399954055,6.200000000000001e-06,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-05,37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742,commonsense_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot",A,(A) children's song,1.0,A,local_mc_A_to_J,98,0,6,stop,none,0.3228017700021155,6.100000000000001e-06,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-01,a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165,mmlu,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.",A,(A),1.0,A,local_mc_A_to_J,226,0,74,stop,low,0.48033068499717047,7.829999999999999e-05,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-02,a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73,mmlu_pro,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans",I,(I),1.0,I,local_mc_A_to_J,214,0,33,stop,low,0.5156648369993491,5.190000000000001e-05,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-03,06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6,arc_challenge,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax",B,(B),1.0,B,local_mc_A_to_J,145,0,51,stop,low,0.521636708999722,5.234999999999999e-05,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-04,46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb,openbook_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling",A,"The situation that involves the greatest amount of surface friction is **hands clapping**.  
+
+**Answer: (B)**",0.0,B,local_mc_A_to_J,151,0,107,stop,low,0.6263622869992105,8.685e-05,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-05,37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742,commonsense_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot",A,(A),1.0,A,local_mc_A_to_J,151,0,48,stop,low,0.416077158999542,5.145e-05,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-06,06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e,boolq,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No",A,(A),1.0,A,local_mc_A_to_J,211,0,38,stop,low,0.49553076900338056,5.445e-05,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-07,cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c,hellaswag,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",B,(B),1.0,B,local_mc_A_to_J,324,0,104,stop,low,0.6442233400011901,0.000111,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-08,2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac,gsm8k,GSM8K,"[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?","There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27","**Step 1: Identify the given numbers**
+
+- Black jellybeans = **8**  
+- Green jellybeans = “2 more green beans” than the black beans.  
+- Orange jellybeans = “1 less orange bean than green beans”.
+
+**Step 2: Find the number of green beans**
+
+Since there are 2 more green beans than black beans:
+
+\[
+\text{Green beans} = 8 \;(\text{black}) + 2 = 10
+\]
+
+**Step 3: Find the number of orange beans**
+
+The orange beans are one fewer than the green beans:
+
+\[
+\text{Orange beans} = 10 \;(\text{green}) - 1 = 9
+\]
+
+**Step 4: Add all the beans together**
+
+\[
+\text{Total beans} = \text{black} + \text{green} + \text{orange}
+= 8 + 10 + 9 = 27
+\]
+
+---
+
+\[
+\boxed{27}
+\]",1.0,27,local_last_numeric_answer_fixed_smoke_tasks,122,0,297,stop,low,0.9987120109981333,0.0001965,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-09,c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b,math,MATH,"[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?","Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$",\boxed{729},1.0,729,local_last_numeric_answer_fixed_smoke_tasks,180,0,358,stop,low,1.719462344000931,0.0002418,,False
+gptoss120b,accounts/fireworks/models/gpt-oss-120b,accounts/fireworks/models/gpt-oss-120b,,smoke-10,53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152,squad,f1_score,"[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",ringers,They’ve been accused of slipping “ringers” – contestants who were secretly planted by the producers – into the show.,0.0,They’ve been accused of slipping “ringers” – contestants who were secretly planted by the producers – into the show.,local_normalized_token_f1,163,67,68,stop,low,0.655799111998931,5.6205e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-01,a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165,mmlu,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.",A,A,1.0,A,local_mc_A_to_J,169,168,3,stop,low,0.6520678650012997,6.69e-06,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-02,a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73,mmlu_pro,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans",I,"I
+
+The answer is (I).",1.0,I,local_mc_A_to_J,162,128,10,stop,low,1.0542890670003544,1.3939999999999999e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-03,06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6,arc_challenge,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax",B,"(B) paper
+
+Paper does not melt when heated; instead, it burns/decomposes before it could ever become a liquid. Butter, ice, and candle wax all melt into liquids when heat is applied.",1.0,B,local_mc_A_to_J,85,0,51,stop,low,3.6936596960040333,3.825e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-04,46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb,openbook_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling",A,(A) river stones smashing,1.0,A,local_mc_A_to_J,91,0,30,stop,low,0.9775689860034618,2.865e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-05,37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742,commonsense_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot",A,(A) children's song,1.0,A,local_mc_A_to_J,92,0,26,stop,low,0.8984504230029415,2.6799999999999998e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-06,06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e,boolq,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No",A,A,1.0,A,local_mc_A_to_J,153,152,3,stop,low,2.34927915300068,6.21e-06,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-07,cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c,hellaswag,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",B,B,1.0,B,local_mc_A_to_J,274,0,3,stop,low,1.4798160689970246,4.26e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-08,2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac,gsm8k,GSM8K,"[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?","There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27","Green beans: 8 + 2 = 10
+Orange beans: 10 − 1 = 9
+Total: 8 + 10 + 9 = **27 jellybeans**",1.0,27,local_last_numeric_answer_fixed_smoke_tasks,63,0,42,stop,low,1.0263856499987014,3.0449999999999998e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-09,c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b,math,MATH,"[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?","Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$",\boxed{729},1.0,729,local_last_numeric_answer_fixed_smoke_tasks,121,120,130,stop,low,1.8457971550014918,6.875e-05,,False
+glmflash,accounts/fireworks/models/glm-5p3-flash,accounts/fireworks/models/glm-5p3-flash,,smoke-10,53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152,squad,f1_score,"[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",ringers,"Producers have been accused of planting ""ringers"" within the show.",0.2,"Producers have been accused of planting ""ringers"" within the show.",local_normalized_token_f1,103,64,17,stop,low,0.9273685839980317,1.627e-05,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-01,a07a0a4a52af3e8617d50d5ad8f18485b839ded14abddf1ab1fd9f66af2ea165,mmlu,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+My name is Kitty. I have a very big and nice room and I have a great school things collection. My brother's room is near my room. He is Mike. And he has a big sports collection. I have twenty erasers, ten pencils, nine rulers and eight pens in my schoolbag. My brother has two baseballs, four soccer balls and five basketballs under his bed. Does Mike have a great sports collection?
+
+## Options:
+A. Yes, he does.
+B. No, he doesn't.
+C. We don't know.
+D. No, I don't.",A,"Looking at the passage, I need to determine if Mike has a great sports collection.
+
+The passage states: ""He is Mike. And he has a big sports collection.""
+
+It also mentions: ""My brother has two baseballs, four soccer balls and five basketballs under his bed.""
+
+The text explicitly says Mike has a ""big sports collection,"" which aligns with having a ""great sports collection.""
+
+The answer is A. Yes, he does.
+
+(A)",1.0,A,local_mc_A_to_J,179,0,98,stop,none,2.021153363999474,0.000946,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-02,a966f28a03ad716ff8b8084c032ca8af525d80ff422e47238a2d60879524af73,mmlu_pro,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+
+## Options:
+A. Email Trojans
+B. Backdoor Trojans
+C. Rootkit Trojans
+D. Banking Trojans
+E. Trojan-Downloader
+F. Spyware Trojans
+G. Network Trojans
+H. Worm Trojans
+I. Ransom Trojan
+J. IM – Trojans",I,"The question describes malware that can modify data on your system so that it doesn't run correctly, you can no longer access specific data, or it may ask for ransom to give you access.
+
+Let me analyze the options:
+
+- **Email Trojans**: Related to email-based attacks
+- **Backdoor Trojans**: Create backdoors for unauthorized access
+- **Rootkit Trojans**: Hide malicious activity at system level
+- **Banking Trojans**: Target banking information
+- **Trojan-Downloader**: Downloads other malware
+- **Spyware Trojans**: Spy on user activity
+- **Network Trojans**: Target network communications
+- **Worm Trojans**: Self-replicating malware
+- **Ransom Trojan**: Modifies/encrypts data and demands ransom for access
+- **IM – Trojans**: Target instant messaging
+
+The description clearly matches **Ransom Trojan** (option I). The key indicators are:
+1. ""modify data on your system""
+2. ""system doesn't run correctly""
+3. ""you can no longer access specific data""
+4. ""ask for ransom in order to give your access""
+
+This is the classic definition of ransomware/Ransom Trojan behavior.
+
+The answer is **(I)**.",1.0,I,local_mc_A_to_J,169,0,266,stop,none,1.9891368290009268,0.001934,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-03,06b1115328e9f4ac3123b5903cc7907e95757e0344af3999e83994870474e5d6,arc_challenge,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: Which of the following is least likely to change from a solid state to a liquid state when heat is applied?
+(A) butter
+(B) paper
+(C) ice
+(D) candle wax",B,"Looking at this question, I need to determine which substance is least likely to melt (change from solid to liquid) when heat is applied.
+
+Let me analyze each option:
+
+(A) Butter - Melts at around 32-35°C (90-95°F). It easily transitions from solid to liquid when heated.
+
+(B) Paper - Paper does NOT melt when heated. Instead, it undergoes combustion (burns) at around 233°C (451°F). Paper is made of cellulose fibers, which decompose and burn rather than melting into a liquid state. It goes from solid directly to ash/gases through chemical decomposition.
+
+(C) Ice - Melts at 0°C (32°F). It very easily transitions from solid to liquid when heat is applied.
+
+(D) Candle wax - Melts at around 46-68°C depending on the type. It easily transitions from solid to liquid when heated.
+
+The answer is clearly (B) paper, because paper does not undergo a phase change from solid to liquid. Instead, when sufficient heat is applied, it burns (undergoes combustion/chemical decomposition) rather than melting.
+
+**(B)**",1.0,B,local_mc_A_to_J,90,0,250,stop,none,2.2574782079973374,0.00168,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-04,46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb,openbook_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling",A,"The question asks about which scenario would have the most friction based on surface roughness.
+
+Let me analyze each option:
+
+(A) River stones smashing - River stones are smooth (worn down by water), so they would have less friction.
+
+(B) Hands clapping - Hands have skin with ridges, fingerprints, and texture, making them relatively rough surfaces. When clapping, the rough skin surfaces press against each other, creating significant friction.
+
+(C) Mirrors pressing together - Mirrors have very smooth, polished glass surfaces, so they would have very little friction.
+
+(D) Stone falling - A stone falling through air involves air resistance, not surface-to-surface friction in the same way. Also, this doesn't involve two rough surfaces pressing against each other.
+
+The key principle stated is: ""more rough a surface being touched has = more friction.""
+
+Hands have rough, textured skin (with ridges and fingerprints), making them the roughest surfaces among the options. When hands clap together, these rough surfaces create the most friction.
+
+The answer is (B).
+
+(B)",0.0,B,local_mc_A_to_J,95,0,224,stop,none,1.8712791389989434,0.001534,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-05,37c8c57c56203926216e8db009f1ca42b48c901630a38e801daada53f4a18742,commonsense_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: The family TV personality was dressed as a weasel, and he began to play a what?
+(A) children's song
+(B) washington d.c
+(C) chicken coop
+(D) dead
+(E) used car lot",A,"Looking at this question, I need to determine what a family TV personality dressed as a weasel would begin to play.
+
+Let me analyze the options:
+- (A) children's song - This makes sense in context. A family TV personality (like someone on a kids' show) dressed as a weasel would likely play a children's song. This fits the family-friendly, entertainment context.
+- (B) washington d.c - This is a place, not something you ""play.""
+- (C) chicken coop - This is a place/object, not something you ""play.""
+- (D) dead - This doesn't make grammatical sense with ""play a dead.""
+- (E) used car lot - This is a place, not something you ""play.""
+
+The only option that makes grammatical and contextual sense with ""play a ___"" is (A) children's song. A family TV personality dressed as a weasel playing a children's song fits perfectly with the family entertainment context.
+
+(A)",1.0,A,local_mc_A_to_J,97,0,212,stop,none,2.035594975001004,0.001466,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-06,06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e,boolq,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No",A,"The passage clearly states that ""Bill & Ted's Excellent Adventure"" ""stars Alex Winter, Keanu Reeves, and George Carlin."" This confirms that George Carlin was indeed in the film.
+
+(A)",1.0,A,local_mc_A_to_J,161,0,44,stop,none,0.970127771000989,0.000586,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-07,cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c,hellaswag,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",B,"Looking at this question, I need to find the option that logically follows the step about filling a cocktail shaker with ice for making a vodka gimlet.
+
+Let me analyze each option:
+
+A. ""Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better."" - This doesn't make sense. You want cold ice for cocktails, not room temperature ice. This is incorrect advice.
+
+B. ""For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail."" - This is logical and practical advice that follows naturally from filling a shaker with ice. Using fresh ice and chilling the shaker are legitimate cocktail-making tips.
+
+C. ""[substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor."" - The second part ""Add the vodka to the shaker, then mix in the liquor"" is redundant since vodka IS the liquor. This doesn't make logical sense.
+
+D. ""[substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling."" - This is nonsensical. Ice doesn't come in shades of red, and champagne riesling has nothing to do with a vodka gimlet.
+
+The correct answer is B, as it provides logical, practical advice that naturally follows the instruction about filling the cocktail shaker with ice.
+
+(B)",1.0,B,local_mc_A_to_J,285,0,363,stop,none,2.387216457998875,0.002748,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-08,2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac,gsm8k,GSM8K,"[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?","There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27","Let me work through this step by step.
+
+**Black beans:** 8
+
+**Green beans:** 2 more than black beans = 8 + 2 = 10
+
+**Orange beans:** 1 less than green beans = 10 - 1 = 9
+
+**Total jellybeans:** 8 + 10 + 9 = **27**",1.0,27,local_last_numeric_answer_fixed_smoke_tasks,67,0,79,stop,none,0.9830565580014081,0.000608,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-09,c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b,math,MATH,"[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?","Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$","I need to find the assignment of numbers 2, 3, 4, 5, 6, 7 to the six faces of a cube that maximizes the sum of the eight vertex products.
+
+**Setting up the problem:**
+
+A cube has 3 pairs of opposite faces. Let me label the pairs as (a, a'), (b, b'), (c, c'). Each vertex is formed by choosing one face from each pair, so the eight vertex products are all combinations of choosing one from each pair.
+
+The sum of all eight vertex products is:
+$(a + a')(b + b')(c + c')$
+
+This is because each vertex product picks one element from each pair, and summing over all 8 combinations gives the product of the three sums.
+
+**So I need to maximize $(a + a')(b + b')(c + c')$ where {a, a', b, b', c, c'} = {2, 3, 4, 5, 6, 7}.**
+
+The total sum is 2 + 3 + 4 + 5 + 6 + 7 = 27. I need to partition these into three pairs, and maximize the product of the three pair-sums.
+
+Let the three pair-sums be $s_1, s_2, s_3$ where $s_1 + s_2 + s_3 = 27$.
+
+By AM-GM, the product $s_1 \cdot s_2 \cdot s_3$ is maximized when the sums are as equal as possible (i.e., each close to 9).
+
+**Possible pairings and their sums:**
+
+Let me find pairings where the sums are as balanced as possible:
+
+- (2,7), (3,6), (4,5): sums are 9, 9, 9 → product = 729
+- (2,6), (3,5), (4,7): sums are 8, 8, 11 → product = 704
+- (2,5), (3,4), (6,7): sums are 7, 7, 13 → product = 637
+- (2,4), (3,7), (5,6): sums are 6, 10, 11 → product = 660
+- (2,3), (4,5), (6,7): sums are 5, 9, 13 → product = 585
+- (2,7), (3,5), (4,6): sums are 9, 8, 10 → product = 720
+- (2,6), (3,7), (4,5): sums are 8, 10, 9 → product = 720
+- (2,5), (3,6), (4,7): sums are 7, 9, 11 → product = 693
+- (2,4), (3,6), (5,7): sums are 6, 9, 12 → product = 648
+- (2,3), (4,6), (5,7): sums are 5, 10, 12 → product = 600
+- (2,3), (4,7), (5,6): sums are 5, 11, 11 → product = 605
+- (2,4), (3,5), (6,7): sums are 6, 8, 13 → product = 624
+- (2,5), (3,7), (4,6): sums are 7, 10, 10 → product = 700
+- (2,6), (3,4), (5,7): sums are 8, 7, 12 → product = 672
+- (2,7), (3,4), (5,6): sums are 9, 7, 11 → product = 693
+
+The maximum is achieved with pairing (2,7), (3,6), (4,5), giving sums 9, 9, 9 and product $9 \times 9 \times 9 = 729$.
+
+$$\boxed{729}$$",1.0,729,local_last_numeric_answer_fixed_smoke_tasks,125,0,962,stop,none,4.500201931998163,0.006022,,False
+qwenmax,accounts/fireworks/models/qwen3p8-max,Qwen 3.8 Max,,smoke-10,53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152,squad,f1_score,"[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",ringers,"Based on the context provided, producers have been accused of planting **'ringers'** within the show. The context states that individual contestants have generated controversy ""for being 'ringers' planted by the producers.""",0.07142857142857142,"Based on the context provided, producers have been accused of planting **'ringers'** within the show. The context states that individual contestants have generated controversy ""for being 'ringers' planted by the producers.""",local_normalized_token_f1,108,0,42,stop,none,0.7259712699997181,0.000468,,False
+auto,auto,glm-5p3-flash,True,smoke-04,46047405117a3c0949591865f80b2f312fe5a2ce7e29f97215f87342c0333bcb,openbook_qa,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+Question: There is more friction the more rough a surface being touched has, so the most friction would be found in
+(A) river stones smashing
+(B) hands clapping
+(C) mirrors pressing together
+(D) stone falling",A,(A),1.0,A,local_mc_A_to_J,91,64,30,stop,low,2.287653429000784,2.0969999999999997e-05,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-06,06091ba2ec31b1966fa81ddc4a3508476ce4bdf75b522575a1607fe52997f12e,boolq,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+Question: was george carlin in bill and ted's excellent adventure
+
+Passage: Bill & Ted's Excellent Adventure is a 1989 American science fiction comedy film directed by Stephen Herek and written by Chris Matheson and Ed Solomon. It stars Alex Winter, Keanu Reeves, and George Carlin. The plot follows slackers Bill (Winter) and Ted (Reeves), who travel through time to assemble historical figures for their high school history presentation.
+
+## Options:
+A. Yes
+B. No",A,A,1.0,A,local_mc_A_to_J,157,156,2,stop,none,0.4232838139978412,2.0100000000000002e-06,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-08,2bae11f47b917a12fb3c2791c92ce84ef073a29468567ad42cdcf8bf408443ac,gsm8k,GSM8K,"[System Instruction]
+Answer the following math question step by step.
+
+[User Query]
+Question: A bag of jellybeans contains 8 black beans and 2 more green beans. It also contains 1 less orange bean than green beans. How many jellybeans are there in the bag?","There are 8 + 2 = <<8+2=10>>10 green beans.
+There are 10 -1 = <<10-1=9>>9 orange beans.
+There are 8 black + 10 green + 9 orange = <<8+10+9=27>>27 jelly beans.
+#### 27","Let's break down the problem step by step:
+
+1. **Black beans**: The problem states there are 8 black beans.
+
+2. **Green beans**: It says there are ""2 more green beans"" than black beans.
+   - Black beans = 8
+   - Green beans = 8 + 2 = 10
+
+3. **Orange beans**: It says there are ""1 less orange bean than green beans.""
+   - Green beans = 10
+   - Orange beans = 10 - 1 = 9
+
+4. **Total jellybeans**: Add up all the beans.
+   - Black: 8
+   - Green: 10
+   - Orange: 9
+   - Total = 8 + 10 + 9 = 27
+
+**Answer**: There are 27 jellybeans in the bag.",1.0,27,local_last_numeric_answer_fixed_smoke_tasks,66,0,180,stop,none,1.0146723420002672,3.93e-05,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-09,c5b0111e37119631711e1e474ff8474ad5918f2a59e9d353d7336f2f59319a6b,math,MATH,"[System Instruction]
+Answer the following math question. Make sure to put the answer (and only answer) inside \boxed{}.
+
+[User Query]
+Question: All the numbers 2, 3, 4, 5, 6, 7 are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?","Let the labels be $a,$ $b,$ $c,$ $d,$ $e,$, $f$ be the labels of the cube, so that $a$ and $b$ are opposite, $c$ and $d$ are opposite, and $e$ and $f$ are opposite.  Then the sum of the eight products is
+\[ace + acf + ade + adf + bce + bcf + bde + bdf = (a + b)(c + d)(e + f).\]By AM-GM,
+\[(a + b)(c + d)(e + f) \le \left[ \frac{(a + b) + (c + d) + (e + f)}{3} \right]^3 = \left( \frac{27}{3} \right)^3 = 729.\]Equality occurs when $a + b = c + d = e + f = 9,$ which is clearly achievable, so the maximum sum is $\boxed{729}.$",120,0.0,120,local_last_numeric_answer_fixed_smoke_tasks,126,0,4,stop,none,0.3957447209977545,7.100000000000001e-06,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,smoke-10,53d3b6761dc1bff621e71b06733b028779aaac10758408ea61234e14fc74c152,squad,f1_score,"[System Instruction]
+Answer the question using the provided context.
+
+[User Query]
+Question: Producers have been accused of planting what within the show?
+
+Context: Individual contestants have generated controversy in this competition for their past actions, or for being 'ringers' planted by the producers. A number of contestants had been disqualified for various reasons, such as for having an existing contract or undisclosed criminal records, although the show had been accused of double standard for disqualifying some but not others.",ringers,ringers,1.0,ringers,local_normalized_token_f1,106,0,3,stop,none,0.47940571999788517,5.9e-06,,False
+nemotron30b,accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b,,,smoke-07,cd69c31680683d9667e0930965ee15b7dd7869b52f94535a984154fa9c01d76c,hellaswag,em_mc,"[System Instruction]
+Answer the following multiple-choice question by selecting the correct option (A, B, C, or D). You MUST put your final answer letter in a parenthesis.
+
+[User Query]
+## Question:
+[header] How to make a vodka gimlet [title] Fill a cocktail shaker with ice. [step] Vodka gimlets are typically made by shaking the ingredients rather than stirring them. Add enough ice to a cocktail shaker to completely fill it.
+
+## Options:
+A. [substeps] Keep the lid off while you're dumping the mixture in. The ice will melt during the process so the closer it is to room temperature, the better.
+B. For the best tasting gimlet, make sure to use fresh ice. [substeps] You'll get a colder gimlet if you chill the cocktail shaker for 30 minutes to 1 hour before making the cocktail.
+C. [substeps] If you don't have a cocktail shaker, fill a tall glass with ice instead. [title] Add the vodka to the shaker, then mix in the liquor.
+D. [substeps] Use ice that's a light shade of red, or a light cherry of your choice. If you prefer a slightly, exotic, or smoky flavor, you may prefer a champagne riesling.",B,,,,request_error,,,,,low,181.01401646399972,,"HTTPSConnectionPool(host='api.fireworks.ai', port=443): Read timed out. (read timeout=180)",True

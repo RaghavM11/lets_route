@@ -53,6 +53,11 @@ To retry saved request errors, rerun the same command with `--retry-errors`.
 Previous failed records are retained in `failed_request_history.json`; successful
 model/task pairs are not repeated. Their successful request latencies and costs
 remain separate from the archived failed requests, whose billing is unknown.
+If a particular prompt repeatedly stalls in non-thinking mode, an explicit
+`--retry-errors --retry-reasoning-effort low` recovery run changes effort only
+for those failed pairs. The change is saved in `retry_settings_history.json`
+and in each result's effective request; it is not a strictly identical-settings
+rerun of that query.
 
 Nexus Auto and GPT-OSS request low reasoning effort. GPT-OSS does not support
 disabling reasoning. Other pinned arms request `none`; if a model explicitly

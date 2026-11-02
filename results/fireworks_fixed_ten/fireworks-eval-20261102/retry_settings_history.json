@@ -1,0 +1,14 @@
+[
+  {
+    "at": "2026-11-02T23:33:33.188413+00:00",
+    "pairs": [
+      {
+        "arm": "nemotron30b",
+        "fixed_id": "smoke-07",
+        "previous_effort": "none"
+      }
+    ],
+    "new_effort": "low",
+    "note": "Explicit service-recovery attempt; successful prior requests were not repeated."
+  }
+]

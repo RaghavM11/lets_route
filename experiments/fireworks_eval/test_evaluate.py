@@ -84,13 +84,16 @@ class FireworksEvaluationTest(unittest.TestCase):
             client.chat.return_value=response
             client.sanitize.side_effect=lambda value:value
             with patch.object(evaluate,'ROOT',root),patch.object(evaluate,'FireworksClient',return_value=client),\
-                 patch('sys.argv',['evaluate','--arms','auto','--run-id','retry-test','--retry-errors']):
+                 patch('sys.argv',['evaluate','--arms','auto','--run-id','retry-test','--retry-errors','--retry-reasoning-effort','none']):
                 evaluate.main()
             self.assertEqual(client.chat.call_count,1)
             self.assertEqual(len(json.loads((folder/'failed_request_history.json').read_text())),1)
             saved=json.loads((folder/'results.json').read_text())
             self.assertEqual(len(saved),10)
             self.assertTrue(all(row['error'] is None for row in saved))
+            retried=next(row for row in saved if row['fixed_id']==tasks[3]['fixed_id'])
+            self.assertEqual(retried['effective_request']['reasoning_effort'],'none')
+            self.assertTrue((folder/'retry_settings_history.json').exists())
 
 
 if __name__=='__main__': unittest.main()
