@@ -104,10 +104,16 @@ held-out metrics. We track runs here.
 |---|---|---|---|---|---|---|---|---|
 | 1 | 2026-11-02 | Qwen3.5-0.8B | 1,200 train / 200 test | 400 | `releases/router_0c98a5eb3d` | 0.730 | 0.795 | ✅ done (baseline) |
 | 2 | 2026-11-02 | Qwen3.5-9B | fast-test: 100 train / 32 test | 12 | `releases/router_7fda15b1ca` | 0.688* | 0.875* | ✅ done (pipeline smoke) |
-| 3 | — | Qwen3.5-9B | full: 4,488 train / 3,729 test | 2,244 | _to be filled_ | — | — | ⏳ planned |
+| 3 | 2026-11-02 | Qwen3.5-9B | 1,000 train / full test 3,729 | 125 | `releases/router_563c668b78` | 0.706 | 0.773 | ✅ done (9B / 1k prompts) |
+| 4 | — | Qwen3.5-9B | full: 4,488 train / 3,729 test | 2,244 | _to be filled_ | — | — | ⏳ planned |
+| 5 | 2026-11-02 | Qwen3.5-27B | fast-test: 1,000 train / 200 test | 250 | _picking_ | — | — | ⏳ running |
 
 \* Fast-test run is a 12-step smoke test on a tiny subset — numbers are not
 conclusive; it only validates the H200 pipeline end-to-end.
+
+\** Row 3 metrics are the full held-out evaluation on the complete test split
+(3,729 queries). The training-time subset eval (200 queries) for the same run
+recorded oracle_acc 0.740 / acceptable_hit 0.815.
 
 **How to keep this log current after a new run:** after training finishes,
 run:

@@ -210,6 +210,8 @@ It uses SGLang, caches the pinned model in a Modal Volume, runs the six-task
 multiple-choice suite on one H200, and saves complete local and remote result
 artifacts.
 
+![Ephemeral System-1 router training and evaluation jobs running on Modal H200 GPUs](docs/assets/modal-h200-runs.svg)
+
 ## Checkpoint & rollback
 
 | Ref | Hash | What |

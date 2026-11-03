@@ -45,9 +45,9 @@ IMAGE = (
     )
 )
 
-# Full-dataset run: Qwen3.5-9B backbone, train+valid for training, test held out.
-MODEL = "Qwen/Qwen3.5-9B"
-MODEL_REVISION = "main"
+# Full-dataset run: Qwen3.5-27B backbone, train+valid for training, test held out.
+MODEL = "Qwen/Qwen3.5-27B"
+MODEL_REVISION = "fc05daec18b0a78c049392ed2e771dde82bdf654"
 SEED = 7
 
 # ~2 epochs over the combined training set (train 3939 + valid 549 = 4488 queries),
@@ -140,11 +140,14 @@ def _collate(encs, pad_id, device):
     secrets=[modal.Secret.from_name("hf-token")],
     volumes={"/data": VOLUME},
 )
-def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: int = 12, fast_eval: int = 32):
+def train_on_h200(model_id: str = "", fast_test: bool = False, fast_train: int = 1000, fast_steps: int = 0, fast_eval: int = 200, optimize: bool = True):
     """Train the System-1 router on an H200.
 
     Default (fast_test=False) runs the full dataset (~2 epochs). Set
     fast_test=True for a quick pipeline smoke test on a small subset.
+
+    optimize=True applies H200-friendly speedups (disable gradient
+    checkpointing — plenty of VRAM for a 9B LoRA — and larger eval batch).
     """
     import torch
     import torch.nn.functional as F
@@ -174,11 +177,14 @@ def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: in
         test = rng.sample(test, min(fast_eval, len(test)))
         print(f"[FAST TEST] train={len(train)} eval={len(test)} steps={fast_steps}", flush=True)
 
-    tok = AutoTokenizer.from_pretrained(MODEL, revision=MODEL_REVISION, use_fast=True, trust_remote_code=False)
+    mid = model_id or MODEL
+    # Use the pinned revision only for the 27B model it belongs to; 9B/0.8B use "main".
+    rev = MODEL_REVISION if "27B" in model_id else "main"
+    tok = AutoTokenizer.from_pretrained(mid, revision=rev, use_fast=True, trust_remote_code=False)
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
     model = Qwen3_5ForConditionalGeneration.from_pretrained(
-        MODEL, revision=MODEL_REVISION, dtype=DTYPE, attn_implementation="eager", trust_remote_code=False
+        mid, revision=rev, dtype=DTYPE, attn_implementation="eager", trust_remote_code=False
     ).to(DEVICE).eval()
 
     # --- head ---
@@ -225,6 +231,7 @@ def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: in
 
     head = ChoiceHead(model.config.text_config.hidden_size, **HEAD_CONFIG).to(DEVICE)
     model.requires_grad_(False)
+    # Gradient checkpointing stays ON for memory safety on H200 (27B/9B LoRA).
     model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
     model.enable_input_require_grads()
     LORA = [name for name, layer in model.named_modules()
@@ -240,7 +247,19 @@ def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: in
         rng.shuffle(keep)
         return _request(row["query"], {k: pool[k] for k in keep})
 
-    steps = fast_steps if fast_test else STEPS
+    # Optimize: bigger batch (fewer steps) + bigger eval batch. Gradient
+    # checkpointing stays ON (memory safety on H200). 27B uses a smaller
+    # batch than 9B/0.8B.
+    if optimize:
+        TBATCH = 8 if "27B" in model_id else 16
+        EVAL_BATCH = 16
+        steps = max(1, N_EPOCHS * len(train) // TBATCH)
+        print(f"[OPTIMIZE] batch={TBATCH} eval_batch={EVAL_BATCH} steps={steps}", flush=True)
+    else:
+        TBATCH = BATCH
+        EVAL_BATCH = 2
+        steps = fast_steps if fast_test else STEPS
+
     opt = torch.optim.AdamW([
         {"params": [p for p in model.parameters() if p.requires_grad], "lr": 2e-4},
         {"params": head.parameters(), "lr": 1e-3},
@@ -250,14 +269,14 @@ def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: in
                                               else 0.5 * (1 + math.cos(math.pi * (s - warmup) / max(1, steps - warmup))))
     trainable = [p for p in router.parameters() if p.requires_grad]
     rows = []
-    while len(rows) < steps * BATCH:
+    while len(rows) < steps * TBATCH:
         order = list(train); rng.shuffle(order); rows.extend(order)
-    rows = rows[:steps * BATCH]
+    rows = rows[:steps * TBATCH]
 
     router.train(); opt.zero_grad(set_to_none=True)
     t0 = time.perf_counter()
     for step in range(steps):
-        part = rows[step * BATCH:(step + 1) * BATCH]
+        part = rows[step * TBATCH:(step + 1) * TBATCH]
         encs = [_encode_record(tok, train_request(r)) for r in part]
         logits = router(_collate(encs, tok.pad_token_id, DEVICE))
         loss = torch.stack([
@@ -297,9 +316,10 @@ def train_on_h200(fast_test: bool = False, fast_train: int = 100, fast_steps: in
     tok.save_pretrained(release / "tokenizer")
     torch.save({k: v.detach().cpu() for k, v in head.state_dict().items()}, release / "head.pt")
     (release / "manifest.json").write_text(json.dumps({
-        "format": "router-adapter-v1", "model_id": MODEL, "steps": steps, "batch": BATCH,
+        "format": "router-adapter-v1", "model_id": mid, "steps": steps, "batch": TBATCH,
         "seed": SEED, "train_size": len(train), "test_size": len(test),
-        "fast_test": fast_test, "training_seconds": train_secs, "loss_at_end": loss.item(),
+        "fast_test": fast_test, "optimize": optimize,
+        "training_seconds": train_secs, "loss_at_end": loss.item(),
         "held_out": {"oracle_acc": oracle_acc, "acceptable_hit": acc_hit},
     }, indent=2))
     VOLUME.commit()
