@@ -183,6 +183,11 @@ Realized cost/performance vs the oracle on the same test split
 | Mean per-query performance | 0.922 | **0.717** |
 | Mean per-query cost | $28.8e-6 | **$11.9e-6** |
 
+Routing operating points vs the static-model cost/performance frontier on the
+same queries (from `analysis_acc_cost_tradeoff.ipynb`, Chart 6):
+
+![Chart 6 — Routing policies vs static-model frontier](docs/assets/analysis-chart6-routing-frontier.png)
+
 **Takeaways**
 - The router matches the oracle's exact cheapest-acceptable pick 73% of the
   time and lands inside the acceptable set 79.5% — far above the generative
